@@ -30,5 +30,4 @@ Primary.args = {
   IsDisabled: false,
   RTL: false,
   IsMaxWidth: false,
-  OnChange: () => {},
 };

@@ -20,7 +20,6 @@ function CheckBox({
   RTL,
   IsMaxWidth,
   Checked,
-  OnChange,
 }) {
   const [isChecked, setIsChecked] = useState(Checked);
 
@@ -107,7 +106,6 @@ CheckBox.propTypes = {
   RTL: PropTypes.bool,
   IsMaxWidth: PropTypes.bool,
   Checked: PropTypes.bool,
-  OnChange: PropTypes.func,
 };
 
 CheckBox.defualtProps = {
@@ -127,6 +125,5 @@ CheckBox.defualtProps = {
   RTL: false,
   IsMaxWidth: false,
   Checked: false,
-  onchange: () => {},
 };
 export default CheckBox;
