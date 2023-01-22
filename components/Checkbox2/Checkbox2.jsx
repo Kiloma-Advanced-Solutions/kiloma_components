@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import PropTypes from 'prop-types';
-import style from './2CheckBox.module.css';
+import style from './Checkbox2.module.css';
 
 function CheckBox({
   CheckBoxTitle,
