@@ -1,36 +1,22 @@
 .main{
     display: flex;
     position: relative;
-    
-
-
 }
-
 .checkBoxContainer{
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
-    
-
-   
-}
-
+ }
 .checkBoxContainerRTL{
     display: flex;
     justify-content: center;
     align-items: center;
     direction: rtl;
     position: relative;
-
-   
 }
-
 .fullWidth{
     width: 100%;
     height: 100%;
     display: flex;
-   
-
 }
-

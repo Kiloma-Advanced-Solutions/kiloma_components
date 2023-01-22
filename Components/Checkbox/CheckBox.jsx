@@ -1,6 +1,6 @@
 /* eslint-disable react/require-default-props */
-/* eslint-disable linebreak-style */
 import React, { useState, useEffect } from 'react';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import PropTypes from 'prop-types';
 import style from './CheckBox.module.css';
 
@@ -20,6 +20,7 @@ function CheckBox({
   RTL,
   IsMaxWidth,
   Checked,
+  OnChange,
 }) {
   const [isChecked, setIsChecked] = useState(Checked);
 
@@ -106,6 +107,7 @@ CheckBox.propTypes = {
   RTL: PropTypes.bool,
   IsMaxWidth: PropTypes.bool,
   Checked: PropTypes.bool,
+  OnChange: PropTypes.func,
 };
 
 CheckBox.defualtProps = {
