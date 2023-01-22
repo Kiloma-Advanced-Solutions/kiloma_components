@@ -1,8 +1,8 @@
 import React from 'react';
-import CheckBox from './CheckBox';
+import CheckBox from './2CheckBox';
 
 export default {
-  title: 'myStories/CheckBox',
+  title: 'myStories/2CheckBox',
   component: CheckBox,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
 };
