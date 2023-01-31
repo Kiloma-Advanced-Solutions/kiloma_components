@@ -3,12 +3,11 @@ import Image from 'next/image';
 import styles from '../styles/Home.module.css';
 
 export default function Home() {
-  const logoImg = 'Imageslibrary.svg';
   return (
     <div className={styles.container}>
       <div className={styles.inside_div}>
         <div className={styles.img_title}>
-          <Image src={logoImg} width={100} height={100} />
+          <Image src="\Images\logo.svg" width={100} height={100} />
           <p>Kiloma Components</p>
         </div>
         <div className={styles.button_div}>
