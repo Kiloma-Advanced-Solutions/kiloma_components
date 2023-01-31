@@ -19,8 +19,7 @@ export default function Home() {
       <div className={styles.img_div}>
         <Image
           src='\Images\library.svg'
-          width={300}
-          height={400}
+          fill={true}
           className={styles.lower_img}
         />
       </div>
