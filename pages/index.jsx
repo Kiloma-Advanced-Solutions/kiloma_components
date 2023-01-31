@@ -3,7 +3,7 @@ import Image from 'next/image';
 import styles from '../styles/Home.module.css';
 
 export default function Home() {
-  const logoImg = '/images/logo.svg';
+  const logoImg = 'Imageslibrary.svg';
   return (
     <div className={styles.container}>
       <div className={styles.inside_div}>
