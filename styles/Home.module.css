@@ -6,15 +6,23 @@
   height: 100vh; 
   overflow-y: hidden;
 }
+.inside_div{
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 .img_title{
   display: flex;
   margin-top: 40px;
   font-family: Helvetica;
   font-size: 30px;
+  color: black;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   gap: 20px;
+  
 }
 .button_div{
   display: flex;
@@ -23,7 +31,7 @@
 }
 .button{
   background-color: #42B0F4;
-  width: 250px;
+  width: 330px;
   height: 64px;
   background: #42B0F4;
   border-radius: 70px;
@@ -31,6 +39,7 @@
   color: white;
   font-family: Helvetica;
   font-weight: bold;
+  font-size: 25px;
 }
 .img_div{
   display: flex;
@@ -43,13 +52,7 @@
 .lower_img{
   margin-top: 20px;
   position: absolute;
-  bottom: -110px; ;
+  bottom: -190px; ;
   max-width: 100%;
 }
 
-.inside_div{
-  height: 70%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
