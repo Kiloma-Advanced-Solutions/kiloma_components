@@ -7,6 +7,7 @@ export default function Demo() {
       <h2>
         This is our first demo page
       </h2>
+      <button type="button">Amazing button</button>
     </div>
   );
 }
