@@ -1,3 +1,4 @@
+/* eslint-disable jsx-quotes */
 import React from 'react';
 import Image from 'next/image';
 import styles from '../styles/Home.module.css';
@@ -19,7 +20,7 @@ export default function Home() {
       <div className={styles.img_div}>
         <Image
           src='\Images\library.svg'
-          fill={true}
+          fill='true'
           className={styles.lower_img}
         />
       </div>

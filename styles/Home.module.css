@@ -22,7 +22,6 @@
   align-items: center;
   flex-direction: column;
   gap: 20px;
-  
 }
 .button_div{
   display: flex;
@@ -40,6 +39,7 @@
   font-family: Helvetica;
   font-weight: bold;
   font-size: 25px;
+  margin: 5px;
 }
 .img_div{
   display: flex;
