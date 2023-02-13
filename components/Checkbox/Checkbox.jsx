@@ -110,12 +110,12 @@ Checkbox.propTypes = {
   OnChange: PropTypes.func,
 };
 
-Checkbox.defualtProps = {
+Checkbox.defaultProps = {
   CheckBoxTitle: '',
   IdForTheLabel: '',
   LabelValue: '',
   IsRequired: true,
-  IsReadOnly: false,
+  // IsReadOnly: false, where is this prop?
   ShouldDisplayLabel: false,
   LabelFontSize: '',
   CheckBoxHeight: '',
