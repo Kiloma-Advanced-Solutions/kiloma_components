@@ -56,8 +56,15 @@
   bottom: -190px; ;
   max-width: 100%;
 }
-
 @media (min-width: 767px){
+  .container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    height: 95vh; 
+    overflow-y: hidden;
+  }
   .img_title{
     margin-top: 55px;
     font-family: Helvetica;
@@ -86,4 +93,11 @@
     width: 100%;
     position: relative;
   }
+  .button_div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: -395px;
 }
+  }
+
