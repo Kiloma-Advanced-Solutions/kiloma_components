@@ -1,6 +1,7 @@
 .container{
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   position: relative;
   height: 80vh; 
@@ -62,7 +63,7 @@
     flex-direction: column;
     align-items: center;
     position: relative;
-    height: 95vh; 
+    height: 80vh; 
     overflow-y: hidden;
   }
   .img_title{
@@ -72,23 +73,22 @@
     color: #000;
     justify-content: center;
     gap: 25px;
+    
   }
   .button{
-    width: 620px;
+    background-color: #42B0F4;
+    width: 380px;
     height: 64px;
     background: #42B0F4;
     border-radius: 70px;
     border: none;
-    color: #fff;
+    color: white;
     font-family: Helvetica;
-    font-weight: 700;
+    font-weight: bold;
     font-size: 25px;
-    margin:auto;
+    margin: 5px;
   }
   .img_div{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     height: 50%;
     width: 100%;
     position: relative;
