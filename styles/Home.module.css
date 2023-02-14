@@ -5,6 +5,10 @@
   position: relative;
   height: 100vh; 
   overflow-y: hidden;
+  margin-top: 44px;
+  margin-bottom: 44px;
+  margin-left: 16px;
+  margin-right: 16px;
 }
 .inside_div{
   height: 70%;
@@ -27,6 +31,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: -194px;
 }
 .button{
   background-color: #42B0F4;
@@ -50,7 +55,7 @@
   position: relative;
 }
 .lower_img{
-  margin-top: 20px;
+  margin-top: -153px;
   position: absolute;
   bottom: -190px; ;
   max-width: 100%;
