@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import styles from '../styles/Home.module.css';
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -17,9 +18,9 @@ export default function Home() {
         />
       </div>
       <div className={styles.button_div}>
-        <button type="button" className={styles.button}>
+        <Link className={styles.button} href="/demo_page">
           Browse
-        </button>
+        </Link>
       </div>
     </div>
   );
