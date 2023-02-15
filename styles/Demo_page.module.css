@@ -1,0 +1,31 @@
+/* Mobile First */
+.container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    overflow-y: hidden;
+    gap: 10px;
+    height: 90vh;
+}
+.title{
+    font-family: Helvetica;
+    font-size: 30px;
+    color: black;
+    margin-top: 30px;
+}
+.sub_title{
+    font-family:Helvetica;
+    font-size: 20px;
+}
+
+/* Large Screen */
+@media only screen and (min-width : 1024px){
+    .container{
+        height: 100vh;
+        overflow-y: hidden;
+    }
+    .sub_title{
+    padding: 5px;
+    margin-left: 0;
+    }
+}
