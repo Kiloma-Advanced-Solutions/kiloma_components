@@ -105,7 +105,7 @@ CheckBox.propTypes = {
   RTL: PropTypes.bool,
   IsMaxWidth: PropTypes.bool,
   Checked: PropTypes.bool,
-  // OnChange: PropTypes.func,
+  OnChange: PropTypes.func,
 };
 
 CheckBox.defaultProps = {
@@ -124,5 +124,6 @@ CheckBox.defaultProps = {
   RTL: false,
   IsMaxWidth: false,
   Checked: false,
+  OnChange: () => {},
 };
 export default CheckBox;

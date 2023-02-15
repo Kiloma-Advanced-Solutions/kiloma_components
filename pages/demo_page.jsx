@@ -14,17 +14,12 @@ export default function demoPage() {
         </div>
         <div className={styles.sbExample}>
           <CheckBox
-            CheckBoxBackGroundColor=""
-            CheckBoxHeight=""
-            CheckBoxTitle="CheckBox"
-            CheckBoxWidth=""
-            IdForTheLabel=""
+            CheckBoxTitle="Checkbox Example"
             IsChecked=""
+            IsRequired={false}
             LabelColor=""
-            LabelFontFamily=""
-            LabelFontSize=""
-            LabelValue=""
             ShouldDispalyLabel
+            OnChange={() => {}}
           />
         </div>
       </div>
