@@ -4,18 +4,26 @@
     align-items: center;
     flex-direction: column;
     overflow-y: hidden;
-    gap: 10px;
+    gap: 20px;
     height: 90vh;
 }
 .title{
     font-family: Helvetica;
-    font-size: 30px;
+    font-size: 20px;
     color: black;
     margin-top: 30px;
 }
-.sub_title{
+.sub_div{
     font-family:Helvetica;
     font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.sub_title{
+    display: flex;
+    font-family:Helvetica;
+    font-weight: bold;
 }
 
 /* Large Screen */
@@ -24,8 +32,11 @@
         height: 100vh;
         overflow-y: hidden;
     }
-    .sub_title{
-    padding: 5px;
-    margin-left: 0;
+    .sub_div{
+        padding: 5px;
+        margin-left: 0;
+    }
+    .sbExample{
+        margin-left: 0px;
     }
 }

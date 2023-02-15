@@ -1,6 +1,4 @@
-/* eslint-disable react/require-default-props */
 import React, { useState, useEffect } from 'react';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import PropTypes from 'prop-types';
 import style from './Checkbox2.module.css';
 
@@ -107,15 +105,14 @@ CheckBox.propTypes = {
   RTL: PropTypes.bool,
   IsMaxWidth: PropTypes.bool,
   Checked: PropTypes.bool,
-  OnChange: PropTypes.func,
+  // OnChange: PropTypes.func,
 };
 
-CheckBox.defualtProps = {
+CheckBox.defaultProps = {
   CheckBoxTitle: '',
   IdForTheLabel: '',
   LabelValue: '',
   IsRequired: true,
-  IsReadOnly: false,
   ShouldDispalyLabel: false,
   LabelFontSize: '',
   CheckBoxHeight: '',
