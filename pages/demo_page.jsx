@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../styles/Demo_page.module.css'
+import styles from '../styles/Demo_page.module.css';
 
 export default function demoPage() {
   return (
