@@ -30,6 +30,22 @@ export default function components() {
                 />
               </div>
             </li>
+            <li>
+              <div className={styles.examples}>
+                <p> Checkbox - </p>
+                <CheckBox
+                  CheckBoxTitle="Agree"
+                  IsChecked=""
+                  IsRequired={false}
+                  ShouldDisplayLabel
+                  labelColor="#19d443"
+                  OnChange={() => {}}
+                  CheckBoxWidth="25"
+                  CheckBoxHeight="15"
+                  LabelFontSize="20"
+                />
+              </div>
+            </li>
           </ol>
         </div>
       </div>
