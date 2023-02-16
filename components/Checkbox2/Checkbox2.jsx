@@ -14,7 +14,7 @@ function CheckBox({
   labelColor,
   LabelFontFamily,
   IsDisabled,
-  ShouldDispalyLabel,
+  ShouldDisplayLabel,
   RTL,
   IsMaxWidth,
   Checked,
@@ -66,14 +66,14 @@ function CheckBox({
           checked={isChecked}
           onChange={handleChecked}
         />
-        {ShouldDispalyLabel && !IsRequired ? (
+        {ShouldDisplayLabel && !IsRequired ? (
           <label style={makeLabelStyleFromProps()} htmlFor={IdForTheLabel}>
             {CheckBoxTitle}
           </label>
         ) : (
           <p />
         )}
-        {ShouldDispalyLabel && IsRequired ? (
+        {ShouldDisplayLabel && IsRequired ? (
           <label
             style={makeLabelStyleFromPropsRequired()}
             htmlFor={IdForTheLabel}
@@ -94,7 +94,7 @@ CheckBox.propTypes = {
   IdForTheLabel: PropTypes.string,
   LabelValue: PropTypes.string,
   IsRequired: PropTypes.bool,
-  ShouldDispalyLabel: PropTypes.bool,
+  ShouldDisplayLabel: PropTypes.bool,
   LabelFontSize: PropTypes.string,
   CheckBoxHeight: PropTypes.string,
   CheckBoxWidth: PropTypes.string,
@@ -113,7 +113,7 @@ CheckBox.defaultProps = {
   IdForTheLabel: '',
   LabelValue: '',
   IsRequired: true,
-  ShouldDispalyLabel: false,
+  ShouldDisplayLabel: false,
   LabelFontSize: '',
   CheckBoxHeight: '',
   CheckBoxWidth: '',

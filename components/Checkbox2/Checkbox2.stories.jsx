@@ -20,7 +20,7 @@ Primary.args = {
   LabelValue: '',
   IsChecked: '',
   IsRequired: false,
-  ShouldDispalyLabel: true,
+  ShouldDisplayLabel: true,
   LabelFontSize: '',
   CheckBoxHeight: '',
   CheckBoxWidth: '',

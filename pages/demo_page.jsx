@@ -15,11 +15,11 @@ export default function demoPage() {
         <div className={styles.examples}>
           <p>Checkbox</p>
           <CheckBox
-            CheckBoxTitle="Checkbox"
+            CheckBoxTitle="Agree"
             IsChecked=""
             IsRequired={false}
             LabelColor=""
-            ShouldDispalyLabel
+            ShouldDisplayLabel
             OnChange={() => {}}
           />
         </div>
