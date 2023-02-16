@@ -8,13 +8,14 @@ export default function demoPage() {
       <div className={styles.title}>
         <h1>Components</h1>
       </div>
+      <div className={styles.sub_title}>
+        <p> Input Components </p>
+      </div>
       <div className={styles.sub_div}>
-        <div className={styles.sub_title}>
-          <p> Input Components </p>
-        </div>
-        <div className={styles.sbExample}>
+        <div className={styles.examples}>
+          <p>Checkbox</p>
           <CheckBox
-            CheckBoxTitle="Checkbox Example"
+            CheckBoxTitle="Checkbox"
             IsChecked=""
             IsRequired={false}
             LabelColor=""

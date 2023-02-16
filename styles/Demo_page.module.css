@@ -24,6 +24,8 @@
     display: flex;
     font-family:Helvetica;
     font-weight: bold;
+    
+    
 }
 
 /* Large Screen */
@@ -32,11 +34,18 @@
         height: 100vh;
         overflow-y: hidden;
     }
-    .sub_div{
-        padding: 5px;
-        margin-left: 0;
+    .sub_title{
+        display: flex;
+        margin-left: 10px;
+        flex-direction: column;
     }
-    .sbExample{
-        margin-left: 0px;
+    .sub_div{
+        margin-left: 10px;
+        display: flex;
+        flex-direction: column;
+    }
+    .examples{
+        display: flex;
+        gap: 10px;
     }
 }
