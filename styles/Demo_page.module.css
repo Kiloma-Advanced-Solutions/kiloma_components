@@ -1,0 +1,51 @@
+/* Mobile First */
+.container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    overflow-y: hidden;
+    gap: 20px;
+    height: 90vh;
+}
+.title{
+    font-family: Helvetica;
+    font-size: 20px;
+    color: black;
+    margin-top: 30px;
+}
+.sub_div{
+    font-family:Helvetica;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.sub_title{
+    display: flex;
+    font-family:Helvetica;
+    font-weight: bold;
+    
+    
+}
+
+/* Large Screen */
+@media only screen and (min-width : 1024px){
+    .container{
+        height: 100vh;
+        overflow-y: hidden;
+    }
+    .sub_title{
+        display: flex;
+        margin-left: 10px;
+        flex-direction: column;
+    }
+    .sub_div{
+        margin-left: 10px;
+        display: flex;
+        flex-direction: column;
+    }
+    .examples{
+        display: flex;
+        gap: 10px;
+    }
+}
