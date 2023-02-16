@@ -39,7 +39,7 @@
         margin-left: 10px;
         flex-direction: column;
     }
-    .sub_div{
+    .input_components{
         margin-left: 10px;
         display: flex;
         flex-direction: column;
@@ -48,4 +48,5 @@
         display: flex;
         gap: 10px;
     }
+    
 }
