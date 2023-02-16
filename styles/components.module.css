@@ -13,20 +13,25 @@
     color: black;
     margin-top: 30px;
 }
-.sub_div{
+.sub_title{
+    display: flex;
+    font-family:Helvetica;
+    font-weight: bold;
+}
+.input_components{
     font-family:Helvetica;
     font-size: 20px;
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
-.sub_title{
+
+.examples{
     display: flex;
-    font-family:Helvetica;
-    font-weight: bold;
-    
-    
+    gap: 10px;
 }
+   
+
 
 /* Large Screen */
 @media only screen and (min-width : 1024px){
@@ -39,7 +44,7 @@
         margin-left: 10px;
         flex-direction: column;
     }
-    .sub_div{
+    .input_components{
         margin-left: 10px;
         display: flex;
         flex-direction: column;
@@ -48,4 +53,5 @@
         display: flex;
         gap: 10px;
     }
+    
 }
