@@ -8,7 +8,7 @@ export default function components() {
       <div className={styles.title}>
         <h1>Components</h1>
       </div>
-      <div className={styles.sub_title}>
+      <div className={styles.input_title}>
         <p> Input Components </p>
       </div>
       <div className={styles.input_components}>
