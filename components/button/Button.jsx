@@ -31,7 +31,7 @@ text-align:center;
 }
 
 &:hover{
-    box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 3px 3px 3px rgba(0, 0.1, 0.1, 0.3);
 }
 `;
 
