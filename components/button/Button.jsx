@@ -9,7 +9,9 @@ margin-top:20px;
 flex-direction: column;
 gap:20px`;
 
-const RoundedButton = styled.button`
+const RoundedButton = styled.button.attrs((props) => ({
+  disabled: props.disabled,
+}))`
 background:rgb(3, 99, 233);
 color:white;
 font-family: Helvetica;
@@ -19,6 +21,7 @@ padding: 13px 20px;
 width: 65%;
 border-radius: 30px;
 text-align:center;
+
 
 @media only screen and (min-width : 1024px){
     background:rgb(3, 99, 233);
@@ -33,9 +36,15 @@ text-align:center;
 &:hover{
     box-shadow: 3px 3px 3px rgba(0, 0.1, 0.1, 0.3);
 }
+&:disabled {
+    opacity: 0.75;
+    cursor: not-allowed;
+  }
 `;
 
-const SquareButton = styled.button`
+const SquareButton =styled.button.attrs((props) => ({
+  disabled: props.disabled,
+}))`
 background:rgb(3, 99, 233);
 color:white;
 font-family: Helvetica;
@@ -57,15 +66,19 @@ width: 65%;
     width: 11%;
     cursor: pointer;
 }
-&:active{
-    background:black;
-}
+
 &:hover{
     box-shadow: 3px 3px 3px rgba(0, 0.1, 0.1, 0.3);
 }
+&:disabled {
+    opacity: 0.75;
+    cursor: not-allowed;
+  }
 `;
 
-const DarkButton = styled.button`
+const DarkButton = styled.button.attrs((props) => ({
+  disabled: props.disabled,
+}))`
     background: #333;
     color: #fff; 
     padding: 12px;
@@ -88,9 +101,15 @@ const DarkButton = styled.button`
     &:hover{
         box-shadow: 3px 3px 3px rgba(0, 0.1, 0.1, 0.4);
     }
+    &:disabled {
+        opacity: 0.75;
+        cursor: not-allowed;
+      }
   ;`;
 
-const LightButton = styled.button`
+const LightButton = styled.button.attrs((props) => ({
+  disabled: props.disabled,
+}))`
     width: 65%;
     background-color: #fff;
     color: #333; 
@@ -114,6 +133,10 @@ const LightButton = styled.button`
     &:hover{
         box-shadow: 3px 3px 3px rgba(0, 0.1, 0.1, 0.1);
     }
+    &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
     ;`;
 
 function ButtonComponents() {
