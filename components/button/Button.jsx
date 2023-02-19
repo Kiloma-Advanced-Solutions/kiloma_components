@@ -18,8 +18,8 @@ font-size: 16px;
 padding: 13px 20px; 
 width: 65%;
 border-radius: 30px;
-font-weight: bold;
 text-align:center;
+
 @media only screen and (min-width : 1024px){
     background:rgb(3, 99, 233);
     width: 15%;
@@ -46,7 +46,6 @@ text-align: center;
 text-decoration: none;
 font-size: 20px; 
 cursor: pointer;
-font-weight: bold;
 width: 65%;
 
 @media only screen and (min-width : 1024px){
@@ -103,6 +102,7 @@ const LightButton = styled.button`
     text-decoration: none;
     font-size: 16px; 
     cursor: pointer;
+    font-family: Helvetica;
     }
     @media only screen and (min-width : 1024px){
         width: 15%;
