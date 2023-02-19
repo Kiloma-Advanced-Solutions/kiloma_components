@@ -61,7 +61,7 @@ width: 65%;
     background:black;
 }
 &:hover{
-    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 3px 3px 3px rgba(0, 0.1, 0.1, 0.3);
 }
 `;
 
@@ -86,8 +86,7 @@ const DarkButton = styled.button`
         cursor: pointer;
     }
     &:hover{
-        box-shadow: 10px 10px 10px rgba(0, 0, 0.2, 0.5);
-
+        box-shadow: 3px 3px 3px rgba(0, 0.1, 0.1, 0.4);
     }
   ;`;
 
@@ -113,7 +112,7 @@ const LightButton = styled.button`
         cursor: pointer;
     }
     &:hover{
-        box-shadow: 10px 10px 10px rgba(0, 0.4, 0.2, 0.5);
+        box-shadow: 3px 3px 3px rgba(0, 0.1, 0.1, 0.1);
     }
     ;`;
 
