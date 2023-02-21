@@ -3,14 +3,14 @@ import ButtonComponents from '../components/button/Button';
 
 export default function Demo() {
   const alertOnClick = () => {
-    console.log('Working>');
+    alert('Working>');
   };
   return (
     <div>
       <ButtonComponents
         ButtonLabel="Button"
         ButtonTheme="round"
-        Disabled
+        Onclick={alertOnClick}
       />
     </div>
   );
