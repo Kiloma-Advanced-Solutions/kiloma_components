@@ -6,8 +6,7 @@ export default function Demo() {
     <div>
       <ButtonComponents
         ButtonLabel="Button"
-        ButtonTheme="light"
-        IsDisabled
+        ButtonTheme="dark"
       />
     </div>
   );

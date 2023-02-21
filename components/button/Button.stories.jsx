@@ -15,5 +15,5 @@ Button.args = {
   ButtonLabel: 'Button',
   ButtonTheme: 'round',
   IsDisabled: false,
-  IsRound: false,
+  IsRound: true,
 };

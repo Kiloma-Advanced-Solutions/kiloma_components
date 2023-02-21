@@ -40,6 +40,11 @@ font-weight: 900;
     background-color: #42B0F4;
 }
 
+.borderRadius{
+    border-radius: 30px;
+    border: none;
+}
+
 @media only screen and (min-width : 1024px) {
 .roundButton{
     background:#17a3fa;
@@ -80,8 +85,13 @@ font-weight: 900;
     font-family: Helvetica;
     font-weight: 900;
 
-}
 
+}
+.borderRadius{
+    border-radius: 30px;
+    border: none;
+}
+}
 @media only screen and (min-width : 1920px) {
     .roundButton{
         background:#17a3fa;
@@ -122,7 +132,12 @@ font-weight: 900;
         font-family: Helvetica;
         font-weight: 900;
     }
+    .borderRadius{
+        border-radius: 30px;
+        border: none;
+    }
 }
+
 
 
 .lightButton:disabled{
@@ -148,4 +163,3 @@ font-weight: 900;
     background-color: #c2185b;
 }
 
-}

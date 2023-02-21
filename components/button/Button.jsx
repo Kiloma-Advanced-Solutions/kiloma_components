@@ -2,14 +2,15 @@ import React from 'react';
 // import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import styles from './Button.module.css';
+import cx from 'classnames';
 
 export default function ButtonComponents({
-  ButtonLabel, ButtonTheme, backgroundColor, IsDisabled, Onclick,IsRound
+  ButtonLabel, ButtonTheme, backgroundColor, IsDisabled, Onclick, IsRound,
 
 }) {
   return (
     <div>
-      <button type="button" onClick={Onclick} disabled={IsDisabled} className={styles[`${ButtonTheme}Button`]} style={backgroundColor && { backgroundColor }}>{ButtonLabel}</button>
+      <button type="button" onClick={Onclick} disabled={IsDisabled} className={cx(styles[`${ButtonTheme}Button`], { [styles.borderRadius]: IsRound })} style={backgroundColor && { backgroundColor }}>{ButtonLabel}</button>
     </div>
   );
 }
