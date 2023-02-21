@@ -36,4 +36,81 @@ text-align:center;
     font-family: Helvetica;
 }
 
+@media only screen and (min-width : 1024px) {
+.roundButton{
+    background:rgb(3, 99, 233);
+    color:white;
+    font-family: Helvetica;
+    border: none;
+    font-size: 16px;
+    padding: 13px 20px; 
+    width: 30%;
+    border-radius: 30px;
+    text-align:center;
+}
+.darkButton{
+    background: #333;
+    color: #fff; 
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    width:30%;
+    font-family: Helvetica;
+}
+.lightButton{
+    width: 30%;
+    background-color: #fff;
+    color: #333; 
+    border: 1px solid #333; 
+    padding: 10px 20px; 
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px; 
+    cursor: pointer;
+    font-family: Helvetica;
+}
 
+@media only screen and (min-width : 1920px) {
+    .roundButton{
+        background:rgb(3, 99, 233);
+        color:white;
+        font-family: Helvetica;
+        border: none;
+        font-size: 16px;
+        padding: 13px 20px; 
+        width: 25%;
+        border-radius: 30px;
+        text-align:center;
+    }
+    .darkButton{
+        background: #333;
+        color: #fff; 
+        padding: 12px;
+        border: none;
+        border-radius: 5px;
+        text-align: center;
+        font-size: 16px;
+        cursor: pointer;
+        width:25%;
+        font-family: Helvetica;
+    }
+    .lightButton{
+        width: 25%;
+        background-color: #fff;
+        color: #333; 
+        border: 1px solid #333; 
+        padding: 10px 20px; 
+        border-radius: 5px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 16px; 
+        cursor: pointer;
+        font-family: Helvetica;
+    }
+}
+
+}

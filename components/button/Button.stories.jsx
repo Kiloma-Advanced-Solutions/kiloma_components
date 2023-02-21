@@ -10,9 +10,8 @@ function Template(args) {
   return <ButtonComponents {...args} />;
 }
 export const Button = Template.bind({});
-// export const Dark = Template.bind({});
 
 Button.args = {
-  buttonLabel: 'Button',
+  ButtonLabel: 'Button',
   ButtonTheme: 'light',
 };
