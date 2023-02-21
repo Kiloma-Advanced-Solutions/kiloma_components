@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from '../styles/components.module.css';
 import CheckBox from '../components/Checkbox2/Checkbox2';
+import ButtonComponents from '../components/button/Button';
 
 export default function components() {
   return (
@@ -27,6 +28,15 @@ export default function components() {
                   CheckBoxWidth="25"
                   CheckBoxHeight="15"
                   LabelFontSize="20"
+                />
+              </div>
+            </li>
+            <li>
+              <div className={styles.examples}>
+                <p> Checkbox - </p>
+                <ButtonComponents
+                  ButtonLabel="Button"
+                  ButtonTheme="dark"
                 />
               </div>
             </li>
