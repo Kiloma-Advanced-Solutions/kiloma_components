@@ -1,5 +1,6 @@
+/* Mobile First CSS  */
 .roundButton{
-background:rgb(3, 99, 233);
+background:#17a3fa;
 color:white;
 font-family: Helvetica;
 border: none;
@@ -8,6 +9,7 @@ padding: 13px 20px;
 width: 65%;
 border-radius: 30px;
 text-align:center;
+font-weight: 900;
 }
 .darkButton{
     background: #333;
@@ -20,12 +22,12 @@ text-align:center;
     cursor: pointer;
     width:65%;
     font-family: Helvetica;
+    font-weight: 900;
 }
 
 .lightButton{
     width: 65%;
-    background-color: #fff;
-    color: #42B0F4; 
+    color: #fff; 
     border: 1px solid #333; 
     padding: 10px 20px; 
     border-radius: 5px;
@@ -34,11 +36,13 @@ text-align:center;
     font-size: 16px; 
     cursor: pointer;
     font-family: Helvetica;
+    font-weight: 900;
+    background-color: #42B0F4;
 }
 
 @media only screen and (min-width : 1024px) {
 .roundButton{
-    background:rgb(3, 99, 233);
+    background:#17a3fa;
     color:white;
     font-family: Helvetica;
     border: none;
@@ -47,6 +51,7 @@ text-align:center;
     width: 30%;
     border-radius: 30px;
     text-align:center;
+    font-weight: 900;
 }
 .darkButton{
     background: #333;
@@ -59,11 +64,12 @@ text-align:center;
     cursor: pointer;
     width:30%;
     font-family: Helvetica;
+    font-weight: 900;
 }
 .lightButton{
     width: 30%;
-    background-color: #fff;
-    color: #42B0F4; 
+    background-color: #42B0F4;
+    color: #fff; 
     border: 1px solid #333; 
     padding: 10px 20px; 
     border-radius: 5px;
@@ -72,11 +78,13 @@ text-align:center;
     font-size: 16px; 
     cursor: pointer;
     font-family: Helvetica;
+    font-weight: 900;
+
 }
 
 @media only screen and (min-width : 1920px) {
     .roundButton{
-        background:rgb(3, 99, 233);
+        background:#17a3fa;
         color:white;
         font-family: Helvetica;
         border: none;
@@ -85,6 +93,7 @@ text-align:center;
         width: 25%;
         border-radius: 30px;
         text-align:center;
+        font-weight: 900;
     }
     .darkButton{
         background: #333;
@@ -97,11 +106,12 @@ text-align:center;
         cursor: pointer;
         width:25%;
         font-family: Helvetica;
+        font-weight: 900;
     }
     .lightButton{
         width: 25%;
-        background-color: #fff;
-        color: #333; 
+        background-color: #42B0F4;
+        color: #fff; 
         border: 1px solid #333; 
         padding: 10px 20px; 
         border-radius: 5px;
@@ -110,6 +120,7 @@ text-align:center;
         font-size: 16px; 
         cursor: pointer;
         font-family: Helvetica;
+        font-weight: 900;
     }
 }
 
@@ -118,12 +129,23 @@ text-align:center;
     opacity: 0.5;
     cursor: not-allowed;
 }
+.lightButton:active{
+    background-color: #c2185b;
+}
 .darkButton:disabled{
-    opacity: 0.65;
+    opacity: 0.70;
     cursor: not-allowed;
 }
+.darkButton:active{
+    background-color: #c2185b;
+}
+
 .roundButton:disabled{
     opacity: 0.55;
     cursor: not-allowed;
 }
+.roundButton:active{
+    background-color: #c2185b;
+}
+
 }
