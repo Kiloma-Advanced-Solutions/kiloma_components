@@ -4,12 +4,12 @@ import PropTypes, { string } from 'prop-types';
 import styles from './Button.module.css';
 
 export default function ButtonComponents({
-  ButtonLabel, ButtonTheme, BackgroundColor,
+  ButtonLabel, ButtonTheme, backgroundColor, Disabled,
 
 }) {
   return (
     <div>
-      <button type="button" className={styles[`${ButtonTheme}Button`]} style={BackgroundColor && { BackgroundColor }}>{ButtonLabel}</button>
+      <button type="button" disabled={Disabled} className={styles[`${ButtonTheme}Button`]} style={backgroundColor && { backgroundColor }}>{ButtonLabel}</button>
     </div>
   );
 }
@@ -17,11 +17,13 @@ export default function ButtonComponents({
 ButtonComponents.propTypes = {
   ButtonLabel: PropTypes.string.isRequired,
   ButtonTheme: PropTypes.oneOf(['round', 'dark', 'light']),
-  BackgroundColor: string,
+  backgroundColor: PropTypes.string,
+  Disabled: PropTypes.bool,
 };
 
 ButtonComponents.defaultProps = {
   ButtonTheme: 'round',
-  BackgroundColor: null,
+  backgroundColor: null,
+  Disabled: false,
 
 };

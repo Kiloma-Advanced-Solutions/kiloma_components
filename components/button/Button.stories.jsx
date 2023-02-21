@@ -14,4 +14,5 @@ export const Button = Template.bind({});
 Button.args = {
   ButtonLabel: 'Button',
   ButtonTheme: 'light',
+  Disabled: false,
 };
