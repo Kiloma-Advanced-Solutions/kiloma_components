@@ -1,5 +1,39 @@
-
-
-.button:active{
-    background-color: rgb(236, 12, 221);
+.roundButton{
+background:rgb(3, 99, 233);
+color:white;
+font-family: Helvetica;
+border: none;
+font-size: 16px;
+padding: 13px 20px; 
+width: 65%;
+border-radius: 30px;
+text-align:center;
 }
+.darkButton{
+    background: #333;
+    color: #fff; 
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    width:65%;
+    font-family: Helvetica;
+}
+
+.lightButton{
+    width: 65%;
+    background-color: #fff;
+    color: #333; 
+    border: 1px solid #333; 
+    padding: 10px 20px; 
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px; 
+    cursor: pointer;
+    font-family: Helvetica;
+}
+
+

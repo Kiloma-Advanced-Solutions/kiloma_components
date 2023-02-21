@@ -1,10 +1,13 @@
 import React from 'react';
-import Button from '../components/button/Button';
+import ButtonComponents from '../components/button/Button';
 
 export default function Demo() {
   return (
     <div>
-      <Button />
+      <ButtonComponents
+        ButtonTheme="light"
+        buttonLabel="Button"
+      />
     </div>
   );
 }
