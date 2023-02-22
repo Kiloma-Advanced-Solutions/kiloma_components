@@ -1,5 +1,4 @@
 import React from 'react';
-import { FaUser } from 'react-icons/fa';
 import ButtonComponents from './ButtonComponent ';
 
 export default {
@@ -17,5 +16,9 @@ Button.args = {
   ButtonTheme: 'round',
   IsDisabled: false,
   IsRound: true,
+  UrlIcon: '',
+  RelativePathUrlImg: '',
+  ImageAlt: '',
+  RTL: false,
 
 };

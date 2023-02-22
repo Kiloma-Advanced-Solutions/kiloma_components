@@ -57,7 +57,7 @@ font-weight: 900;
     font-size: 16px;
     padding: 13px 20px; 
     width: 30%;
-    border-radius: 30px;
+    border-radius: 20%;
     text-align:center;
     font-weight: 900;
     
@@ -71,12 +71,12 @@ font-weight: 900;
     text-align: center;
     font-size: 16px;
     cursor: pointer;
-    width: 30%;;
+    width: 20%;;
     font-family: Helvetica;
     font-weight: 900;
 }
 .lightButton{
-    width: 30%;
+    width: 20%;
     background-color: #42B0F4;
     color: #fff; 
     border: 1px solid #333; 
@@ -146,7 +146,7 @@ font-weight: 900;
 
 .lightButton:disabled{
     opacity: 0.5;
-    cursor:pointer;
+    cursor:default;
 }
 .lightButton:hover{
     box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
@@ -159,7 +159,7 @@ font-weight: 900;
 }
 .darkButton:disabled{
     opacity: 0.70;
-    cursor: pointer;
+    cursor: default;
 }
 .darkButton:active{
     background-color: #c2185b;
@@ -167,7 +167,7 @@ font-weight: 900;
 
 .roundButton:disabled{
     opacity: 0.55;
-    cursor: pointer;
+    cursor: default;
 }
 .roundButton:active{
     background-color: #c2185b;
@@ -187,4 +187,16 @@ font-weight: 900;
 .icon{
     text-align: center;
     align-items: center;
+}
+
+.RTL{
+    direction: rtl;
+}
+
+.img1{
+    width: 34px;
+    height: 34px;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
 }
