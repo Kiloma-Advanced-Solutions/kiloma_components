@@ -1,12 +1,14 @@
 import React from 'react';
-import ButtonComponents from '../components/button/Button';
+import { FaAccusoft } from 'react-icons/fa';
+import ButtonComponents from '../components/button/ButtonComponent ';
 
 export default function Demo() {
   return (
     <div>
+
       <ButtonComponents
-        ButtonLabel="Button"
-        ButtonTheme="dark"
+        ButtonLabel=  <FaAccusoft  size={30}/>
+        ButtonTheme="light"
       />
     </div>
   );

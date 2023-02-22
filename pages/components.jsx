@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from '../styles/components.module.css';
 import CheckBox from '../components/Checkbox2/Checkbox2';
-import ButtonComponents from '../components/button/Button';
+import ButtonComponents from '../components/button/ButtonComponent ';
 
 export default function components() {
   return (

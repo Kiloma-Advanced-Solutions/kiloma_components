@@ -38,6 +38,9 @@ font-weight: 900;
     font-family: Helvetica;
     font-weight: 900;
     background-color: #42B0F4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .borderRadius{
@@ -173,3 +176,15 @@ font-weight: 900;
     background-color: #c2185b;
 }
 
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-direction: column;
+}
+
+.icon{
+    text-align: center;
+    align-items: center;
+}
