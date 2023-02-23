@@ -10,18 +10,16 @@ export default function ButtonComponents({
   IsDisabled,
   Onclick,
   IsRound,
-  UrlIcon,
-  RelativePathUrlImg,
+  PathForImage,
   RTL,
   ImageAlt,
-
 }) {
   return (
     <div className={cx(styles.main, { [styles.RTL]: RTL })}>
       <button type="button" onClick={Onclick} disabled={IsDisabled} className={cx(styles[`${ButtonTheme}Button`], { [styles.borderRadius]: IsRound })} style={backgroundColor && { backgroundColor }}>
+        {PathForImage? <img src={PathForImage} alt={ImageAlt} className={styles.icon_img} /> : null}
         {ButtonLabel}
         {' '}
-        <img className={styles.img1} src={RelativePathUrlImg} alt={ImageAlt} />
         {' '}
       </button>
     </div>
@@ -35,8 +33,7 @@ ButtonComponents.propTypes = {
   IsDisabled: PropTypes.bool,
   IsRound: PropTypes.bool,
   Onclick: PropTypes.func,
-  UrlIcon: PropTypes.string,
-  RelativePathUrlImg: PropTypes.string,
+  PathForImage: PropTypes.string,
   ImageAlt: PropTypes.string,
   RTL: PropTypes.bool,
 
@@ -48,8 +45,7 @@ ButtonComponents.defaultProps = {
   IsDisabled: false,
   IsRound: true,
   Onclick: undefined,
-  UrlIcon: '',
-  RelativePathUrlImg: '',
+  PathForImage: '',
   ImageAlt: '',
   RTL: false,
 

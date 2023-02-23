@@ -6,13 +6,12 @@ export default function Demo() {
     <div>
 
       <ButtonComponents
-        ButtonLabel="fgdgdfgdfgfd"
+        ButtonLabel=""
         ButtonTheme="dark"
-        ImageAlt="sffdsf"
-        IsRound={true}
-        RTL
-        RelativePathUrlImg="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMlT_uFTmPLI9F22oW2YKtd-eSeNayVlYhww&usqp=CAU"
+        IsRound={false}
+        PathForImage="Images\logo.svg"
       />
+
     </div>
   );
 }

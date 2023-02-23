@@ -16,8 +16,7 @@ Button.args = {
   ButtonTheme: 'round',
   IsDisabled: false,
   IsRound: true,
-  UrlIcon: '',
-  RelativePathUrlImg: '',
+  PathForImage: '',
   ImageAlt: '',
   RTL: false,
 
