@@ -171,6 +171,7 @@ justify-content: center;
 .lightButton:disabled{
     opacity: 0.5;
     cursor:default;
+    pointer-events: none;
 }
 .lightButton:hover{
     box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
@@ -184,6 +185,7 @@ justify-content: center;
 .darkButton:disabled{
     opacity: 0.70;
     cursor: default;
+    pointer-events: none;
 }
 .darkButton:active{
     background-color: #c2185b;
@@ -192,6 +194,7 @@ justify-content: center;
 .roundButton:disabled{
     opacity: 0.55;
     cursor: default;
+    pointer-events: none;
 }
 .roundButton:active{
     background-color: #c2185b;

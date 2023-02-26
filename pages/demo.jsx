@@ -4,14 +4,16 @@ import ButtonComponents from '../components/button/ButtonComponent ';
 export default function Demo() {
   return (
     <div>
-
       <ButtonComponents
-        ButtonLabel=""
+        ButtonLabel="Button"
+        IsDisabled
+        IsRound={false}
+      />
+      <ButtonComponents
+        ButtonLabel="Dark Button"
         ButtonTheme="dark"
         IsRound={false}
-        PathForImage="Images\logo.svg"
       />
-
     </div>
   );
 }

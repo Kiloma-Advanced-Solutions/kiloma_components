@@ -17,7 +17,15 @@ export default function ButtonComponents({
   return (
     <div className={cx(styles.main, { [styles.RTL]: RTL })}>
       <button type="button" onClick={Onclick} disabled={IsDisabled} className={cx(styles[`${ButtonTheme}Button`], { [styles.borderRadius]: IsRound })} style={backgroundColor && { backgroundColor }}>
-        {PathForImage? <img src={PathForImage} alt={ImageAlt} className={styles.icon_img} /> : null}
+        {PathForImage
+          ? (
+            <img
+              src={PathForImage}
+              alt={ImageAlt}
+              className={styles.icon_img}
+            />
+          )
+          : null}
         {ButtonLabel}
         {' '}
         {' '}
