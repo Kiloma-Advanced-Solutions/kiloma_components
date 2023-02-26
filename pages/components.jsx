@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from '../styles/components.module.css';
 import CheckBox from '../components/Checkbox2/Checkbox2';
-import ButtonComponents from '../components/button/ButtonComponent ';
 
 export default function components() {
   return (
@@ -10,7 +9,7 @@ export default function components() {
         <h1>Components</h1>
       </div>
       <div className={styles.input_title}>
-        <p> Input Components </p>
+        <h2 className={styles.sub_title}>Input Components</h2>
       </div>
       <div className={styles.input_components}>
         <div className={styles.examples}>
@@ -31,17 +30,9 @@ export default function components() {
                 />
               </div>
             </li>
-            <li>
-              <div className={styles.examples}>
-                <p> Checkbox - </p>
-                <ButtonComponents
-                  ButtonLabel="Button"
-                  ButtonTheme="dark"
-                />
-              </div>
-            </li>
           </ol>
         </div>
+        <h2 className={styles.sub_title}> UI Components</h2>
       </div>
     </div>
   );

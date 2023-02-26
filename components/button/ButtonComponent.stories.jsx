@@ -7,7 +7,7 @@ export default {
   parameters: {
     docs: {
       description: {
-        component: 'Place for adding info or description about the component',
+        component: 'This function can design a button in a simple way. ',
       },
     },
   },
@@ -26,5 +26,6 @@ Button.args = {
   PathForImage: '',
   ImageAlt: '',
   RTL: false,
+  IsShaded: false,
 
 };
