@@ -10,7 +10,7 @@ export default function components() {
         <h1>Components</h1>
       </div>
       <div className={styles.input_div}>
-        <h2 className={styles.h2}>Input Components</h2>
+        <h2 className={styles.H2}>Input Components</h2>
         <div className={styles.examples}>
           <p className={styles.p1}> 1.CheckBox Component- </p>
           <CheckBox
@@ -29,7 +29,7 @@ export default function components() {
         </div>
       </div>
       <div className={styles.ui_div}>
-        <h2 className={styles.h2}>UI Components</h2>
+        <h2 className={styles.H2}>UI Components</h2>
         <div className={styles.examples}>
           <p className={styles.p1}>1.Button - </p>
           <ButtonComponents

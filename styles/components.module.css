@@ -32,7 +32,7 @@
     font-size: 18px;
 }
 /* Laptop Screens  */
-/* @media only screen and (min-width : 1024px){
+@media only screen and (min-width : 1024px){
     
     .title{
         display: flex;
@@ -41,27 +41,27 @@
         width: 100%;
         flex-direction: column;
     }
+    .H2{
+        font-family:  Helvetica;
+        font-size: 30px;
+        font-weight: 700;
+    }
+        .container{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            align-items: flex-start;
+        }
+        .input_div{
+           display: flex;
+           flex-direction: column;
+           align-items: flex-start;
+        }
+        .ui_div{
+            display: flex;
+            align-items: flex-start;
+        }
+    
+        
 }
 
-.h2{
-    font-family:  Helvetica;
-    font-size: 30px;
-    font-weight: 700;
-}
-    .container{
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        align-items: flex-start;
-    }
-    .input_div{
-       display: flex;
-       flex-direction: column;
-       align-items: flex-start;
-    }
-    .ui_div{
-        display: flex;
-        align-items: flex-start;
-    }
-
-    */
