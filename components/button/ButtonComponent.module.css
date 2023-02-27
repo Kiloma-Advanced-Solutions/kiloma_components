@@ -203,12 +203,14 @@ justify-content: center;
     cursor: default;
     pointer-events: none;
 }
-.roundButton:active{
-    background-color: #c2185b;
-}
+ 
 .roundButton:hover{
     box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
     background-color: #16c00a;
+}
+
+.roundButton:active{
+    background-color:#c2185b;
 }
 
 .main{
@@ -226,9 +228,7 @@ justify-content: center;
 
 .RTL{
     direction: rtl;
-    font-family: Impact, 'Arial Narrow Bold', sans-serif;
-    font-weight: 900;
-    font-size: 16px;
+    ;
 }
 
 .icon_img{
@@ -242,4 +242,10 @@ justify-content: center;
 
 .button_shadow{
     box-shadow: 1px 1px 10px rgba(201, 15, 15, 0.9);
+}
+
+.RTL_Label{
+    font-family: 'Arial';
+    font-weight: 900;
+    font-size: 16px;
 }
