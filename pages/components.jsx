@@ -33,10 +33,8 @@ export default function components() {
         <ol>
           <li>
             <ButtonComponents
-              ButtonLabel="Button"
-              ButtonTheme="dark"
+              ButtonLabel="Click Here"
               IsRound={false}
-              IsShaded
             />
           </li>
         </ol>
