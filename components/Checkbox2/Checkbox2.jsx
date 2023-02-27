@@ -68,7 +68,9 @@ function CheckBox({
         />
         {ShouldDisplayLabel && !IsRequired ? (
           <label style={makeLabelStyleFromProps()} htmlFor={IdForTheLabel}>
-            {CheckBoxTitle}
+            <div>
+              {CheckBoxTitle}
+            </div>
           </label>
         ) : (
           <p />
@@ -78,7 +80,9 @@ function CheckBox({
             style={makeLabelStyleFromPropsRequired()}
             htmlFor={IdForTheLabel}
           >
-            {CheckBoxTitle}
+            <div>
+              {CheckBoxTitle}
+            </div>
           </label>
         ) : (
           <p />
