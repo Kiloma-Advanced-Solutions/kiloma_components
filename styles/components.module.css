@@ -4,56 +4,21 @@
     align-items: center;
     flex-direction: column;
     overflow-y: hidden;
-    gap: 20px;
     height: 90vh;
+    width: 100%;
 }
-.title{
-    font-family: Helvetica;
-    font-size: 20px;
-    color: black;
-    margin-top: 30px;
-}
-.sub_title{
-    display: flex;
-    font-family:Helvetica;
-    font-weight: bold;
-}
-.input_components{
-    font-family:Helvetica;
-    font-size: 20px;
+
+.input_div{
     display: flex;
     flex-direction: column;
-    gap: 10px;
-
+    justify-content: center;
+    align-items: center;
 }
 
-.examples{
+.ui_div{
     display: flex;
-    gap: 10px;
-    
-}
-   
-
-
-/* Large Screen */
-@media only screen and (min-width : 1024px){
-    .container{
-        height: 100vh;
-        overflow-y: hidden;
-    }
-    .sub_title{
-        display: flex;
-        margin-left: 10px;
-        flex-direction: column;
-    }
-    .input_components{
-        margin-left: 10px;
-        display: flex;
-        flex-direction: column;
-    }
-    .examples{
-        display: flex;
-        gap: 10px;
-    }
-    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
