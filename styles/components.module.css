@@ -24,7 +24,7 @@
     align-items: center;
 }
 
-.examples{
+.components_examples{
     display: flex;
     gap: 5px;
 }
@@ -61,6 +61,17 @@
             display: flex;
             align-items: flex-start;
         }
+        .components_examples{
+            display: flex;
+            gap: 5px;
+            flex-direction: row;
+        }
+
+        .ol1{
+            padding: 0px;
+            margin: 25px;
+        }
+        
     
         
 }

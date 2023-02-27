@@ -11,31 +11,42 @@ export default function components() {
       </div>
       <div className={styles.input_div}>
         <h2 className={styles.H2}>Input Components</h2>
-        <div className={styles.examples}>
-          <p className={styles.p1}> 1.CheckBox Component- </p>
-          <CheckBox
-            CheckBoxBackGroundColor="#24b655"
-            CheckBoxHeight="15"
-            CheckBoxTitle="Hello"
-            CheckBoxWidth="15"
-            IdForTheLabel="1"
-            IsChecked=""
-            IsRequired={false}
-            LabelValue="1"
-            ShouldDisplayLabel
-            labelColor="#d20808"
-          />
-
+        <div className={styles.components_examples}>
+          <ol className={styles.ol1}>
+            <li>
+              <div className={styles.components_examples}>
+                <p className={styles.p1}> CheckBox- </p>
+                <CheckBox
+                  CheckBoxBackGroundColor="#24b655"
+                  CheckBoxHeight="15"
+                  CheckBoxTitle="Hello"
+                  CheckBoxWidth="15"
+                  IdForTheLabel="1"
+                  IsChecked=""
+                  IsRequired={false}
+                  LabelValue="1"
+                  ShouldDisplayLabel
+                  labelColor="#d20808"
+                />
+              </div>
+            </li>
+          </ol>
         </div>
       </div>
       <div className={styles.ui_div}>
         <h2 className={styles.H2}>UI Components</h2>
-        <div className={styles.examples}>
-          <p className={styles.p1}>1.Button - </p>
-          <ButtonComponents
-            ButtonLabel="Click Here"
-            IsRound={false}
-          />
+        <div className={styles.components_examples}>
+          <ol className={styles.ol1}>
+            <li>
+              <div className={styles.components_examples}>
+                <p className={styles.p1}> CheckBox- </p>
+                <ButtonComponents
+                  ButtonLabel="Click Here"
+                  IsRound={false}
+                />
+              </div>
+            </li>
+          </ol>
         </div>
       </div>
     </div>
