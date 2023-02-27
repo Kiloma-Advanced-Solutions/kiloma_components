@@ -12,7 +12,7 @@ export default function components() {
       <div className={styles.input_div}>
         <h2 className={styles.h2}>Input Components</h2>
         <div className={styles.examples}>
-          <p>1.CheckBox Component - </p>
+          <p className={styles.p1}> 1.CheckBox Component- </p>
           <CheckBox
             CheckBoxBackGroundColor="#24b655"
             CheckBoxHeight="15"
@@ -31,7 +31,7 @@ export default function components() {
       <div className={styles.ui_div}>
         <h2 className={styles.h2}>UI Components</h2>
         <div className={styles.examples}>
-          <p>1.Button Component - </p>
+          <p className={styles.p1}>1.Button - </p>
           <ButtonComponents
             ButtonLabel="Click Here"
             IsRound={false}

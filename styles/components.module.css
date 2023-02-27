@@ -3,7 +3,7 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    /* overflow-y: hidden; */
+    overflow-y: hidden;
     height: 90vh;
     width: 100%;
 }
@@ -24,15 +24,15 @@
     align-items: center;
 }
 
-.ol1{
+.examples{
     display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
+    gap: 5px;
 }
-
+.p1{
+    font-size: 18px;
+}
 /* Laptop Screens  */
-@media only screen and (min-width : 1024px){
+/* @media only screen and (min-width : 1024px){
     
     .title{
         display: flex;
@@ -64,7 +64,4 @@
         align-items: flex-start;
     }
 
-    .examples{
-        display: flex;
-        gap: 10px;
-    }
+    */
