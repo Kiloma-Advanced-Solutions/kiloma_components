@@ -77,7 +77,7 @@ user-select: none;
     border: none;
     font-size: 16px;
     padding: 13px 20px; 
-    width: 65%;
+    width: 215px;
     border-radius: 20%;
     text-align:center;
     font-weight: 900;
@@ -97,7 +97,7 @@ user-select: none;
     text-align: center;
     font-size: 16px;
     cursor: pointer;
-    width: 65%;
+    width: 215px;
     font-family: Helvetica;
     font-weight: 900;
     display: flex;
@@ -116,7 +116,7 @@ user-select: none;
     text-align: center;
     font-size: 16px;
     cursor: pointer;
-    width: 65%;
+    width: 215px;
     font-family: Helvetica;
     font-weight: 900;
     display: flex;
@@ -211,6 +211,7 @@ user-select: none;
 }
 .lightButton:active{
     background-color: #c2185b;
+    box-shadow: none;
 }
 .darkButton:hover{
     box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
@@ -224,6 +225,8 @@ user-select: none;
 }
 .darkButton:active{
     background-color: #c2185b;
+    box-shadow: none;
+
 }
 
 .roundButton:disabled{
@@ -239,6 +242,8 @@ user-select: none;
 
 .roundButton:active{
     background-color:#c2185b;
+    box-shadow: none;
+
 }
 
 .main{
