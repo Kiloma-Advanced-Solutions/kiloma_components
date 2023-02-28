@@ -6,48 +6,35 @@ import CheckBox from '../components/Checkbox2/Checkbox2';
 export default function components() {
   return (
     <div className={styles.container}>
-      <div className={styles.title}>
-        <h1>Components</h1>
-      </div>
+      <h1 className={styles.title}>Components</h1>
       <div className={styles.input_div}>
-        <h2 className={styles.H2}>Input Components</h2>
-        <div className={styles.components_examples}>
-          <ol className={styles.ol1}>
-            <li>
-              <div className={styles.components_examples}>
-                <p className={styles.p1}> CheckBox- </p>
-                <CheckBox
-                  CheckBoxBackGroundColor="#24b655"
-                  CheckBoxHeight="15"
-                  CheckBoxTitle="Hello"
-                  CheckBoxWidth="15"
-                  IdForTheLabel="1"
-                  IsChecked=""
-                  IsRequired={false}
-                  LabelValue="1"
-                  ShouldDisplayLabel
-                  labelColor="#d20808"
-                />
-              </div>
-            </li>
-          </ol>
-        </div>
+        <h2>Input Components</h2>
+        <ol>
+          <li>
+            {' '}
+            <CheckBox
+              CheckBoxHeight="15"
+              CheckBoxTitle="Agree  ✅"
+              CheckBoxWidth="15"
+              IdForTheLabel="id"
+              IsChecked=""
+              IsRequired={false}
+              LabelColor="#88cb7e"
+              ShouldDisplayLabel
+            />
+          </li>
+        </ol>
       </div>
       <div className={styles.ui_div}>
-        <h2 className={styles.H2}>UI Components</h2>
-        <div className={styles.components_examples}>
-          <ol className={styles.ol1}>
-            <li>
-              <div className={styles.components_examples}>
-                <p className={styles.p1}> CheckBox- </p>
-                <ButtonComponents
-                  ButtonLabel="Click Here"
-                  IsRound={false}
-                />
-              </div>
-            </li>
-          </ol>
-        </div>
+        <h2>UI Components</h2>
+        <ol>
+          <li>
+            <ButtonComponents
+              ButtonLabel="Click Here"
+              IsRound={false}
+            />
+          </li>
+        </ol>
       </div>
     </div>
   );

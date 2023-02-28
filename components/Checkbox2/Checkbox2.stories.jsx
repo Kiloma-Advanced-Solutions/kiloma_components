@@ -25,7 +25,6 @@ Primary.args = {
   CheckBoxHeight: '',
   CheckBoxWidth: '',
   CheckBoxBackGroundColor: '',
-  LabelColor: '',
   LabelFontFamily: '',
   IsDisabled: false,
   RTL: false,
