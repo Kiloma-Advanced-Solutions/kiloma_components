@@ -14,13 +14,15 @@ export default function components() {
             <li>
               <div className={styles.components_examples}>
                 <p className={styles.p1}> CheckBox- </p>
+
                 <CheckBox
-                  CheckBoxHeight="15"
-                  CheckBoxTitle="Agree ✅"
-                  CheckBoxWidth="15"
+                  CheckBoxHeight="25"
+                  CheckBoxTitle="Agree "
+                  CheckBoxWidth="20"
                   IdForTheLabel="checkbox"
                   IsChecked=""
                   IsRequired={false}
+                  LabelFontFamily="Helvetica"
                   ShouldDisplayLabel
                   labelColor="#1f7dda"
                 />
