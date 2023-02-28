@@ -30,7 +30,26 @@
 }
 .p1{
     font-size: 18px;
+    font-family:  Helvetica;
+    
 }
+
+
+.title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+    font-family: Helvetica
+}
+.H2{
+    font-family:  Helvetica;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+
 /* Laptop Screens  */
 @media only screen and (min-width : 1024px){
     
@@ -40,6 +59,7 @@
         align-items: center;
         width: 100%;
         flex-direction: column;
+        font-family: Helvetica
     }
     .H2{
         font-family:  Helvetica;
