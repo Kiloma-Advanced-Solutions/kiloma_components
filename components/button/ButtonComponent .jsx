@@ -16,9 +16,12 @@ export default function ButtonComponents({
   IsShaded,
   ShadowColor,
 }) {
+  const backgroundColorStyles = backgroundColor ? { backgroundColor } : {};
+  const shadowColorStyles = ShadowColor && IsShaded ? { boxShadow: `0px 0px 5px ${ShadowColor}` } : {};
+
   return (
     <div className={cx(styles.main, { [styles.RTL]: RTL })}>
-      <button type="button" onClick={Onclick} disabled={IsDisabled} className={cx(styles[`${ButtonTheme}Button`], { [styles.borderRadius]: IsRound, [styles.button_shadow]: IsShaded, [styles.RTL_Label]: RTL })} style={IsShaded ? ShadowColor && { boxShadow: `0px 0px 5px ${ShadowColor}` } : null}>
+      <button type="button" onClick={Onclick} disabled={IsDisabled} className={cx(styles[`${ButtonTheme}Button`], { [styles.borderRadius]: IsRound, [styles.button_shadow]: IsShaded, [styles.RTL_Label]: RTL })} style={{ ...backgroundColorStyles, ...shadowColorStyles }}>
         {PathForImage
           ? (
             <img
