@@ -26,6 +26,6 @@ Button.args = {
   PathForImage: '',
   ImageAlt: '',
   RTL: false,
-  IsShaded: false,
+  IsShaded: true,
 
 };
