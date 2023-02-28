@@ -14,10 +14,11 @@ export default function ButtonComponents({
   RTL,
   ImageAlt,
   IsShaded,
+  ShadowColor,
 }) {
   return (
     <div className={cx(styles.main, { [styles.RTL]: RTL })}>
-      <button type="button" onClick={Onclick} disabled={IsDisabled} className={cx(styles[`${ButtonTheme}Button`], { [styles.borderRadius]: IsRound, [styles.button_shadow]: IsShaded, [styles.RTL_Label]: RTL })} style={backgroundColor && { backgroundColor }}>
+      <button type="button" onClick={Onclick} disabled={IsDisabled} className={cx(styles[`${ButtonTheme}Button`], { [styles.borderRadius]: IsRound, [styles.button_shadow]: IsShaded, [styles.RTL_Label]: RTL })} style={IsShaded ? ShadowColor && { boxShadow: `0px 0px 5px ${ShadowColor}` } : null}>
         {PathForImage
           ? (
             <img
@@ -46,6 +47,7 @@ ButtonComponents.propTypes = {
   ImageAlt: PropTypes.string,
   RTL: PropTypes.bool,
   IsShaded: PropTypes.bool,
+  ShadowColor: PropTypes.string,
 
 };
 
@@ -59,5 +61,6 @@ ButtonComponents.defaultProps = {
   ImageAlt: '',
   RTL: false,
   IsShaded: false,
+  ShadowColor: null,
 
 };
