@@ -214,7 +214,6 @@ text-overflow: ellipsis;
     pointer-events: none;
 }
 .lightButton:hover{
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
     background-color: #16c00a;
 }
 .lightButton:active{
@@ -222,7 +221,6 @@ text-overflow: ellipsis;
     box-shadow: none;
 }
 .darkButton:hover{
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
     background-color: #16c00a;
 
 }
@@ -244,7 +242,6 @@ text-overflow: ellipsis;
 }
  
 .roundButton:hover{
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
     background-color: #16c00a;
 }
 

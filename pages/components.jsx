@@ -46,6 +46,18 @@ export default function components() {
                 />
               </div>
             </li>
+            <li>
+              <div className={styles.components_examples}>
+                <p className={styles.p1}> CheckBox- </p>
+                <ButtonComponents
+                  ButtonLabel="Button"
+                  IsRound={false}
+                  IsShaded
+                  ShadowColor="#d71c1c"
+                  backgroundColor="#000000"
+                />
+              </div>
+            </li>
           </ol>
         </div>
       </div>
