@@ -65,5 +65,6 @@ ButtonComponents.defaultProps = {
   RTL: false,
   IsShaded: false,
   ShadowColor: null,
+  Prefix: '',
 
 };
