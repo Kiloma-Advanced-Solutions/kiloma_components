@@ -7,3 +7,22 @@ export const parameters = {
     },
   },
 }
+
+// .storybook/preview.js
+
+import { createGlobalStyle } from 'styled-components';
+
+const GlobalStyle = createGlobalStyle`
+  body {
+    font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+`;
+
+const withGlobalStyle = (Story) => (
+  <>
+    <GlobalStyle />
+    <Story />
+  </>
+);
+
+export const decorators = [withGlobalStyle];

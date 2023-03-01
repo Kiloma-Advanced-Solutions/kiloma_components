@@ -34,7 +34,7 @@ function CheckBox({
   }, [Checked]);
 
   const makeInputStyleFromProps = () => ({
-    cursor: 'pointer',
+    cursor: 'grab',
     height: `${CheckBoxHeight}px`,
     width: `${CheckBoxWidth}px`,
     accentColor: `${CheckBoxBackGroundColor}`,
@@ -43,11 +43,13 @@ function CheckBox({
     fontSize: `${LabelFontSize}px`,
     color: `${labelColor}`,
     fontFamily: `${LabelFontFamily}`,
+    cursor: 'grab',
   });
   const makeLabelStyleFromPropsRequired = () => ({
     fontSize: `${LabelFontSize}px`,
     color: 'red',
     fontFamily: `${LabelFontFamily}`,
+    cursor: 'grab',
   });
 
   return (
@@ -68,7 +70,9 @@ function CheckBox({
         />
         {ShouldDisplayLabel && !IsRequired ? (
           <label style={makeLabelStyleFromProps()} htmlFor={IdForTheLabel}>
-            {CheckBoxTitle}
+            <div>
+              {CheckBoxTitle}
+            </div>
           </label>
         ) : (
           <p />
@@ -78,7 +82,9 @@ function CheckBox({
             style={makeLabelStyleFromPropsRequired()}
             htmlFor={IdForTheLabel}
           >
-            {CheckBoxTitle}
+            <div>
+              {CheckBoxTitle}
+            </div>
           </label>
         ) : (
           <p />

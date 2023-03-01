@@ -1,23 +1,66 @@
+// ./src/stories/button.js
+
 import React from 'react';
 import PropTypes from 'prop-types';
-import './button.css';
+import styled, { css } from 'styled-components';
+
+const getVariantStyles = ({ primary = false }) =>
+  primary
+    ? css`
+        color: white;
+        background-color: #1ea7fd;
+      `
+    : css`
+        color: #333;
+        background-color: transparent;
+        box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
+      `;
+
+const getSizeStyles = ({ size = 'medium' }) => {
+  switch (size) {
+    case 'small': {
+      return css`
+        font-size: 12px;
+        padding: 10px 16px;
+      `;
+    }
+    case 'large': {
+      return css`
+        font-size: 16px;
+        padding: 12px 24px;
+      `;
+    }
+    default: {
+      return css`
+        font-size: 14px;
+        padding: 11px 20px;
+      `;
+    }
+  }
+};
 
 /**
  * Primary UI component for user interaction
  */
-export const Button = ({ primary, backgroundColor, size, label, ...props }) => {
-  const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
-  return (
-    <button
-      type="button"
-      className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
-      style={backgroundColor && { backgroundColor }}
-      {...props}
-    >
-      {label}
-    </button>
-  );
-};
+const StyledButton = styled.button`
+  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  border: 0;
+  border-radius: 3em;
+  cursor: pointer;
+  display: inline-block;
+  line-height: 1;
+
+  ${(props) => getVariantStyles(props)}
+  ${(props) => getSizeStyles(props)}
+  ${({ backgroundColor }) =>
+    backgroundColor &&
+    css`
+      background-color: ${backgroundColor};
+    `}
+`;
+
+export const Button = ({ label, ...rest }) => <StyledButton {...rest}>{label}</StyledButton>;
 
 Button.propTypes = {
   /**
