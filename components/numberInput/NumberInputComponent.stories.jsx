@@ -20,11 +20,11 @@ function Template(args) {
 export const Number = Template.bind({});
 
 Number.args = {
-  LabelText: '',
-  PlaceHolderText: '',
+  LabelText: 'Text for Label',
   MinLength: null,
   MaxLength: null,
   Step: null,
   Size: '',
   Disabled: false,
+  IsRTL: false,
 };

@@ -4,6 +4,11 @@ import CheckBox from '../components/Checkbox2/Checkbox2';
 import NumberInputComponent from '../components/numberInput/NumberInputComponent';
 
 export default function Demo() {
+  const number = 1000000;
+
+  const formattedNumber = number.toLocaleString('en-US');
+
+  console.log(formattedNumber); // 1,234,567,890
   return (
     <div>
       <ButtonComponents
@@ -20,8 +25,12 @@ export default function Demo() {
         LabelColor=""
         ShouldDisplayLabel
       />
-
-      <NumberInputComponent LabelText="How Much Tip" PlaceHolderText="Number" />
+      <NumberInputComponent
+        LabelText="Enter Amount Of Dollars "
+        MaxLength={10}
+        MinLength={0}
+        Step={1}
+      />
     </div>
   );
 }
