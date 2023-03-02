@@ -28,4 +28,6 @@ Number.args = {
   Disabled: false,
   IsRTL: false,
   IsWithComma: true,
+  InputWidthSize: 25,
+  IsTextCenter: false,
 };

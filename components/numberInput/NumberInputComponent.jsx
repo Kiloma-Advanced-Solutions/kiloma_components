@@ -14,6 +14,8 @@ function NumberInputComponent({
   LabelColor,
   InputBackGroundColor,
   IsWithComma,
+  InputWidthSize,
+  IsTextCenter,
 }) {
   const [value, setValue] = useState(0);
   // This function help to add the comma every 3 digits
@@ -29,12 +31,13 @@ function NumberInputComponent({
     ? { backgroundColor: InputBackGroundColor } : {};
 
   const LabelColorStyle = LabelColor ? { color: LabelColor } : {};
-
+  const InputWidthSizeStyle = InputWidthSize ? { width: `${InputWidthSize}%` } : {};
+  const TextCenterSize = IsTextCenter ? { textAlign: 'center' } : {};
   return (
     <div className={cx(styles.container, { [styles.RTL]: IsRTL })}>
       <label htmlFor="numberInput" className={styles.label} style={{ ...LabelColorStyle }}>
         {LabelText}
-        <input type={IsWithComma ? 'text' : 'number'} value={value} onInput={IsWithComma ? handleChange : handleChangeWithOutComma} min={MinLength} max={MaxLength} step={Step} disabled={Disabled} size={Size} className={cx({ [styles.disabled]: Disabled }, [styles.input_style], [styles.LTR])} style={{ ...InputBackGroundColorStyle }} />
+        <input type={IsWithComma ? 'text' : 'number'} value={value} onInput={IsWithComma ? handleChange : handleChangeWithOutComma} min={MinLength} max={MaxLength} step={Step} disabled={Disabled} size={Size} className={cx({ [styles.disabled]: Disabled }, [styles.input_style], [styles.LTR])} style={{ ...InputBackGroundColorStyle, ...InputWidthSizeStyle, ...TextCenterSize }} />
       </label>
     </div>
   );
@@ -51,6 +54,8 @@ NumberInputComponent.propTypes = {
   InputBackGroundColor: PropTypes.string,
   IsRTL: PropTypes.bool,
   IsWithComma: PropTypes.bool,
+  InputWidthSize: PropTypes.number,
+  IsTextCenter: PropTypes.bool,
 };
 // Size: PropTypes.oneOf(['lg', 'md', 'sm', 'xs']),
 
@@ -65,6 +70,8 @@ NumberInputComponent.defaultProps = {
   InputBackGroundColor: '',
   IsRTL: false,
   IsWithComma: true,
+  InputWidthSize: null,
+  IsTextCenter: false,
 
 };
 
