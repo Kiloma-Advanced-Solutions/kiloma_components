@@ -20,11 +20,12 @@ function Template(args) {
 export const Number = Template.bind({});
 
 Number.args = {
-  LabelText: 'Text for Label',
+  LabelText: 'Text for Label ',
   MinLength: null,
   MaxLength: null,
   Step: null,
   Size: '',
   Disabled: false,
   IsRTL: false,
+  IsWithComma: true,
 };
