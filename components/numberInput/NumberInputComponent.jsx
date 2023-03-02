@@ -1,13 +1,17 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import classNames from 'classnames';
 import styles from './NumberInputComponent.module.css';
 
 function NumberInputComponent({
-  LabelText, MinLength, MaxLength, Step, Size, Disabled, IsRTL,
+  LabelText, MinLength, MaxLength, Step, Size, Disabled, IsRTL, LabelColor, InputBackGroundColor,
 }) {
   const [value, setValue] = useState(0);
+
+  const InputBackGroundColorStyle = InputBackGroundColor
+    ? { backgroundColor: InputBackGroundColor } : {};
+
+  const LabelColorStyle = LabelColor ? { color: LabelColor } : {};
 
   const handleChange = (event) => {
     setValue(event.target.value.toLocaleString('en'));
@@ -15,9 +19,9 @@ function NumberInputComponent({
 
   return (
     <div className={cx(styles.container, { [styles.RTL]: IsRTL })}>
-      <label htmlFor="numberInput" className={styles.label}>
+      <label htmlFor="numberInput" className={styles.label} style={{ ...LabelColorStyle }}>
         {LabelText}
-        <input type="number" value={value} onChange={handleChange} min={MinLength} max={MaxLength} step={Step} disabled={Disabled} size={Size} className={cx({ [styles.disabled]: Disabled }, [styles.input_style], [styles.LTR])} />
+        <input type="number" value={value} onChange={handleChange} min={MinLength} max={MaxLength} step={Step} disabled={Disabled} size={Size} className={cx({ [styles.disabled]: Disabled }, [styles.input_style], [styles.LTR])} style={{ ...InputBackGroundColorStyle }} />
       </label>
     </div>
   );
@@ -30,8 +34,8 @@ NumberInputComponent.propTypes = {
   Step: PropTypes.number,
   Size: PropTypes.string,
   Disabled: PropTypes.bool,
-  // LabelColor: PropTypes.string,
-  // InputBackGroundColor: PropTypes.string,
+  LabelColor: PropTypes.string,
+  InputBackGroundColor: PropTypes.string,
   IsRTL: PropTypes.bool,
 };
 // Size: PropTypes.oneOf(['lg', 'md', 'sm', 'xs']),
@@ -43,8 +47,8 @@ NumberInputComponent.defaultProps = {
   Step: null,
   Size: '',
   Disabled: false,
-  // LabelColor: '',
-  // InputBackGroundColor: '',
+  LabelColor: '',
+  InputBackGroundColor: '',
   IsRTL: false,
 
 };
