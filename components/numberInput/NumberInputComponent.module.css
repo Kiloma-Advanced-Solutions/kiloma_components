@@ -47,20 +47,21 @@
   .minus_input_button{
     margin-left: 0;
     cursor: pointer;
-    font-size: 12px;
+    font-size: 13px;
     padding: 3px 10px;
     box-sizing: border-box;
     border-radius: 4px;
     outline: none;
     text-align: center;
+    border: solid 1px;
   }
 
   .plus_input_button{
     cursor: pointer;
-    font-size: 12px;
+    font-size: 13px;
     padding: 3px 10px;
-    box-sizing: border-box;
     border-radius: 4px;
     outline: none;
     text-align: center;
+    border: solid 1px;
   }

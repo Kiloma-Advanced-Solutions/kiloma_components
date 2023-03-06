@@ -17,12 +17,19 @@ function NumberInputComponent({
   const [value, setValue] = useState(0);
 
   const handleChange = (event) => {
-    const newValue = event.target.value.replace(/[^\d]/g, '');
-    const formattedValue = parseInt(newValue, 10).toLocaleString();
-    setValue(formattedValue);
+    const inputValue = event.target.value;
+    let newValue = inputValue.replace(/[^0-9+-]/g, ''); // replace any character that is not a number, plus sign or minus sign with an empty string
+    if (newValue.length > 3) {
+      const splitValue = newValue.split('.');
+      splitValue[0] = splitValue[0].replace(/\B(?=(\d{3})+(?!\d))/g, ','); // use a regular expression to add commas every third character
+      newValue = splitValue.join('.');
+    }
+    setValue(newValue);
   };
-  const handleChangeWithOutComma = (event) => {
-    setValue(event.target.value);
+
+  const handleChangeWithOutComma = (e) => {
+    const newValue = e.target.value.replace(/[^0-9-]/g, '');
+    setValue(newValue);
   };
 
   const addValue = () => {
@@ -58,6 +65,7 @@ function NumberInputComponent({
   const LabelColorStyle = LabelColor ? { color: LabelColor } : {};
   const InputWidthSizeStyle = InputWidthSize ? { width: `${InputWidthSize}%` } : {};
   const TextCenterSize = IsTextCenter ? { textAlign: 'center' } : {};
+
   return (
     <div className={cx(styles.container, { [styles.RTL]: IsRTL })}>
       <label htmlFor="numberInput" className={styles.label} style={{ ...LabelColorStyle }}>
@@ -65,6 +73,7 @@ function NumberInputComponent({
         <div className={styles.button_div}>
           <input
             type="text"
+            pattern="[^-]+[^0-9]+"
             value={value}
             onInput={IsWithComma ? handleChange : handleChangeWithOutComma}
             step={Step}
