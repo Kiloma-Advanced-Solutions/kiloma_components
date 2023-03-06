@@ -24,7 +24,6 @@ Number.args = {
   MinLength: null,
   MaxLength: null,
   Step: null,
-  Size: '',
   Disabled: false,
   IsRTL: false,
   IsWithComma: true,

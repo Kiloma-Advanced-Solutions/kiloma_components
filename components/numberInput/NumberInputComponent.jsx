@@ -8,7 +8,6 @@ function NumberInputComponent({
   MinLength,
   MaxLength,
   Step,
-  Size,
   Disabled,
   IsRTL,
   LabelColor,
@@ -49,18 +48,17 @@ function NumberInputComponent({
           <input
             type="text"
             value={value}
-            onInput={handleChange}
+            onInput={IsWithComma ? handleChange : handleChangeWithOutComma}
             min={MinLength}
             max={MaxLength}
             step={Step}
             disabled={Disabled}
-            size={Size}
             className={cx({ [styles.disabled]: Disabled }, [styles.input_style], [styles.LTR])}
             style={{ ...InputBackGroundColorStyle, ...InputWidthSizeStyle, ...TextCenterSize }}
           />
           <div className={styles.inside_div_button}>
-            <button className={styles.plus_input_button} type="button" onClick={addValue}>+</button>
-            <button className={styles.minus_input_button} type="button" onClick={decreaseValue}>-</button>
+            <button className={cx({ [styles.disabled]: Disabled }, [styles.plus_input_button])} type="button" onClick={addValue}>+</button>
+            <button className={cx({ [styles.disabled]: Disabled }, [styles.minus_input_button])} type="button" onClick={decreaseValue}>-</button>
 
           </div>
         </div>
@@ -74,7 +72,6 @@ NumberInputComponent.propTypes = {
   MinLength: PropTypes.number,
   MaxLength: PropTypes.number,
   Step: PropTypes.number,
-  Size: PropTypes.string,
   Disabled: PropTypes.bool,
   LabelColor: PropTypes.string,
   InputBackGroundColor: PropTypes.string,
@@ -89,7 +86,6 @@ NumberInputComponent.defaultProps = {
   MinLength: null,
   MaxLength: null,
   Step: null,
-  Size: '',
   Disabled: false,
   LabelColor: '',
   InputBackGroundColor: '',
