@@ -4,11 +4,6 @@ import CheckBox from '../components/Checkbox2/Checkbox2';
 import NumberInputComponent from '../components/numberInput/NumberInputComponent';
 
 export default function Demo() {
-  const number = 1000000;
-
-  const formattedNumber = number.toLocaleString('en-US');
-
-  console.log(formattedNumber); // 1,234,567,890
   return (
     <div>
       <ButtonComponents

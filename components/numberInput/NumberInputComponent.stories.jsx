@@ -21,9 +21,7 @@ export const Number = Template.bind({});
 
 Number.args = {
   LabelText: 'Text for Label ',
-  MinLength: null,
-  MaxLength: null,
-  Step: null,
+  Step: 1,
   Disabled: false,
   IsRTL: false,
   IsWithComma: true,

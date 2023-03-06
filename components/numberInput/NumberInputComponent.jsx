@@ -5,8 +5,6 @@ import styles from './NumberInputComponent.module.css';
 
 function NumberInputComponent({
   LabelText,
-  MinLength,
-  MaxLength,
   Step,
   Disabled,
   IsRTL,
@@ -28,10 +26,30 @@ function NumberInputComponent({
   };
 
   const addValue = () => {
-    setValue(Number(value + 1));
+    if (Step) {
+      setValue((prevValue) => {
+        if (!IsWithComma) {
+          return Number(Number(prevValue) + Step);
+        }
+        const newValue = Number((`${prevValue}`).replace(/[^\d]/g, '')) + Step;
+        return parseInt(newValue, 10).toLocaleString();
+      });
+    } else {
+      setValue((prevValue) => Number(prevValue + 1));
+    }
   };
   const decreaseValue = () => {
-    setValue(Number(value - 1));
+    if (Step) {
+      setValue((prevValue) => {
+        if (!IsWithComma) {
+          return Number(Number(prevValue) - Step);
+        }
+        const newValue = Number((`${prevValue}`).replace(/[^\d]/g, '')) - Step;
+        return parseInt(newValue, 10).toLocaleString();
+      });
+    } else {
+      setValue((prevValue) => Number(prevValue - 1));
+    }
   };
 
   const InputBackGroundColorStyle = InputBackGroundColor
@@ -49,8 +67,6 @@ function NumberInputComponent({
             type="text"
             value={value}
             onInput={IsWithComma ? handleChange : handleChangeWithOutComma}
-            min={MinLength}
-            max={MaxLength}
             step={Step}
             disabled={Disabled}
             className={cx({ [styles.disabled]: Disabled }, [styles.input_style], [styles.LTR])}
@@ -69,8 +85,6 @@ function NumberInputComponent({
 
 NumberInputComponent.propTypes = {
   LabelText: PropTypes.string,
-  MinLength: PropTypes.number,
-  MaxLength: PropTypes.number,
   Step: PropTypes.number,
   Disabled: PropTypes.bool,
   LabelColor: PropTypes.string,
@@ -83,8 +97,6 @@ NumberInputComponent.propTypes = {
 
 NumberInputComponent.defaultProps = {
   LabelText: '',
-  MinLength: null,
-  MaxLength: null,
   Step: null,
   Disabled: false,
   LabelColor: '',
