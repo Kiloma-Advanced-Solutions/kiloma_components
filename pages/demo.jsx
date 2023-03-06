@@ -26,10 +26,10 @@ export default function Demo() {
         ShouldDisplayLabel
       />
       <NumberInputComponent
-        LabelText="Enter Amount Of Dollars "
-        MaxLength={10}
-        MinLength={0}
-        Step={1}
+        InputBackGroundColor="#ffffff"
+        InputWidthSize={10}
+        LabelColor="#3194a5"
+        LabelText="Text for Label "
       />
     </div>
   );

@@ -18,13 +18,21 @@ function NumberInputComponent({
   IsTextCenter,
 }) {
   const [value, setValue] = useState(0);
-  // This function help to add the comma every 3 digits
-  const addCommas = (num) => num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-  const removeNonNumeric = (num) => num.toString().replace(/[^0-9]/g, '');
-  const handleChange = (event) => setValue(addCommas(removeNonNumeric(event.target.value)));
 
+  const handleChange = (event) => {
+    const newValue = event.target.value.replace(/[^\d]/g, '');
+    const formattedValue = parseInt(newValue, 10).toLocaleString();
+    setValue(formattedValue);
+  };
   const handleChangeWithOutComma = (event) => {
     setValue(event.target.value);
+  };
+
+  const addValue = () => {
+    setValue(Number(value + 1));
+  };
+  const decreaseValue = () => {
+    setValue(Number(value - 1));
   };
 
   const InputBackGroundColorStyle = InputBackGroundColor
@@ -37,7 +45,25 @@ function NumberInputComponent({
     <div className={cx(styles.container, { [styles.RTL]: IsRTL })}>
       <label htmlFor="numberInput" className={styles.label} style={{ ...LabelColorStyle }}>
         {LabelText}
-        <input type={IsWithComma ? 'text' : 'number'} value={value} onInput={IsWithComma ? handleChange : handleChangeWithOutComma} min={MinLength} max={MaxLength} step={Step} disabled={Disabled} size={Size} className={cx({ [styles.disabled]: Disabled }, [styles.input_style], [styles.LTR])} style={{ ...InputBackGroundColorStyle, ...InputWidthSizeStyle, ...TextCenterSize }} />
+        <div className={styles.button_div}>
+          <input
+            type="text"
+            value={value}
+            onInput={handleChange}
+            min={MinLength}
+            max={MaxLength}
+            step={Step}
+            disabled={Disabled}
+            size={Size}
+            className={cx({ [styles.disabled]: Disabled }, [styles.input_style], [styles.LTR])}
+            style={{ ...InputBackGroundColorStyle, ...InputWidthSizeStyle, ...TextCenterSize }}
+          />
+          <div className={styles.inside_div_button}>
+            <button className={styles.plus_input_button} type="button" onClick={addValue}>+</button>
+            <button className={styles.minus_input_button} type="button" onClick={decreaseValue}>-</button>
+
+          </div>
+        </div>
       </label>
     </div>
   );
@@ -57,7 +83,6 @@ NumberInputComponent.propTypes = {
   InputWidthSize: PropTypes.number,
   IsTextCenter: PropTypes.bool,
 };
-// Size: PropTypes.oneOf(['lg', 'md', 'sm', 'xs']),
 
 NumberInputComponent.defaultProps = {
   LabelText: '',

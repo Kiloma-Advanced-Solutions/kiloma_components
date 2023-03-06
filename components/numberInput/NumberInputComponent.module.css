@@ -1,5 +1,6 @@
 .container{
     width: 100%;
+    display: flex;
 }
 .disabled{
     opacity: 0.55;
@@ -18,6 +19,7 @@
     font-weight: 800;
     font-size: 16px;
     cursor: default;
+    height: 30%;
     
 }
 
@@ -27,4 +29,38 @@
 
 .LTR{
     direction: ltr;
-}
+}  
+  .button_div{
+    position: relative;
+    display: flex;
+    align-items: center;
+    
+  }
+  .inside_div_button{
+    /* position: absolute; */
+    display: flex;
+    flex-direction: row;
+    /* bottom: 9px;
+    left: 190px; */
+    
+  }
+  .minus_input_button{
+    margin-left: 0;
+    cursor: pointer;
+    font-size: 12px;
+    padding: 3px 10px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    outline: none;
+    text-align: center;
+  }
+
+  .plus_input_button{
+    cursor: pointer;
+    font-size: 12px;
+    padding: 3px 10px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    outline: none;
+    text-align: center;
+  }
