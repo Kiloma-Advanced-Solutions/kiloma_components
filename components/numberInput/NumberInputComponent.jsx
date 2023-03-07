@@ -13,6 +13,7 @@ function NumberInputComponent({
   IsWithComma,
   InputWidthSize,
   IsTextCenter,
+  ShowControlButton,
 }) {
   const [value, setValue] = useState(0);
 
@@ -81,11 +82,13 @@ function NumberInputComponent({
             className={cx({ [styles.disabled]: Disabled }, [styles.input_style], [styles.LTR])}
             style={{ ...InputBackGroundColorStyle, ...InputWidthSizeStyle, ...TextCenterSize }}
           />
-          <div className={styles.inside_div_button}>
-            <button className={cx({ [styles.disabled]: Disabled }, [styles.plus_input_button])} type="button" onClick={addValue}>+</button>
-            <button className={cx({ [styles.disabled]: Disabled }, [styles.minus_input_button])} type="button" onClick={decreaseValue}>-</button>
+          {ShowControlButton ? (
+            <div className={styles.inside_div_button}>
+              <button className={cx({ [styles.disabled]: Disabled }, [styles.plus_input_button])} type="button" onClick={addValue}>+</button>
+              <button className={cx({ [styles.disabled]: Disabled }, [styles.minus_input_button])} type="button" onClick={decreaseValue}>-</button>
 
-          </div>
+            </div>
+          ) : null }
         </div>
       </label>
     </div>
@@ -102,6 +105,7 @@ NumberInputComponent.propTypes = {
   IsWithComma: PropTypes.bool,
   InputWidthSize: PropTypes.number,
   IsTextCenter: PropTypes.bool,
+  ShowControlButton: PropTypes.bool,
 };
 
 NumberInputComponent.defaultProps = {
@@ -114,6 +118,7 @@ NumberInputComponent.defaultProps = {
   IsWithComma: true,
   InputWidthSize: null,
   IsTextCenter: false,
+  ShowControlButton: true,
 
 };
 

@@ -27,4 +27,5 @@ Number.args = {
   IsWithComma: true,
   InputWidthSize: 25,
   IsTextCenter: false,
+  ShowControlButton: true,
 };
