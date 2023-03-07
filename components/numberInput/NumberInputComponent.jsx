@@ -16,16 +16,25 @@ function NumberInputComponent({
   ShowControlButton,
 }) {
   const [value, setValue] = useState(0);
+  const allowedChar = '-';
 
   const handleChange = (event) => {
     const inputValue = event.target.value;
     let newValue = inputValue.replace(/[^0-9+-]/g, ''); // replace any character that is not a number, plus sign or minus sign with an empty string
-    if (newValue.length > 3) {
-      const splitValue = newValue.split('.');
-      splitValue[0] = splitValue[0].replace(/\B(?=(\d{3})+(?!\d))/g, ','); // use a regular expression to add commas every third character
-      newValue = splitValue.join('.');
+    const charCount = (newValue.match(new RegExp(allowedChar, 'g')) || []).length;
+
+    if (charCount > 1) {
+      // Prevent the change and display an error message
+      event.preventDefault();
+      console.error('error');
+    } else {
+      if (newValue.length > 3) {
+        const splitValue = newValue.split('.');
+        splitValue[0] = splitValue[0].replace(/\B(?=(\d{3})+(?!\d))/g, ','); // use a regular expression to add commas every third character
+        newValue = splitValue.join('.');
+      }
+      setValue(newValue);
     }
-    setValue(newValue);
   };
 
   const handleChangeWithOutComma = (e) => {
