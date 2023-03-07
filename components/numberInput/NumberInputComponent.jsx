@@ -17,16 +17,21 @@ function NumberInputComponent({
 }) {
   const [value, setValue] = useState(0);
   const allowedChar = '-';
+  const errorMessage = `The character ${allowedChar} can appear only once`;
 
   const handleChange = (event) => {
     const inputValue = event.target.value;
-    let newValue = inputValue.replace(/[^0-9+-]/g, ''); // replace any character that is not a number, plus sign or minus sign with an empty string
+    let newValue = inputValue.replace(/[^0-9+]|^-/g, (match, offset) => {
+      if (offset === 0 && match === '-') {
+        return match;
+      }
+      return '';
+    });
     const charCount = (newValue.match(new RegExp(allowedChar, 'g')) || []).length;
 
     if (charCount > 1) {
-      // Prevent the change and display an error message
       event.preventDefault();
-      console.error('error');
+      console.log(errorMessage);
     } else {
       if (newValue.length > 3) {
         const splitValue = newValue.split('.');
