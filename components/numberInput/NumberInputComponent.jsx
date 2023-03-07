@@ -14,6 +14,9 @@ function NumberInputComponent({
   InputWidthSize,
   IsTextCenter,
   ShowControlButton,
+  MinLength,
+  MaxLength,
+  PlaceHolder,
 }) {
   const [value, setValue] = useState(0);
   const allowedChar = '-';
@@ -93,6 +96,9 @@ function NumberInputComponent({
             onInput={IsWithComma ? handleChange : handleChangeWithOutComma}
             step={Step}
             disabled={Disabled}
+            minLength={MinLength}
+            maxLength={MaxLength}
+            placeholder={PlaceHolder}
             className={cx({ [styles.disabled]: Disabled }, [styles.input_style], [styles.LTR])}
             style={{ ...InputBackGroundColorStyle, ...InputWidthSizeStyle, ...TextCenterSize }}
           />
@@ -120,6 +126,10 @@ NumberInputComponent.propTypes = {
   InputWidthSize: PropTypes.number,
   IsTextCenter: PropTypes.bool,
   ShowControlButton: PropTypes.bool,
+  MinLength: PropTypes.number,
+  MaxLength: PropTypes.number,
+  PlaceHolder : PropTypes.string,
+
 };
 
 NumberInputComponent.defaultProps = {
@@ -133,7 +143,9 @@ NumberInputComponent.defaultProps = {
   InputWidthSize: null,
   IsTextCenter: false,
   ShowControlButton: true,
-
+  MinLength: null,
+  MaxLength: null,
+  PlaceHolder: 'Place Holder',
 };
 
 export default NumberInputComponent;

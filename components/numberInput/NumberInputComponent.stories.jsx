@@ -28,4 +28,7 @@ Number.args = {
   InputWidthSize: 25,
   IsTextCenter: false,
   ShowControlButton: true,
+  MinLength: 1,
+  MaxLength: 5,
+
 };
