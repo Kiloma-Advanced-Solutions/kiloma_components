@@ -1,6 +1,7 @@
 .container{
     width: 100%;
     display: flex;
+
 }
 .disabled{
     opacity: 0.55;
@@ -12,9 +13,6 @@
     font-weight: 800;
     font-size: 16px;
     width: 100%;
-
-
-
     }
 
 .input_style{
@@ -23,10 +21,6 @@
     font-size: 16px;
     cursor: default;
     height: 30%;
-
-
-;
-    
 }
 
 .RTL{
@@ -37,7 +31,6 @@
     direction: ltr;
 }  
   .button_div{
-    position: relative;
     display: flex;
     align-items: center;
     
@@ -45,9 +38,6 @@
   .inside_div_button{
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
-
-    
   }
   .minus_input_button{
     margin-left: 0;
@@ -59,6 +49,8 @@
     outline: none;
     text-align: center;
     border: solid 1px;
+    display: flex;
+    justify-content: flex-start;
   }
 
   .plus_input_button{

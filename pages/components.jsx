@@ -2,6 +2,7 @@ import React from 'react';
 import styles from '../styles/components.module.css';
 import ButtonComponents from '../components/button/ButtonComponent ';
 import CheckBox from '../components/Checkbox2/Checkbox2';
+import NumberInputComponent from '../components/numberInput/NumberInputComponent';
 
 export default function components() {
   return (
@@ -25,6 +26,19 @@ export default function components() {
                   LabelFontFamily="Helvetica"
                   ShouldDisplayLabel
                   labelColor="#1f7dda"
+                />
+              </div>
+            </li>
+            <li>
+              <div className={styles.components_examples}>
+                <p className={styles.p1}> Number- </p>
+
+                <NumberInputComponent
+                  InputWidthSize={25}
+                  LabelText="Text for Label "
+                  MaxLength={5}
+                  MinLength={1}
+                  Step={1}
                 />
               </div>
             </li>

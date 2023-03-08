@@ -27,6 +27,7 @@
 .components_examples{
     display: flex;
     gap: 5px;
+    margin-top: 1px;
 }
 .p1{
     font-size: 18px;
