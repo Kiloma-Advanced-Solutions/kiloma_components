@@ -12,6 +12,9 @@
     font-weight: 800;
     font-size: 16px;
     width: 100%;
+
+
+
     }
 
 .input_style{
@@ -20,6 +23,9 @@
     font-size: 16px;
     cursor: default;
     height: 30%;
+
+
+;
     
 }
 
@@ -37,11 +43,10 @@
     
   }
   .inside_div_button{
-    /* position: absolute; */
     display: flex;
     flex-direction: row;
-    /* bottom: 9px;
-    left: 190px; */
+    justify-content: flex-start;
+
     
   }
   .minus_input_button{

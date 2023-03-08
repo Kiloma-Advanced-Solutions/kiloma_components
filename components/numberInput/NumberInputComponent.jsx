@@ -44,12 +44,16 @@ function NumberInputComponent({
       setValue(newValue);
     }
   };
-
   const handleChangeWithOutComma = (e) => {
-    const newValue = e.target.value.replace(/[^0-9-]/g, '');
+    const inputValue = e.target.value;
+    const  newValue = inputValue.replace(/[^0-9+]|^-/g, (match, offset) => {
+      if (offset === 0 && match === '-') {
+        return match;
+      }
+      return '';
+    });
     setValue(newValue);
   };
-
   const addValue = () => {
     if (Step) {
       setValue((prevValue) => {
@@ -102,6 +106,7 @@ function NumberInputComponent({
             className={cx({ [styles.disabled]: Disabled }, [styles.input_style], [styles.LTR])}
             style={{ ...InputBackGroundColorStyle, ...InputWidthSizeStyle, ...TextCenterSize }}
           />
+          <p>$</p>
           {ShowControlButton ? (
             <div className={styles.inside_div_button}>
               <button className={cx({ [styles.disabled]: Disabled }, [styles.plus_input_button])} type="button" onClick={addValue}>+</button>
@@ -128,7 +133,7 @@ NumberInputComponent.propTypes = {
   ShowControlButton: PropTypes.bool,
   MinLength: PropTypes.number,
   MaxLength: PropTypes.number,
-  PlaceHolder : PropTypes.string,
+  PlaceHolder: PropTypes.string,
 
 };
 

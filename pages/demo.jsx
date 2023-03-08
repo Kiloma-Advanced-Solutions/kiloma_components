@@ -21,10 +21,11 @@ export default function Demo() {
         ShouldDisplayLabel
       />
       <NumberInputComponent
-        InputBackGroundColor="#ffffff"
         InputWidthSize={10}
-        LabelColor="#3194a5"
         LabelText="Text for Label "
+        MaxLength={5}
+        MinLength={1}
+        Step={1}
       />
     </div>
   );
