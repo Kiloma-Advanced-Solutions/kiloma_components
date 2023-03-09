@@ -38,7 +38,7 @@ function NumberInputComponent({
     } else {
       if (newValue.length > 3) {
         const splitValue = newValue.split('.');
-        splitValue[0] = splitValue[0].replace(/\B(?=(\d{3})+(?!\d))/g, ','); // use a regular expression to add commas every third character
+        splitValue[0] = splitValue[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
         newValue = splitValue.join('.');
       }
       setValue(newValue);
@@ -57,42 +57,62 @@ function NumberInputComponent({
   const addValue = () => {
     if (Step) {
       setValue((prevValue) => {
+        let newValue;
         if (!IsWithComma) {
-          return Number(Number(prevValue) + Step);
+          newValue = Number(prevValue) + Step;
+        } else {
+          newValue = Number((`${prevValue}`).replace(/[^\d-]/g, '')) + Step;
+          newValue = parseInt(newValue, 10).toLocaleString();
         }
-        const newValue = Number((`${prevValue}`).replace(/[^\d]/g, '')) + Step;
-        return parseInt(newValue, 10).toLocaleString();
+        return newValue;
       });
     } else {
       setValue((prevValue) => Number(prevValue + 1));
     }
   };
+  function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  }
   const decreaseValue = () => {
     if (Step) {
       setValue((prevValue) => {
+        let newValue;
         if (!IsWithComma) {
-          return Number(Number(prevValue) - Step);
+          newValue = Number(prevValue) - Step;
+        } else {
+          newValue = Number((`${prevValue}`).replace(/[^\d-]/g, '')) - Step;
+          newValue = numberWithCommas(newValue);
         }
-        const newValue = Number((`${prevValue}`).replace(/[^\d]/g, '')) - Step;
-        return parseInt(newValue, 10).toLocaleString();
+        return newValue;
       });
     } else {
-      setValue((prevValue) => Number(prevValue - 1));
+      setValue((prevValue) => {
+        let newValue;
+        if (!IsWithComma) {
+          newValue = Number(prevValue) - 1;
+        } else {
+          newValue = Number((`${prevValue}`).replace(/[^\d-]/g, '')) - 1;
+          newValue = numberWithCommas(newValue);
+        }
+        return newValue;
+      });
     }
   };
-
   const InputBackGroundColorStyle = InputBackGroundColor
     ? { backgroundColor: InputBackGroundColor } : {};
 
   const LabelColorStyle = LabelColor ? { color: LabelColor } : {};
-  const InputWidthSizeStyle = InputWidthSize ? { width: `${InputWidthSize}%` } : {};
+  const InputWidthSizeStyle = InputWidthSize ? { width: `${InputWidthSize}` } : {};
   const TextCenterSize = IsTextCenter ? { textAlign: 'center' } : {};
 
   return (
     <div className={cx(styles.container, { [styles.RTL]: IsRTL })}>
       <label htmlFor="numberInput" className={styles.label} style={{ ...LabelColorStyle }}>
         {LabelText}
-        <div className={styles.button_div}>
+        <div
+          className={styles.button_div}
+          style={{ ...InputWidthSizeStyle }}
+        >
           <input
             type="text"
             pattern="[^-]+[^0-9]+"
@@ -104,7 +124,7 @@ function NumberInputComponent({
             maxLength={MaxLength}
             placeholder={PlaceHolder}
             className={cx({ [styles.disabled]: Disabled }, [styles.input_style], [styles.LTR])}
-            style={{ ...InputBackGroundColorStyle, ...InputWidthSizeStyle, ...TextCenterSize }}
+            style={{ ...InputBackGroundColorStyle, ...TextCenterSize }}
           />
           {ShowControlButton ? (
             <div className={styles.inside_div_button}>
@@ -127,7 +147,7 @@ NumberInputComponent.propTypes = {
   InputBackGroundColor: PropTypes.string,
   IsRTL: PropTypes.bool,
   IsWithComma: PropTypes.bool,
-  InputWidthSize: PropTypes.number,
+  InputWidthSize: PropTypes.string,
   IsTextCenter: PropTypes.bool,
   ShowControlButton: PropTypes.bool,
   MinLength: PropTypes.number,
@@ -144,7 +164,7 @@ NumberInputComponent.defaultProps = {
   InputBackGroundColor: '',
   IsRTL: false,
   IsWithComma: true,
-  InputWidthSize: null,
+  InputWidthSize: '',
   IsTextCenter: false,
   ShowControlButton: true,
   MinLength: null,

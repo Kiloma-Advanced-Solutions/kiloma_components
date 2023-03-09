@@ -1,6 +1,5 @@
 .container{
-    width: 100vw;
-
+    width: 90vw;
 }
 .disabled{
     opacity: 0.55;
@@ -11,10 +10,10 @@
     font-family:  Helvetica;
     font-weight: 800;
     font-size: 16px;
-    width: 100vw;
     display: flex;
     flex-direction: row;
     gap: 3px;
+    align-items: center;
     }
 
 .input_style{
@@ -22,14 +21,21 @@
     font-weight: 800;
     font-size: 16px;
     cursor: default;
-    height: 30%;
+    width: 100%;
 }
 
  
   .button_div{
-    align-items: center;    
+    align-items: center;
+    display: flex;
+    position: relative;
+    width: 45vw;
   }
   .inside_div_button{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
     display: flex;
     flex-direction: row;
   }
@@ -37,29 +43,93 @@
     margin-left: 0;
     cursor: pointer;
     font-size: 13px;
-    padding: 3px 10px;
-    box-sizing: border-box;
+    padding: 1px 10px;
     border-radius: 4px;
     outline: none;
     text-align: center;
     border: solid 1px;
-    display: flex;
-    justify-content: flex-start;
   }
 
   .plus_input_button{
     cursor: pointer;
     font-size: 13px;
-    padding: 3px 10px;
+    padding: 1px 10px;
     border-radius: 4px;
     outline: none;
     text-align: center;
     border: solid 1px;
   }
-  .RTL{
-    direction: rtl;
-}
 
+  @media only screen and (min-width : 1024px) {
+    .container{
+      width: 90vw;
+  }
+  .disabled{
+      opacity: 0.55;
+      pointer-events: none;
+  }
+  
+  .label{
+      font-family:  Helvetica;
+      font-weight: 800;
+      font-size: 16px;
+      display: flex;
+      flex-direction: row;
+      gap: 3px;
+      align-items: center;
+      }
+  
+  .input_style{
+      font-family:  Helvetica;
+      font-weight: 800;
+      font-size: 16px;
+      cursor: default;
+      width: 100%;
+  }
+  
+  .RTL{
+      direction: rtl;
+  }
+  
   .LTR{
       direction: ltr;
-  } 
+  }  
+    .button_div{
+      align-items: center;
+      display: flex;
+      position: relative;
+      width: 30vw;
+    }
+    .inside_div_button{
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      flex-direction: row;
+    }
+    .minus_input_button{
+      margin-left: 0;
+      cursor: pointer;
+      font-size: 13px;
+      padding: 1px 10px;
+      border-radius: 4px;
+      outline: none;
+      text-align: center;
+      border: solid 1px;
+    }
+  
+    .plus_input_button{
+      cursor: pointer;
+      font-size: 13px;
+      padding: 1px 10px;
+      border-radius: 4px;
+      outline: none;
+      text-align: center;
+      border: solid 1px;
+    }
+  }
+
+  
+  
+  

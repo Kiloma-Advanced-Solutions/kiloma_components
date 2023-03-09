@@ -14,7 +14,7 @@ export default function components() {
           <ol className={styles.ol1}>
             <li>
               <div className={styles.components_examples}>
-                <p className={styles.p1}> CheckBox- </p>
+                <p className={styles.p1}> CheckBox </p>
 
                 <CheckBox
                   CheckBoxHeight="25"
@@ -31,13 +31,12 @@ export default function components() {
             </li>
             <li>
               <div className={styles.components_examples}>
-                <p className={styles.p1}> Number- </p>
-
                 <NumberInputComponent
-                  InputWidthSize={25}
-                  LabelText="Text for Label "
-                  MaxLength={5}
+                  InputWidthSize="220px"
+                  LabelText="Number Input "
+                  MaxLength={999}
                   MinLength={1}
+                  PlaceHolder=""
                   Step={1}
                 />
               </div>
@@ -51,9 +50,11 @@ export default function components() {
           <ol className={styles.ol1}>
             <li>
               <div className={styles.components_examples}>
-                <p className={styles.p1}> Button- </p>
+                <p className={styles.p1}> Button </p>
+
                 <ButtonComponents
-                  ButtonLabel="Click Here"
+                  ButtonLabel="Click Here "
+                  ButtonTheme="dark"
                   IsRound={false}
                 />
               </div>
