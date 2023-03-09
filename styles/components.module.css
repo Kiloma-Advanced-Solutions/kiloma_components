@@ -53,8 +53,7 @@
 
 /* Laptop Screens  */
 @media only screen and (min-width : 1024px){
-    
-    .title{
+     .title{
         display: flex;
         justify-content: center;
         align-items: center;
@@ -92,10 +91,8 @@
             padding: 0px;
             margin: 25px;
         }
-        
-    
-        
-}
+}     
+
 
 
 @media only screen and (min-width : 1920px) {

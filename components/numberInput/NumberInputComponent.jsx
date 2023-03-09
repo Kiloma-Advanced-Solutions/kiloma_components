@@ -38,7 +38,7 @@ function NumberInputComponent({
     } else {
       if (newValue.length > 3) {
         const splitValue = newValue.split('.');
-        splitValue[0] = splitValue[0].replace(/\B(?=(\d{3})+(?!\d))/g, ','); // use a regular expression to add commas every third character
+        splitValue[0] = splitValue[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
         newValue = splitValue.join('.');
       }
       setValue(newValue);
@@ -70,7 +70,9 @@ function NumberInputComponent({
       setValue((prevValue) => Number(prevValue + 1));
     }
   };
-  
+  function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  }
   const decreaseValue = () => {
     if (Step) {
       setValue((prevValue) => {
@@ -79,7 +81,7 @@ function NumberInputComponent({
           newValue = Number(prevValue) - Step;
         } else {
           newValue = Number((`${prevValue}`).replace(/[^\d-]/g, '')) - Step;
-          newValue = Number(parseInt(newValue, 10).toLocaleString());
+          newValue = numberWithCommas(newValue);
         }
         return newValue;
       });
@@ -90,7 +92,7 @@ function NumberInputComponent({
           newValue = Number(prevValue) - 1;
         } else {
           newValue = Number((`${prevValue}`).replace(/[^\d-]/g, '')) - 1;
-          newValue = Number(parseInt(newValue, 10).toLocaleString());
+          newValue = numberWithCommas(newValue);
         }
         return newValue;
       });
@@ -100,7 +102,7 @@ function NumberInputComponent({
     ? { backgroundColor: InputBackGroundColor } : {};
 
   const LabelColorStyle = LabelColor ? { color: LabelColor } : {};
-  const InputWidthSizeStyle = InputWidthSize ? { width: `${InputWidthSize}%` } : {};
+  const InputWidthSizeStyle = InputWidthSize ? { width: `${InputWidthSize}` } : {};
   const TextCenterSize = IsTextCenter ? { textAlign: 'center' } : {};
 
   return (
@@ -145,7 +147,7 @@ NumberInputComponent.propTypes = {
   InputBackGroundColor: PropTypes.string,
   IsRTL: PropTypes.bool,
   IsWithComma: PropTypes.bool,
-  InputWidthSize: PropTypes.number,
+  InputWidthSize: PropTypes.string,
   IsTextCenter: PropTypes.bool,
   ShowControlButton: PropTypes.bool,
   MinLength: PropTypes.number,
@@ -162,7 +164,7 @@ NumberInputComponent.defaultProps = {
   InputBackGroundColor: '',
   IsRTL: false,
   IsWithComma: true,
-  InputWidthSize: null,
+  InputWidthSize: '',
   IsTextCenter: false,
   ShowControlButton: true,
   MinLength: null,
