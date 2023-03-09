@@ -57,30 +57,45 @@ function NumberInputComponent({
   const addValue = () => {
     if (Step) {
       setValue((prevValue) => {
+        let newValue;
         if (!IsWithComma) {
-          return Number(Number(prevValue) + Step);
+          newValue = Number(prevValue) + Step;
+        } else {
+          newValue = Number((`${prevValue}`).replace(/[^\d-]/g, '')) + Step;
+          newValue = parseInt(newValue, 10).toLocaleString();
         }
-        const newValue = Number((`${prevValue}`).replace(/[^\d]/g, '')) + Step;
-        return parseInt(newValue, 10).toLocaleString();
+        return newValue;
       });
     } else {
       setValue((prevValue) => Number(prevValue + 1));
     }
   };
+  
   const decreaseValue = () => {
     if (Step) {
       setValue((prevValue) => {
+        let newValue;
         if (!IsWithComma) {
-          return Number(Number(prevValue) - Step);
+          newValue = Number(prevValue) - Step;
+        } else {
+          newValue = Number((`${prevValue}`).replace(/[^\d-]/g, '')) - Step;
+          newValue = Number(parseInt(newValue, 10).toLocaleString());
         }
-        const newValue = Number((`${prevValue}`).replace(/[^\d]/g, '')) - Step;
-        return parseInt(newValue, 10).toLocaleString();
+        return newValue;
       });
     } else {
-      setValue((prevValue) => Number(prevValue - 1));
+      setValue((prevValue) => {
+        let newValue;
+        if (!IsWithComma) {
+          newValue = Number(prevValue) - 1;
+        } else {
+          newValue = Number((`${prevValue}`).replace(/[^\d-]/g, '')) - 1;
+          newValue = Number(parseInt(newValue, 10).toLocaleString());
+        }
+        return newValue;
+      });
     }
   };
-
   const InputBackGroundColorStyle = InputBackGroundColor
     ? { backgroundColor: InputBackGroundColor } : {};
 
@@ -108,7 +123,6 @@ function NumberInputComponent({
             placeholder={PlaceHolder}
             className={cx({ [styles.disabled]: Disabled }, [styles.input_style], [styles.LTR])}
             style={{ ...InputBackGroundColorStyle, ...TextCenterSize }}
-            // style={{ ...InputBackGroundColorStyle, ...InputWidthSizeStyle, ...TextCenterSize }}
           />
           {ShowControlButton ? (
             <div className={styles.inside_div_button}>

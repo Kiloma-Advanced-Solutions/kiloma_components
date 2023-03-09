@@ -31,12 +31,10 @@ export default function components() {
             </li>
             <li>
               <div className={styles.components_examples}>
-                <p className={styles.p1}> Number- </p>
-
                 <NumberInputComponent
-                  InputWidthSize={25}
-                  LabelText="Text for Label "
-                  MaxLength={5}
+                  InputWidthSize={15}
+                  LabelText="Number Input - "
+                  MaxLength={999}
                   MinLength={1}
                   Step={1}
                 />

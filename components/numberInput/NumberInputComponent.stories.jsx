@@ -29,6 +29,6 @@ Number.args = {
   IsTextCenter: false,
   ShowControlButton: true,
   MinLength: 1,
-  MaxLength: 5,
+  MaxLength: 999,
 
 };
