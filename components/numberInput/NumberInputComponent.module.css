@@ -1,6 +1,5 @@
 .container{
-    width: 100%;
-    display: flex;
+    width: 100vw;
 
 }
 .disabled{
@@ -12,7 +11,10 @@
     font-family:  Helvetica;
     font-weight: 800;
     font-size: 16px;
-    width: 100%;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    gap: 3px;
     }
 
 .input_style{
@@ -23,17 +25,9 @@
     height: 30%;
 }
 
-.RTL{
-    direction: rtl;
-}
-
-.LTR{
-    direction: ltr;
-}  
+ 
   .button_div{
-    display: flex;
-    align-items: center;
-    
+    align-items: center;    
   }
   .inside_div_button{
     display: flex;
@@ -62,3 +56,10 @@
     text-align: center;
     border: solid 1px;
   }
+  .RTL{
+    direction: rtl;
+}
+
+  .LTR{
+      direction: ltr;
+  } 

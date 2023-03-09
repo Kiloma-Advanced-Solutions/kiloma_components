@@ -20,15 +20,15 @@ function Template(args) {
 export const Number = Template.bind({});
 
 Number.args = {
-  LabelText: 'Text for Label ',
-  Step: 1,
+  LabelText: 'Amount',
+  Step: 0,
   Disabled: false,
   IsRTL: false,
   IsWithComma: true,
-  InputWidthSize: 25,
+  InputWidthSize: 35,
   IsTextCenter: false,
   ShowControlButton: true,
   MinLength: 1,
-  MaxLength: 5,
+  MaxLength: 9999,
 
 };
