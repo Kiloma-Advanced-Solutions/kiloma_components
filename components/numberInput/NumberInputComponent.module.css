@@ -1,6 +1,6 @@
 .container{
-    width: 100%;
-    display: flex;
+    width: 100vw;
+    
 
 }
 .disabled{
@@ -12,7 +12,9 @@
     font-family:  Helvetica;
     font-weight: 800;
     font-size: 16px;
-    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 3px;
     }
 
 .input_style{
@@ -20,7 +22,8 @@
     font-weight: 800;
     font-size: 16px;
     cursor: default;
-    height: 30%;
+    width: 100%;
+    height: 20px;
 }
 
 .RTL{
@@ -31,11 +34,16 @@
     direction: ltr;
 }  
   .button_div{
-    display: flex;
     align-items: center;
-    
+    display: flex;
+    position: relative;
+    width: 30vw;
   }
   .inside_div_button{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
     display: flex;
     flex-direction: row;
   }

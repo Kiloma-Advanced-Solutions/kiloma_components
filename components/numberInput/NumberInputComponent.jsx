@@ -92,7 +92,10 @@ function NumberInputComponent({
     <div className={cx(styles.container, { [styles.RTL]: IsRTL })}>
       <label htmlFor="numberInput" className={styles.label} style={{ ...LabelColorStyle }}>
         {LabelText}
-        <div className={styles.button_div}>
+        <div
+          className={styles.button_div}
+          style={{ ...InputWidthSizeStyle }}
+        >
           <input
             type="text"
             pattern="[^-]+[^0-9]+"
@@ -104,7 +107,8 @@ function NumberInputComponent({
             maxLength={MaxLength}
             placeholder={PlaceHolder}
             className={cx({ [styles.disabled]: Disabled }, [styles.input_style], [styles.LTR])}
-            style={{ ...InputBackGroundColorStyle, ...InputWidthSizeStyle, ...TextCenterSize }}
+            style={{ ...InputBackGroundColorStyle, ...TextCenterSize }}
+            // style={{ ...InputBackGroundColorStyle, ...InputWidthSizeStyle, ...TextCenterSize }}
           />
           {ShowControlButton ? (
             <div className={styles.inside_div_button}>
