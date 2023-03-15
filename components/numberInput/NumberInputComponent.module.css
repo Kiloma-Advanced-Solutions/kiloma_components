@@ -22,6 +22,8 @@
     font-size: 16px;
     cursor: default;
     width: 100%;
+    height: 30px;
+    
 }
 
 .RTL{
@@ -43,99 +45,95 @@
     right: 0;
     bottom: 0;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    gap: 6px;
   }
   .minus_input_button{
     margin-left: 0;
     cursor: pointer;
-    font-size: 13px;
-    padding: 1px 10px;
-    border-radius: 4px;
+    font-size: 12px;
     outline: none;
     text-align: center;
-    border: solid 1px;
+    transform: rotate(180deg);
+    height: 15px;
+
   }
 
   .plus_input_button{
     cursor: pointer;
-    font-size: 13px;
-    padding: 1px 10px;
-    border-radius: 4px;
+    font-size: 12px;
     outline: none;
     text-align: center;
-    border: solid 1px;
+    height: 15px;
   }
 
+  
+  /* Media query for laptop screens  */
   @media only screen and (min-width : 1024px) {
     .container{
       width: 90vw;
-  }
-  .disabled{
-      opacity: 0.55;
-      pointer-events: none;
-  }
-  
-  .label{
-      font-family:  Helvetica;
-      font-weight: 800;
-      font-size: 16px;
-      display: flex;
-      flex-direction: row;
-      gap: 3px;
-      align-items: center;
+    }
+    .disabled{
+        opacity: 0.55;
+        pointer-events: none;
+    }
+    
+    .label{
+        font-family:  Helvetica;
+        font-weight: 800;
+        font-size: 16px;
+          display: flex;
+          flex-direction: row;
+          gap: 3px;
+          align-items: center;
+        }
+    
+    .input_style{
+        font-family:  Helvetica;
+        font-weight: 800;
+        font-size: 16px;
+        cursor: default;
+        height: 30%;
+    }
+    
+    .RTL{
+        direction: rtl;
+    }
+    
+    .LTR{
+        direction: ltr;
+    }  
+      .button_div{
+        display: flex;
+        align-items: center;
+        
       }
-  
-  .input_style{
-      font-family:  Helvetica;
-      font-weight: 800;
-      font-size: 16px;
-      cursor: default;
-      width: 100%;
-  }
-  
-  .RTL{
-      direction: rtl;
-  }
-  
-  .LTR{
-      direction: ltr;
-  }  
-    .button_div{
-      align-items: center;
-      display: flex;
-      position: relative;
-      width: 30vw;
-    }
-    .inside_div_button{
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      display: flex;
-      flex-direction: row;
-    }
-    .minus_input_button{
-      margin-left: 0;
-      cursor: pointer;
-      font-size: 13px;
-      padding: 1px 10px;
-      border-radius: 4px;
-      outline: none;
-      text-align: center;
-      border: solid 1px;
-    }
-  
-    .plus_input_button{
-      cursor: pointer;
-      font-size: 13px;
-      padding: 1px 10px;
-      border-radius: 4px;
-      outline: none;
-      text-align: center;
-      border: solid 1px;
-    }
-  }
+      .inside_div_button{
+        display: flex;
 
-  
-  
+      }
+      .minus_input_button{
+        margin-left: 0;
+        cursor: pointer;
+        font-size: 10px;
+        padding: 3px 10px;
+        box-sizing: border-box;
+        border-radius: 4px;
+        outline: none;
+        text-align: center;
+        border: solid 1px;
+        transform: rotate(180deg);
+       
+      }
+    
+      .plus_input_button{
+        cursor: pointer;
+        font-size: 10px;
+        padding: 3px 10px;
+        border-radius: 4px;
+        outline: none;
+        text-align: center;
+        border: solid 1px;
+      }
+}
   
