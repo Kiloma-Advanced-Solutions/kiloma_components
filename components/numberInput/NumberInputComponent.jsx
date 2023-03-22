@@ -21,7 +21,6 @@ function NumberInputComponent({
   const [value, setValue] = useState(0);
   const allowedChar = '-';
   const errorMessage = `The character ${allowedChar} can appear only once`;
-
   const handleChange = (event) => {
     const inputValue = event.target.value;
     let newValue = inputValue.replace(/[^0-9+]|^-/g, (match, offset) => {
@@ -31,7 +30,6 @@ function NumberInputComponent({
       return '';
     });
     const charCount = (newValue.match(new RegExp(allowedChar, 'g')) || []).length;
-
     if (charCount > 1) {
       event.preventDefault();
       console.log(errorMessage);
@@ -128,8 +126,8 @@ function NumberInputComponent({
           />
           {ShowControlButton ? (
             <div className={styles.inside_div_button}>
-              <button className={cx({ [styles.disabled]: Disabled }, [styles.plus_input_button])} type="button" onClick={addValue}>+</button>
-              <button className={cx({ [styles.disabled]: Disabled }, [styles.minus_input_button])} type="button" onClick={decreaseValue}>-</button>
+              <button className={cx({ [styles.disabled]: Disabled }, [styles.plus_input_button])} type="button" onClick={addValue}>^</button>
+              <button className={cx({ [styles.disabled]: Disabled }, [styles.minus_input_button])} type="button" onClick={decreaseValue}>^</button>
 
             </div>
           ) : null }
@@ -140,7 +138,7 @@ function NumberInputComponent({
 }
 
 NumberInputComponent.propTypes = {
-  LabelText: PropTypes.string,
+  LabelText: PropTypes.string.isRequired,
   Step: PropTypes.number,
   Disabled: PropTypes.bool,
   LabelColor: PropTypes.string,
@@ -157,7 +155,6 @@ NumberInputComponent.propTypes = {
 };
 
 NumberInputComponent.defaultProps = {
-  LabelText: '',
   Step: null,
   Disabled: false,
   LabelColor: '',

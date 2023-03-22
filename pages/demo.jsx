@@ -21,11 +21,11 @@ export default function Demo() {
         ShouldDisplayLabel
       />
       <NumberInputComponent
-        InputWidthSize={55}
-        LabelText="Money Amount "
-        MaxLength={9999}
+        InputWidthSize="20%"
+        LabelText="Text for Label "
+        MaxLength={999}
         MinLength={1}
-        Step={0}
+        Step={1}
       />
     </div>
   );
