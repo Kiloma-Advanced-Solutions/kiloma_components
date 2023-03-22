@@ -55,7 +55,7 @@
     outline: none;
     text-align: center;
     transform: rotate(180deg);
-    height: 15px;
+  height: 15px;
 
   }
 
@@ -93,7 +93,7 @@
         font-weight: 800;
         font-size: 16px;
         cursor: default;
-        height: 30%;
+        height: 30px;
     }
     
     .RTL{
@@ -110,6 +110,23 @@
       }
       .inside_div_button{
         display: flex;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+        .plus_input_button{
+        cursor: pointer;
+        font-size: 10px;
+        padding: 3px 10px;
+        border-radius: 2px;
+        outline: none;
+        text-align: center;
+        border: solid 1px;
 
       }
       .minus_input_button{
@@ -117,23 +134,12 @@
         cursor: pointer;
         font-size: 10px;
         padding: 3px 10px;
-        box-sizing: border-box;
-        border-radius: 4px;
+        border-radius: 2px;
         outline: none;
         text-align: center;
         border: solid 1px;
         transform: rotate(180deg);
-       
       }
-    
-      .plus_input_button{
-        cursor: pointer;
-        font-size: 10px;
-        padding: 3px 10px;
-        border-radius: 4px;
-        outline: none;
-        text-align: center;
-        border: solid 1px;
-      }
-}
+
+    }
   
