@@ -127,19 +127,16 @@
         outline: none;
         text-align: center;
         border: solid 1px;
-
       }
       .minus_input_button{
-        margin-left: 0;
-        cursor: pointer;
-        font-size: 10px;
-        padding: 3px 10px;
-        border-radius: 2px;
-        outline: none;
-        text-align: center;
-        border: solid 1px;
-        transform: rotate(180deg);
+          cursor: pointer;
+          font-size: 10px;
+          padding: 3px 10px;
+          border-radius: 2px;
+          outline: none;
+          text-align: center;
+          border: solid 1px;
+          transform: rotate(180deg );
+        } 
       }
-
-    }
   
