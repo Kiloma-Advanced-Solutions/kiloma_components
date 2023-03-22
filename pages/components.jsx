@@ -32,7 +32,7 @@ export default function components() {
             <li>
               <div className={styles.components_examples}>
                 <NumberInputComponent
-                  InputWidthSize="30%"
+                  InputWidthSize="20%"
                   LabelText="Text for Label "
                   MaxLength={999}
                   MinLength={1}
