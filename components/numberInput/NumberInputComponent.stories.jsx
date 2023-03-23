@@ -31,5 +31,6 @@ Number.args = {
   MinLength: 1,
   MaxLength: 999,
   IsDouble: false,
+  DecimalDotPlace: 2,
 
 };

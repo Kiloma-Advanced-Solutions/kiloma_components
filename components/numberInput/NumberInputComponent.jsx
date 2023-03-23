@@ -18,6 +18,7 @@ function NumberInputComponent({
   MaxLength,
   PlaceHolder,
   IsDouble,
+  DecimalDotPlace
 }) {
   const [value, setValue] = useState(0);
   const allowedChar = /[^0-9.,-]/;
@@ -54,7 +55,7 @@ function NumberInputComponent({
       return '';
     });
     if (IsDouble) {
-      decimalValue = `${newValue.slice(0, -2)}.${newValue.slice(-2)}`;
+      decimalValue = `${newValue.slice(0, -DecimalDotPlace)}.${newValue.slice(-DecimalDotPlace)}`;
       setValue(decimalValue);
     } else {
       setValue(newValue);
@@ -169,6 +170,7 @@ NumberInputComponent.propTypes = {
   MaxLength: PropTypes.number,
   PlaceHolder: PropTypes.string,
   IsDouble: PropTypes.bool,
+  DecimalDotPlace: PropTypes.number,
 
 };
 
@@ -186,6 +188,7 @@ NumberInputComponent.defaultProps = {
   MaxLength: null,
   PlaceHolder: 'Place Holder',
   IsDouble: false,
+  DecimalDotPlace: null,
 };
 
 export default NumberInputComponent;
