@@ -46,14 +46,19 @@ function NumberInputComponent({
   };
   const handleChangeWithDecimal = (e) => {
     const inputValue = e.target.value;
+    let decimalValue = inputValue;
     const newValue = inputValue.replace(/[^0-9+]|^-/g, (match, offset) => {
       if (offset === 0 && match === '-') {
         return match;
       }
       return '';
     });
-    const decimalValue = `${newValue.slice(0, -2)}.${newValue.slice(-2)}`;
-    setValue(decimalValue);
+    if (IsDouble) {
+      decimalValue = `${newValue.slice(0, -2)}.${newValue.slice(-2)}`;
+      setValue(decimalValue);
+    } else {
+      setValue(newValue);
+    }
   };
 
   const addValue = (decimalSeparator = ',') => {
