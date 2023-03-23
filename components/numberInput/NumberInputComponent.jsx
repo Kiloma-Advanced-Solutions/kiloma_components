@@ -18,7 +18,7 @@ function NumberInputComponent({
   MaxLength,
   PlaceHolder,
   IsDouble,
-  DecimalDotPlace
+  DecimalDotPlace,
 }) {
   const [value, setValue] = useState(0);
   const allowedChar = /[^0-9.,-]/;
