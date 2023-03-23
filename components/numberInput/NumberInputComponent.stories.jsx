@@ -30,5 +30,6 @@ Number.args = {
   ShowControlButton: true,
   MinLength: 1,
   MaxLength: 999,
+  IsDouble: false,
 
 };

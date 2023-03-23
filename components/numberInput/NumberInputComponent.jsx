@@ -17,10 +17,12 @@ function NumberInputComponent({
   MinLength,
   MaxLength,
   PlaceHolder,
+  IsDouble,
 }) {
   const [value, setValue] = useState(0);
-  const allowedChar = '-';
+  const allowedChar = /[^0-9.,-]/;
   const errorMessage = `The character ${allowedChar} can appear only once`;
+
   const handleChange = (event) => {
     const inputValue = event.target.value;
     let newValue = inputValue.replace(/[^0-9+]|^-/g, (match, offset) => {
@@ -42,7 +44,7 @@ function NumberInputComponent({
       setValue(newValue);
     }
   };
-  const handleChangeWithOutComma = (e) => {
+  const handleChangeWithDecimal = (e) => {
     const inputValue = e.target.value;
     const newValue = inputValue.replace(/[^0-9+]|^-/g, (match, offset) => {
       if (offset === 0 && match === '-') {
@@ -50,17 +52,27 @@ function NumberInputComponent({
       }
       return '';
     });
-    setValue(newValue);
+    const decimalValue = `${newValue.slice(0, -2)}.${newValue.slice(-2)}`;
+    setValue(decimalValue);
   };
-  const addValue = () => {
+
+  const addValue = (decimalSeparator = ',') => {
     if (Step) {
       setValue((prevValue) => {
         let newValue;
         if (!IsWithComma) {
           newValue = Number(prevValue) + Step;
         } else {
-          newValue = Number((`${prevValue}`).replace(/[^\d-]/g, '')) + Step;
-          newValue = parseInt(newValue, 10).toLocaleString();
+          let cleanValue = `${prevValue}`.replace(/[^\d-]/g, '');
+          if (decimalSeparator === '.') {
+            cleanValue = cleanValue.replace(',', '.');
+          }
+          newValue = Number(cleanValue) + Step;
+          if (decimalSeparator === ',') {
+            newValue = parseInt(newValue, 10).toLocaleString();
+          } else {
+            newValue = newValue.toLocaleString();
+          }
         }
         return newValue;
       });
@@ -115,7 +127,7 @@ function NumberInputComponent({
             type="text"
             pattern="[^-]+[^0-9]+"
             value={value}
-            onInput={IsWithComma ? handleChange : handleChangeWithOutComma}
+            onInput={IsWithComma ? handleChange : handleChangeWithDecimal}
             step={Step}
             disabled={Disabled}
             minLength={MinLength}
@@ -151,6 +163,7 @@ NumberInputComponent.propTypes = {
   MinLength: PropTypes.number,
   MaxLength: PropTypes.number,
   PlaceHolder: PropTypes.string,
+  IsDouble: PropTypes.bool,
 
 };
 
@@ -167,6 +180,7 @@ NumberInputComponent.defaultProps = {
   MinLength: null,
   MaxLength: null,
   PlaceHolder: 'Place Holder',
+  IsDouble: false,
 };
 
 export default NumberInputComponent;
