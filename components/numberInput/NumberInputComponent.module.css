@@ -5,14 +5,13 @@
     opacity: 0.55;
     pointer-events: none;
 }
-
 .label{
     font-family:  Helvetica;
     font-weight: 800;
     font-size: 16px;
     display: flex;
     flex-direction: row;
-    gap: 3px;
+    gap: 7px;
     align-items: center;
     }
 
@@ -23,10 +22,13 @@
     cursor: default;
     width: 100%;
     height: 30px;
-    
 }
-
- 
+.RTL{
+    direction: rtl;
+}
+.LTR{
+    direction: ltr;
+}  
   .button_div{
     align-items: center;
     display: flex;
@@ -50,9 +52,7 @@
     text-align: center;
     transform: rotate(180deg);
   height: 15px;
-
   }
-
   .plus_input_button{
     cursor: pointer;
     font-size: 12px;
@@ -60,8 +60,6 @@
     text-align: center;
     height: 15px;
   }
-
-  
   /* Media query for laptop screens  */
   @media only screen and (min-width : 1024px) {
     .container{
@@ -71,14 +69,13 @@
         opacity: 0.55;
         pointer-events: none;
     }
-    
     .label{
         font-family:  Helvetica;
         font-weight: 800;
         font-size: 16px;
           display: flex;
           flex-direction: row;
-          gap: 3px;
+          gap: 7px;
           align-items: center;
         }
     
@@ -88,6 +85,8 @@
         font-size: 16px;
         cursor: default;
         height: 30px;
+
+
     }
     
     .RTL{
@@ -112,7 +111,6 @@
         flex-direction: column;
         gap: 6px;
       }
-
         .plus_input_button{
         cursor: pointer;
         font-size: 10px;
