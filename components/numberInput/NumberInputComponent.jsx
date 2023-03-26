@@ -25,6 +25,8 @@ function NumberInputComponent({
   const errorMessage = `The character ${allowedChar} can appear only once`;
 
   const handleChange = (event) => {
+    debugger;
+    // const inputValue = '1234.56';
     const inputValue = event.target.value;
     let newValue = inputValue.replace(/[^0-9+]|^-/g, (match, offset) => {
       if (offset === 0 && match === '-') {
@@ -38,9 +40,13 @@ function NumberInputComponent({
       console.log(errorMessage);
     } else {
       if (newValue.length > 3) {
-        const splitValue = newValue.split('.');
-        splitValue[0] = splitValue[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-        newValue = splitValue.join('.');
+        if (IsDouble) {
+          const withoutLast2Digits = newValue.slice(0, -DecimalDotPlace);
+          newValue = `${withoutLast2Digits.replace(/\B(?=(\d{3})+(?!\d))/g, ',')}.${newValue.slice(-DecimalDotPlace)}`;
+        }
+        else {
+          newValue = newValue.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+        }
       }
       setValue(newValue);
     }
