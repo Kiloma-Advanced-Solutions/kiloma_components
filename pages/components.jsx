@@ -33,11 +33,10 @@ export default function components() {
               <div className={styles.components_examples}>
                 <NumberInputComponent
                   DecimalDotPlace={2}
-                  InputWidthSize="20%"
+                  InputWidthSize="25%"
                   IsDouble
                   IsTextCenter
-                  IsWithComma={false}
-                  LabelText="Text Input Example "
+                  LabelText="Text Input Example"
                   MaxLength={999}
                   MinLength={1}
                   Step={1}
