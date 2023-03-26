@@ -114,6 +114,14 @@ function NumberInputComponent({
       });
     }
   };
+  const handleOnKey = (event) => {
+    if (event.keyCode === 40) {
+      decreaseValue();
+    }
+    if (event.keyCode === 38) {
+      addValue();
+    }
+  };
   const InputBackGroundColorStyle = InputBackGroundColor
     ? { backgroundColor: InputBackGroundColor } : {};
 
@@ -130,6 +138,7 @@ function NumberInputComponent({
           style={{ ...InputWidthSizeStyle }}
         >
           <input
+            onKeyDown={handleOnKey}
             type="text"
             pattern="[^-]+[^0-9]+"
             value={value}
