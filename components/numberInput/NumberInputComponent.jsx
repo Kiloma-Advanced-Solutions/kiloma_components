@@ -21,8 +21,6 @@ function NumberInputComponent({
   DecimalDotPlace,
 }) {
   const [value, setValue] = useState(0);
-  const [inputValue, setInputValue] = useState('');
-
   const allowedChar = /[^0-9.,-]/;
   const errorMessage = `The character ${allowedChar} can appear only once`;
 
@@ -122,14 +120,14 @@ function NumberInputComponent({
 
     if (event.keyCode === 40) {
       decreaseValue();
-      setInputValue(event.target.value);
+      // setInputValue1(event.target.value);
 
       setTimeout(() => {
         event.target.setSelectionRange(currentPosition, currentPosition);
       });
     } else if (event.keyCode === 38) {
       addValue();
-      setInputValue(event.target.value);
+      // setInputValue1(event.target.value);
 
       setTimeout(() => {
         event.target.setSelectionRange(currentPosition, currentPosition);
