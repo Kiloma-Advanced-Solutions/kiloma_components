@@ -83,37 +83,37 @@ function NumberInputComponent({
         return newValue;
       });
     } else {
-      setValue((prevValue) => Number(prevValue + 1));
+      setValue((prevValue) => Number(prevValue - 1));
     }
   };
   function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
   }
-  const decreaseValue = () => {
+  const decreaseValue = (decimalSeparator = ',') => {
     if (Step) {
       setValue((prevValue) => {
         let newValue;
         if (!IsWithComma) {
           newValue = Number(prevValue) - Step;
         } else {
-          newValue = Number((`${prevValue}`).replace(/[^\d-]/g, '')) - Step;
-          newValue = numberWithCommas(newValue);
+          let cleanValue = `${prevValue}`.replace(/[^\d-]/g, '');
+          if (decimalSeparator === '.') {
+            cleanValue = cleanValue.replace(',', '.');
+          }
+          newValue = Number(cleanValue) - Step;
+          if (decimalSeparator === ',') {
+            newValue = parseInt(newValue, 10).toLocaleString();
+          } else {
+            newValue = newValue.toLocaleString();
+          }
         }
         return newValue;
       });
     } else {
-      setValue((prevValue) => {
-        let newValue;
-        if (!IsWithComma) {
-          newValue = Number(prevValue) - 1;
-        } else {
-          newValue = Number((`${prevValue}`).replace(/[^\d-]/g, '')) - 1;
-          newValue = numberWithCommas(newValue);
-        }
-        return newValue;
-      });
+      setValue((prevValue) => Number(prevValue - 1));
     }
   };
+
   const handleOnKey = (event) => {
     if (event.keyCode === 40) {
       decreaseValue();
