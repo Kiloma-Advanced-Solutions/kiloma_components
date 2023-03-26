@@ -38,9 +38,12 @@ function NumberInputComponent({
       console.log(errorMessage);
     } else {
       if (newValue.length > 3) {
-        const splitValue = newValue.split('.');
-        splitValue[0] = splitValue[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-        newValue = splitValue.join('.');
+        if (IsDouble) {
+          const withoutLast2Digits = newValue.slice(0, -DecimalDotPlace);
+          newValue = `${withoutLast2Digits.replace(/\B(?=(\d{3})+(?!\d))/g, ',')}.${newValue.slice(-DecimalDotPlace)}`;
+        } else {
+          newValue = newValue.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+        }
       }
       setValue(newValue);
     }
@@ -69,21 +72,21 @@ function NumberInputComponent({
         if (!IsWithComma) {
           newValue = Number(prevValue) + Step;
         } else {
-          let cleanValue = `${prevValue}`.replace(/[^\d-]/g, '');
+          let cleanValue = `${prevValue}`.replace(/[^\d.-]/g, '');
           if (decimalSeparator === '.') {
             cleanValue = cleanValue.replace(',', '.');
           }
           newValue = Number(cleanValue) + Step;
           if (decimalSeparator === ',') {
-            newValue = parseInt(newValue, 10).toLocaleString();
+            newValue = newValue.toLocaleString('en-US', { minimumFractionDigits: 2 });
           } else {
-            newValue = newValue.toLocaleString();
+            newValue = newValue.toLocaleString('en-US', { minimumFractionDigits: 2 });
           }
         }
         return newValue;
       });
     } else {
-      setValue((prevValue) => Number(prevValue - 1));
+      setValue((prevValue) => Number(prevValue + 1));
     }
   };
 
@@ -94,15 +97,15 @@ function NumberInputComponent({
         if (!IsWithComma) {
           newValue = Number(prevValue) - Step;
         } else {
-          let cleanValue = `${prevValue}`.replace(/[^\d-]/g, '');
+          let cleanValue = `${prevValue}`.replace(/[^\d.-]/g, '');
           if (decimalSeparator === '.') {
             cleanValue = cleanValue.replace(',', '.');
           }
           newValue = Number(cleanValue) - Step;
           if (decimalSeparator === ',') {
-            newValue = parseInt(newValue, 10).toLocaleString();
+            newValue = newValue.toLocaleString('en-US', { minimumFractionDigits: 2 });
           } else {
-            newValue = newValue.toLocaleString();
+            newValue = newValue.toLocaleString('en-US', { minimumFractionDigits: 2 });
           }
         }
         return newValue;
