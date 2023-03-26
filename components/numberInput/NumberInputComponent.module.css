@@ -22,7 +22,6 @@
     cursor: default;
     width: 100%;
     height: 30px;
-    margin-right: 2px;
 }
 .RTL{
     direction: rtl;
@@ -86,7 +85,7 @@
         font-size: 16px;
         cursor: default;
         height: 30px;
-        margin-right: 2px;
+
 
     }
     
