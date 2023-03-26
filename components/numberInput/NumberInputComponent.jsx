@@ -118,9 +118,11 @@ function NumberInputComponent({
   const handleOnKey = (event) => {
     if (event.keyCode === 40) {
       decreaseValue();
+      event.preventDefault();
     }
     if (event.keyCode === 38) {
       addValue();
+      event.preventDefault();
     }
   };
   const InputBackGroundColorStyle = InputBackGroundColor
