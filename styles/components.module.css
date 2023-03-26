@@ -4,54 +4,135 @@
     align-items: center;
     flex-direction: column;
     overflow-y: hidden;
-    gap: 20px;
     height: 90vh;
+    width: 100%;
 }
-.title{
-    font-family: Helvetica;
-    font-size: 20px;
-    color: black;
-    margin-top: 30px;
-}
-.sub_title{
-    display: flex;
-    font-family:Helvetica;
-    font-weight: bold;
-}
-.input_components{
-    font-family:Helvetica;
-    font-size: 20px;
+
+.input_div{
     display: flex;
     flex-direction: column;
-    gap: 10px;
-}
-
-.examples{
-    display: flex;
-    gap: 10px;
-}
-   
-
-
-/* Large Screen */
-@media only screen and (min-width : 1024px){
-    .container{
-        height: 100vh;
-        overflow-y: hidden;
-    }
-    .sub_title{
-        display: flex;
-        margin-left: 10px;
-        flex-direction: column;
-    }
-    .input_components{
-        margin-left: 10px;
-        display: flex;
-        flex-direction: column;
-    }
-    .examples{
-        display: flex;
-        gap: 10px;
-    }
+    justify-content: center;
+    align-items: center;
     
 }
+
+.ui_div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.components_examples{
+    display: flex;
+    gap: 5px;
+    margin-top: 1px;
+}
+.p1{
+    font-family:  Helvetica;
+    font-weight: 800;
+    font-size: 16px;
+    cursor: default;
+}
+
+
+.title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+    font-family: Helvetica
+}
+.H2{
+    font-family:  Helvetica;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+
+/* Laptop Screens  */
+@media only screen and (min-width : 1024px){
+     .title{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        flex-direction: column;
+        font-family: Helvetica
+    }
+    .H2{
+        font-family:  Helvetica;
+        font-size: 30px;
+        font-weight: 700;
+    }
+        .container{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            align-items: flex-start;
+        }
+        .input_div{
+           display: flex;
+           flex-direction: column;
+           align-items: flex-start;
+        }
+        .ui_div{
+            display: flex;
+            align-items: flex-start;
+        }
+        .components_examples{
+            display: flex;
+            gap: 5px;
+            flex-direction: row;
+        }
+
+        .ol1{
+            padding: 0px;
+            margin: 25px;
+        }
+}     
+
+
+
+@media only screen and (min-width : 1920px) {
+    .title{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        flex-direction: column;
+    }
+    .H2{
+        font-family:  Helvetica;
+        font-size: 30px;
+        font-weight: 700;
+    }
+        .container{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            align-items: flex-start;
+        }
+        .input_div{
+           display: flex;
+           flex-direction: column;
+           align-items: flex-start;
+        }
+        .ui_div{
+            display: flex;
+            align-items: flex-start;
+        }
+    
+}
+
+
+
+
+
+
+
+
+
+
+
