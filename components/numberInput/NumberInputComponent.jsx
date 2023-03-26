@@ -86,9 +86,7 @@ function NumberInputComponent({
       setValue((prevValue) => Number(prevValue - 1));
     }
   };
-  function numberWithCommas(x) {
-    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-  }
+
   const decreaseValue = (decimalSeparator = ',') => {
     if (Step) {
       setValue((prevValue) => {
