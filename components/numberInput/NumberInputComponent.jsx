@@ -25,8 +25,6 @@ function NumberInputComponent({
   const errorMessage = `The character ${allowedChar} can appear only once`;
 
   const handleChange = (event) => {
-    debugger;
-    // const inputValue = '1234.56';
     const inputValue = event.target.value;
     let newValue = inputValue.replace(/[^0-9+]|^-/g, (match, offset) => {
       if (offset === 0 && match === '-') {
@@ -43,8 +41,7 @@ function NumberInputComponent({
         if (IsDouble) {
           const withoutLast2Digits = newValue.slice(0, -DecimalDotPlace);
           newValue = `${withoutLast2Digits.replace(/\B(?=(\d{3})+(?!\d))/g, ',')}.${newValue.slice(-DecimalDotPlace)}`;
-        }
-        else {
+        } else {
           newValue = newValue.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
         }
       }
@@ -75,21 +72,21 @@ function NumberInputComponent({
         if (!IsWithComma) {
           newValue = Number(prevValue) + Step;
         } else {
-          let cleanValue = `${prevValue}`.replace(/[^\d-]/g, '');
+          let cleanValue = `${prevValue}`.replace(/[^\d.-]/g, '');
           if (decimalSeparator === '.') {
             cleanValue = cleanValue.replace(',', '.');
           }
           newValue = Number(cleanValue) + Step;
           if (decimalSeparator === ',') {
-            newValue = parseInt(newValue, 10).toLocaleString();
+            newValue = newValue.toLocaleString('en-US', { minimumFractionDigits: 2 });
           } else {
-            newValue = newValue.toLocaleString();
+            newValue = newValue.toLocaleString('en-US', { minimumFractionDigits: 2 });
           }
         }
         return newValue;
       });
     } else {
-      setValue((prevValue) => Number(prevValue - 1));
+      setValue((prevValue) => Number(prevValue + 1));
     }
   };
 
@@ -100,15 +97,15 @@ function NumberInputComponent({
         if (!IsWithComma) {
           newValue = Number(prevValue) - Step;
         } else {
-          let cleanValue = `${prevValue}`.replace(/[^\d-]/g, '');
+          let cleanValue = `${prevValue}`.replace(/[^\d.-]/g, '');
           if (decimalSeparator === '.') {
             cleanValue = cleanValue.replace(',', '.');
           }
           newValue = Number(cleanValue) - Step;
           if (decimalSeparator === ',') {
-            newValue = parseInt(newValue, 10).toLocaleString();
+            newValue = newValue.toLocaleString('en-US', { minimumFractionDigits: 2 });
           } else {
-            newValue = newValue.toLocaleString();
+            newValue = newValue.toLocaleString('en-US', { minimumFractionDigits: 2 });
           }
         }
         return newValue;
