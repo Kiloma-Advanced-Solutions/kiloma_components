@@ -32,11 +32,10 @@ export default function components() {
             <li>
               <div className={styles.components_examples}>
                 <NumberInputComponent
-                  DecimalDotPlace={2}
                   InputWidthSize="25%"
                   IsDouble
                   IsTextCenter
-                  LabelText="Text Input Example"
+                  LabelText="Number Input Example"
                   MaxLength={999}
                   MinLength={1}
                   Step={1}
