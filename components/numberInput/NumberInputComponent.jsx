@@ -18,39 +18,26 @@ function NumberInputComponent({
   MaxLength,
   PlaceHolder,
   IsDouble,
-  DecimalDotPlace,
 }) {
   const [value, setValue] = useState(0);
-  const allowedChar = /[^0-9.,-]/;
-  const errorMessage = `The character ${allowedChar} can appear only once`;
 
   const handleChange = (event) => {
-    const inputValue = event.target.value;
-    let newValue = inputValue.replace(/[^0-9+]|^-/g, (match, offset) => {
-      if (offset === 0 && match === '-') {
-        return match;
-      }
-      return '';
-    });
-    const charCount = (newValue.match(new RegExp(allowedChar, 'g')) || []).length;
-    if (charCount > 1) {
-      event.preventDefault();
-      console.log(errorMessage);
-    } else {
-      if (newValue.length > 3) {
-        if (IsDouble) {
-          const withoutLast2Digits = newValue.slice(0, -DecimalDotPlace);
-          newValue = `${withoutLast2Digits.replace(/\B(?=(\d{3})+(?!\d))/g, ',')}.${newValue.slice(-DecimalDotPlace)}`;
-        } else {
-          newValue = newValue.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-        }
-      }
-      setValue(newValue);
+    let inputValue = event.target.value;
+    const decimalIndex = inputValue.indexOf('.');
+    if (decimalIndex !== -1) {
+      let decimalPart = inputValue.slice(decimalIndex + 1);
+      decimalPart = decimalPart.replace(/[^0-9]/g, '');
+      inputValue = inputValue.slice(0, decimalIndex + 1) + decimalPart;
     }
+    inputValue = inputValue.replace(/[^\d.]/g, '');
+    const parts = inputValue.split('.');
+    parts[0] = parts[0].replace(/(\d)(?=(\d{3})+$)/g, '$1,');
+    inputValue = parts.join('.');
+    setValue(inputValue);
   };
-  const handleChangeWithDecimal = (e) => {
+
+  const handleWithOutComma = (e) => {
     const inputValue = e.target.value;
-    let decimalValue = inputValue;
     const newValue = inputValue.replace(/[^0-9+]|^-/g, (match, offset) => {
       if (offset === 0 && match === '-') {
         return match;
@@ -58,8 +45,11 @@ function NumberInputComponent({
       return '';
     });
     if (IsDouble) {
-      decimalValue = `${newValue.slice(0, -DecimalDotPlace)}.${newValue.slice(-DecimalDotPlace)}`;
-      setValue(decimalValue);
+      const regex = /^\d*(\.\d*)?$/; // Regular expression to allow only comma and dot numbers
+      const input = e.target.value;
+      if (regex.test(input)) {
+        setValue(input);
+      }
     } else {
       setValue(newValue);
     }
@@ -156,7 +146,7 @@ function NumberInputComponent({
             type="text"
             pattern="[^-]+[^0-9]+"
             value={value}
-            onInput={IsWithComma ? handleChange : handleChangeWithDecimal}
+            onInput={IsWithComma ? handleChange : handleWithOutComma}
             step={Step}
             disabled={Disabled}
             minLength={MinLength}
@@ -193,7 +183,6 @@ NumberInputComponent.propTypes = {
   MaxLength: PropTypes.number,
   PlaceHolder: PropTypes.string,
   IsDouble: PropTypes.bool,
-  DecimalDotPlace: PropTypes.number,
 
 };
 
@@ -211,7 +200,7 @@ NumberInputComponent.defaultProps = {
   MaxLength: null,
   PlaceHolder: 'Place Holder',
   IsDouble: false,
-  DecimalDotPlace: null,
+
 };
 
 export default NumberInputComponent;
