@@ -38,14 +38,15 @@ function NumberInputComponent({
 
   const handleWithOutComma = (e) => {
     const inputValue = e.target.value;
-    const newValue = inputValue.replace(/[^0-9+]|^-/g, (match, offset) => {
-      if (offset === 0 && match === '-') {
-        return match;
-      }
-      return '';
-    });
+    let newValue = inputValue.replace(/[^0-9.-]|(?<=-)\-|\.(?=[^.]*\.)/g, '');
+    if (newValue.indexOf('-') !== -1) {
+      newValue = newValue.replace('-', '\uFEFF-');
+      newValue = newValue.replace(/[^\d.]/g, '');
+      newValue = newValue.replace('\uFEFF', '-');
+    }
+
     if (IsDouble) {
-      const regex = /^\d*(\.\d*)?$/; // Regular expression to allow only comma and dot numbers
+      const regex = /^-?\d*\.?\d*$/;
       const input = e.target.value;
       if (regex.test(input)) {
         setValue(input);
