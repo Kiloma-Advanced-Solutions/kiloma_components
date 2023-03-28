@@ -67,7 +67,8 @@ height: 15px;
 -webkit-appearance: none;
 -moz-appearance: none;
 appearance: none;
-border: none
+border: none;
+margin-top: 4px;
 }
 
 
@@ -132,6 +133,7 @@ border: none
       text-align: center;
       border: solid 1px;
       height: 15px;
+      margin-top: 0px;
   
     }
     .minus_input_button{
@@ -210,6 +212,8 @@ border: none
     text-align: center;
     border: solid 1px;
     height: 15px;
+    margin-top: 0px;
+
   }
   .minus_input_button{
       cursor: pointer;
