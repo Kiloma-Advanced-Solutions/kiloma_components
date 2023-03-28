@@ -52,9 +52,7 @@ outline: none;
 text-align: center;
 transform: rotate(180deg);
 height: 15px;
--webkit-appearance: none;
--webkit-border-radius: none;
-border-radius: 10px;
+ -webkit-appearance: button;
 
 
 
@@ -65,9 +63,8 @@ font-size: 12px;
 outline: none;
 text-align: center;
 height: 15px;
--webkit-appearance: none;
--webkit-border-radius: none;
-border-radius: 10px;
+-webkit-appearance: button;
+
 
 
 
