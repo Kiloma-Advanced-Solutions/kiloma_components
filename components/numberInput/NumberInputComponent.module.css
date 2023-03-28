@@ -55,16 +55,20 @@ height: 15px;
 -webkit-appearance: none;
 -moz-appearance: none;
 appearance: none;
+border: none
+
 }
 .plus_input_button{
 cursor: pointer;
 font-size: 12px;
 outline: none;
 text-align: center;
-height: 15px;
+height: 64;
+width: 64;
 -webkit-appearance: none;
 -moz-appearance: none;
 appearance: none;
+border: none
 }
 
 
