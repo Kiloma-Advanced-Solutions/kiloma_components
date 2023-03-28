@@ -52,7 +52,10 @@ outline: none;
 text-align: center;
 transform: rotate(180deg);
 height: 15px;
--webkit-border-radius:none; 
+border-radius: 0;
+-webkit-appearance: none;
+-moz-appearance: none;
+appearance: none;
 
 
 
@@ -64,6 +67,10 @@ outline: none;
 text-align: center;
 height: 15px;
 -webkit-border-radius:none; 
+border-radius: 0;
+-webkit-appearance: none;
+-moz-appearance: none;
+appearance: none;
 
 
 
