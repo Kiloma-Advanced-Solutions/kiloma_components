@@ -157,8 +157,8 @@ function NumberInputComponent({
           />
           {ShowControlButton ? (
             <div className={styles.inside_div_button}>
-              <button className={cx({ [styles.disabled]: Disabled }, [styles.plus_input_button])} type="button" onClick={addValue}>^</button>
-              <button className={cx({ [styles.disabled]: Disabled }, [styles.minus_input_button])} type="button" onClick={decreaseValue}>^</button>
+              <div className={cx({ [styles.disabled]: Disabled }, [styles.plus_input_button])} role="button" onClick={addValue} tabIndex={0} onKeyUp={() => {}}>^</div>
+              <div className={cx({ [styles.disabled]: Disabled }, [styles.minus_input_button])} role="button" type="button" onClick={decreaseValue} tabIndex={0} onKeyUp={() => {}}>^</div>
 
             </div>
           ) : null }
