@@ -52,7 +52,8 @@ outline: none;
 text-align: center;
 transform: rotate(180deg);
 height: 15px;
--webkit-appearance: none;
+-webkit-border-radius:none; 
+
 
 
 }
@@ -62,7 +63,8 @@ font-size: 12px;
 outline: none;
 text-align: center;
 height: 15px;
--webkit-appearance: none;
+-webkit-border-radius:none; 
+
 
 
 }
