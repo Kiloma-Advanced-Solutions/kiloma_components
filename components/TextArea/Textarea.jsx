@@ -24,10 +24,11 @@ function Textarea({
 
 }) {
   const LabelColorStyle = LabelColor ? { color: LabelColor } : {};
-  const insideTextColor = TextColor ?{color: TextColor} : {};
+  const insideTextColor = TextColor ? { color: TextColor } : {};
+
   return (
     <div className={cx(styles.container, { [styles.RTL]: IsRTL })}>
-      <label htmlFor="TextAreaId" className={styles.label} style={{ ...LabelColorStyle }}>
+      <label htmlFor="TextAreaId" className={cx(styles.label)} style={{ ...LabelColorStyle }}>
         {Label}
         <textarea
           className={styles.text_area}

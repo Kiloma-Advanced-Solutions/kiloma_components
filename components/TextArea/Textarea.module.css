@@ -3,6 +3,7 @@
     flex-direction: column;
     gap:5px;
     width: 90vh;
+    position: relative;
 }
 .label{
 font-family:  Helvetica, sans-serif Arial, ;
@@ -12,6 +13,7 @@ display: flex;
 flex-direction: column;
 gap: 7px;
 }
+
 .text_area{
     display: flex;
     font-family: Helvetica,Arial, sans-serif;
