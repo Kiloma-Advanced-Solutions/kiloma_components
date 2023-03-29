@@ -22,10 +22,10 @@ function Textarea({
 }) {
   return (
     <div className={cx(styles.container, { [styles.RTL]: IsRTL })}>
-      <label htmlFor="TextAreaId">
-        {' '}
-        Testing
+      <label htmlFor="TextAreaId" className={styles.label}>
+        Enter Your Text Here
         <textarea
+          className={styles.text_area}
           id={Id}
           name={Name}
           rows={Row}
@@ -41,6 +41,7 @@ function Textarea({
           defaultValue={DefaultValue}
         />
       </label>
+
     </div>
   );
 }

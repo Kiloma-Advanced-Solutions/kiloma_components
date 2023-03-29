@@ -17,7 +17,7 @@ export const Primary = Template.bind({});
 Primary.args = {
   Id: '',
   Name: '',
-  Row: 20,
+  Row: 10,
   Column: 40,
   AutoComplete: true,
   IsDisabled: false,
