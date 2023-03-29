@@ -18,11 +18,15 @@ function Textarea({
   IsSpellChecker,
   DefaultValue,
   IsRTL,
+  LabelColor,
+  TextColor,
 
 }) {
+  const LabelColorStyle = LabelColor ? { color: LabelColor } : {};
+  const insideTextColor = TextColor ?{color: TextColor} : {};
   return (
     <div className={cx(styles.container, { [styles.RTL]: IsRTL })}>
-      <label htmlFor="TextAreaId" className={styles.label}>
+      <label htmlFor="TextAreaId" className={styles.label} style={{ ...LabelColorStyle }}>
         Enter Your Text Here
         <textarea
           className={styles.text_area}
@@ -39,6 +43,7 @@ function Textarea({
           maxLength={MaxValue}
           spellCheck={IsSpellChecker}
           defaultValue={DefaultValue}
+          style={{ ...insideTextColor }}
         />
       </label>
 
@@ -61,6 +66,8 @@ Textarea.propTypes = {
   IsSpellChecker: PropTypes.bool,
   DefaultValue: PropTypes.string,
   IsRTL: PropTypes.bool,
+  LabelColor: PropTypes.string,
+  TextColor: PropTypes.string,
 };
 
 Textarea.defaultProps = {
@@ -78,5 +85,7 @@ Textarea.defaultProps = {
   IsSpellChecker: true,
   DefaultValue: null,
   IsRTL: false,
+  LabelColor: '',
+  TextColor: '',
 };
 export default Textarea;
