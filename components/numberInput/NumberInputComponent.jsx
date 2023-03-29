@@ -35,29 +35,56 @@ function NumberInputComponent({
   //   inputValue = parts.join('.');
   //   setValue(inputValue);
   // };
-  const handleChange = (event) => {
-    let inputValue = event.target.value;
-    // Allow minus sign at any place but only one time
-    inputValue = inputValue.replace(/^(-)?\d*\.?\d+$/, (match, p1) => {
-      if (p1) {
-        // negative number
-        return `-${match.slice(1).replace(/-/g, '').replace(/^0+(\d)/, '$1')}`;
-      }
-      // positive number
-      return match.replace(/-/g, '').replace(/^0+(\d)/, '$1');
-    });
+  // const handleChange = (event) => {
+  //   let inputValue = event.target.value;
+  //   // Allow minus sign at any place but only one time
+  //   inputValue = inputValue.replace(/^(-)?\d*\.?\d+$/, (match, p1) => {
+  //     if (p1) {
+  //       // negative number
+  //       return `-${match.slice(1).replace(/-/g, '').replace(/^0+(\d)/, '$1')}`;
+  //     }
+  //     // positive number
+  //     return match.replace(/-/g, '').replace(/^0+(\d)/, '$1');
+  //   });
 
-    const decimalIndex = inputValue.indexOf('.');
-    if (decimalIndex !== -1) {
-      let decimalPart = inputValue.slice(decimalIndex + 1);
-      decimalPart = decimalPart.replace(/[^0-9]/g, '');
-      inputValue = inputValue.slice(0, decimalIndex + 1) + decimalPart;
+  //   const decimalIndex = inputValue.indexOf('.');
+  //   if (decimalIndex !== -1) {
+  //     let decimalPart = inputValue.slice(decimalIndex + 1);
+  //     decimalPart = decimalPart.replace(/[^0-9]/g, '');
+  //     inputValue = inputValue.slice(0, decimalIndex + 1) + decimalPart;
+  //   }
+  //   inputValue = inputValue.replace(/[^\d.]/g, '');
+  //   const parts = inputValue.split('.');
+  //   parts[0] = parts[0].replace(/(\d)(?=(\d{3})+$)/g, '$1,');
+  //   inputValue = parts.join('.');
+  //   setValue(inputValue);
+  // };
+
+  const handleChange = (e) => {
+    if (IsDouble) {
+      const regex = /^-?\d*\.?\d*$/;
+      let input = e.target.value.replace(',', '');
+      if (regex.test(input)) {
+        // let [integerPart, decimalPart] = input.split('.');
+        const divided = input.split('.');
+        let integerPart = divided[0];
+        const decimalPart = divided[1];
+        integerPart = integerPart.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+        if (decimalPart !== undefined) {
+          input = `${integerPart}.${decimalPart}`;
+        } else {
+          input = integerPart;
+        }
+
+        setValue(input);
+      }
+    } else {
+      const regexWithOutComma = /^-?\d*$/;
+      const firstInput = e.target.value.replace(',', '');
+      if (regexWithOutComma.test(firstInput)) {
+        setValue(firstInput.replace(/\B(?=(\d{3})+(?!\d))/g, ','));
+      }
     }
-    inputValue = inputValue.replace(/[^\d.]/g, '');
-    const parts = inputValue.split('.');
-    parts[0] = parts[0].replace(/(\d)(?=(\d{3})+$)/g, '$1,');
-    inputValue = parts.join('.');
-    setValue(inputValue);
   };
 
   const handleWithOutComma = (e) => {
