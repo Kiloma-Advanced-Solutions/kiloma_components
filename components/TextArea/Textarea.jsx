@@ -20,6 +20,7 @@ function Textarea({
   IsRTL,
   LabelColor,
   TextColor,
+  Label,
 
 }) {
   const LabelColorStyle = LabelColor ? { color: LabelColor } : {};
@@ -27,7 +28,7 @@ function Textarea({
   return (
     <div className={cx(styles.container, { [styles.RTL]: IsRTL })}>
       <label htmlFor="TextAreaId" className={styles.label} style={{ ...LabelColorStyle }}>
-        Enter Your Text Here
+        {Label}
         <textarea
           className={styles.text_area}
           id={Id}
@@ -52,6 +53,7 @@ function Textarea({
 }
 
 Textarea.propTypes = {
+  Label: PropTypes.string,
   Id: PropTypes.string,
   Name: PropTypes.string,
   Row: PropTypes.number,
@@ -71,6 +73,7 @@ Textarea.propTypes = {
 };
 
 Textarea.defaultProps = {
+  Label: '',
   Id: '',
   Name: '',
   Row: 20,

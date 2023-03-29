@@ -15,6 +15,7 @@ function Template(args) {
 export const Primary = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Primary.args = {
+  Label: 'Text Area Label',
   Id: '',
   Name: '',
   Row: 10,
