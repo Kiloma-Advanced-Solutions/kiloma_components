@@ -34,7 +34,7 @@ export default function components() {
                 <NumberInputComponent
                   InputWidthSize="25%"
                   IsDouble
-                  IsTextCenter
+                  IsWithComma={false}
                   LabelText="Number Input Example"
                   MaxLength={999}
                   MinLength={1}

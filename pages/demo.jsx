@@ -1,32 +1,31 @@
 import React from 'react';
-import ButtonComponents from '../components/button/ButtonComponent ';
-import CheckBox from '../components/Checkbox2/Checkbox2';
-import NumberInputComponent from '../components/numberInput/NumberInputComponent';
+// import ButtonComponents from '../components/button/ButtonComponent ';
+// import CheckBox from '../components/Checkbox2/Checkbox2';
+// import NumberInputComponent from '../components/numberInput/NumberInputComponent';
 
 export default function Demo() {
   return (
     <div>
-      <ButtonComponents
-        ButtonLabel="Button"
-        ButtonTheme="dark"
-        IsRound={false}
-        IsShaded
-      />
-
-      <CheckBox
-        CheckBoxTitle="Hello"
-        IsChecked=""
-        IsRequired={false}
-        LabelColor=""
-        ShouldDisplayLabel
-      />
-      <NumberInputComponent
-        InputWidthSize={35}
-        LabelText="213123"
-        MaxLength={999}
-        MinLength={1}
-        Step={0}
-      />
+      <label htmlFor="postTextAreaId">
+        {' '}
+        Testing
+        <textarea
+          id="postTextAreaId"
+          name="story"
+          rows="30"
+          cols="90"
+          autoComplete="true"
+        // disabled
+          placeholder="Hello"
+          required
+        // readOnly
+          minLength={0}
+          maxLength={999}
+          spellCheck="false"
+          wrap="hard"
+          defaultValue="Hello"
+        />
+      </label>
     </div>
   );
 }

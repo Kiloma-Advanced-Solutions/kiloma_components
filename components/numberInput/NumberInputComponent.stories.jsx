@@ -20,8 +20,8 @@ function Template(args) {
 export const Number = Template.bind({});
 
 Number.args = {
-  LabelText: 'Amount',
-  Step: 0,
+  LabelText: 'Example',
+  Step: 1,
   Disabled: false,
   IsRTL: false,
   IsWithComma: true,

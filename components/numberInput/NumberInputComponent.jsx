@@ -21,8 +21,32 @@ function NumberInputComponent({
 }) {
   const [value, setValue] = useState(0);
 
+  // const handleChange = (event) => {
+  //   let inputValue = event.target.value;
+  //   const decimalIndex = inputValue.indexOf('.');
+  //   if (decimalIndex !== -1) {
+  //     let decimalPart = inputValue.slice(decimalIndex + 1);
+  //     decimalPart = decimalPart.replace(/[^0-9]/g, '');
+  //     inputValue = inputValue.slice(0, decimalIndex + 1) + decimalPart;
+  //   }
+  //   inputValue = inputValue.replace(/[^\d.]/g, '');
+  //   const parts = inputValue.split('.');
+  //   parts[0] = parts[0].replace(/(\d)(?=(\d{3})+$)/g, '$1,');
+  //   inputValue = parts.join('.');
+  //   setValue(inputValue);
+  // };
   const handleChange = (event) => {
     let inputValue = event.target.value;
+    // Allow minus sign at any place but only one time
+    inputValue = inputValue.replace(/^(-)?\d*\.?\d+$/, (match, p1) => {
+      if (p1) {
+        // negative number
+        return `-${match.slice(1).replace(/-/g, '').replace(/^0+(\d)/, '$1')}`;
+      }
+      // positive number
+      return match.replace(/-/g, '').replace(/^0+(\d)/, '$1');
+    });
+
     const decimalIndex = inputValue.indexOf('.');
     if (decimalIndex !== -1) {
       let decimalPart = inputValue.slice(decimalIndex + 1);
@@ -37,14 +61,6 @@ function NumberInputComponent({
   };
 
   const handleWithOutComma = (e) => {
-    const inputValue = e.target.value;
-    let newValue = inputValue.replace(/[^0-9.-]|(?<=-)\-|\.(?=[^.]*\.)/g, '');
-    if (newValue.indexOf('-') !== -1) {
-      newValue = newValue.replace('-', '\uFEFF-');
-      newValue = newValue.replace(/[^\d.]/g, '');
-      newValue = newValue.replace('\uFEFF', '-');
-    }
-
     if (IsDouble) {
       const regex = /^-?\d*\.?\d*$/;
       const input = e.target.value;
@@ -52,7 +68,11 @@ function NumberInputComponent({
         setValue(input);
       }
     } else {
-      setValue(newValue);
+      const regexWithOutComma = /^-?\d*$/;
+      const firstInput = e.target.value;
+      if (regexWithOutComma.test(firstInput)) {
+        setValue(firstInput);
+      }
     }
   };
 
