@@ -1,18 +1,17 @@
 import React from 'react';
-// import ButtonComponents from '../components/button/ButtonComponent ';
-// import CheckBox from '../components/Checkbox2/Checkbox2';
-// import NumberInputComponent from '../components/numberInput/NumberInputComponent';
 import Textarea from '../components/TextArea/Textarea';
 
 export default function Demo() {
   return (
     <div>
       <Textarea
+        AutoComplete={false}
+        Column={50}
         Id="1"
+        IsRequired
+        Label="sdfsdf"
         Name="1"
-        Row={10}
       />
-
     </div>
   );
 }

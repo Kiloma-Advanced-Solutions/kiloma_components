@@ -10,7 +10,6 @@ function Textarea({
   Column,
   AutoComplete,
   IsDisabled,
-  PlaceHolder,
   IsRequired,
   IsReadOnly,
   MinValue,
@@ -28,25 +27,26 @@ function Textarea({
 
   return (
     <div className={cx(styles.container, { [styles.RTL]: IsRTL })}>
+      <textarea
+        className={cx(styles.input, { [styles.disabled]: IsDisabled })}
+        id={Id}
+        name={Name}
+        rows={Row}
+        cols={Column}
+        autoComplete={AutoComplete}
+        disabled={IsDisabled}
+        required={IsRequired}
+        readOnly={IsReadOnly}
+        minLength={MinValue}
+        maxLength={MaxValue}
+        spellCheck={IsSpellChecker}
+        defaultValue={DefaultValue}
+        style={{ ...insideTextColor }}
+      />
       <label htmlFor="TextAreaId" className={cx(styles.label)} style={{ ...LabelColorStyle }}>
+        {' '}
         {Label}
-        <textarea
-          className={styles.text_area}
-          id={Id}
-          name={Name}
-          rows={Row}
-          cols={Column}
-          autoComplete={AutoComplete}
-          disabled={IsDisabled}
-          placeholder={PlaceHolder}
-          required={IsRequired}
-          readOnly={IsReadOnly}
-          minLength={MinValue}
-          maxLength={MaxValue}
-          spellCheck={IsSpellChecker}
-          defaultValue={DefaultValue}
-          style={{ ...insideTextColor }}
-        />
+        {' '}
       </label>
 
     </div>
@@ -61,8 +61,7 @@ Textarea.propTypes = {
   Column: PropTypes.number,
   AutoComplete: PropTypes.bool,
   IsDisabled: PropTypes.bool,
-  PlaceHolder: PropTypes.string,
-  IsRequired: PropTypes.bool,
+  IsRequired: PropTypes.bool.isRequired,
   IsReadOnly: PropTypes.bool,
   MinValue: PropTypes.number,
   MaxValue: PropTypes.number,
@@ -81,8 +80,6 @@ Textarea.defaultProps = {
   Column: 40,
   AutoComplete: true,
   IsDisabled: false,
-  PlaceHolder: 'place holder',
-  IsRequired: false,
   IsReadOnly: false,
   MinValue: 1,
   MaxValue: 999,
