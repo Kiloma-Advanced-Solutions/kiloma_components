@@ -22,18 +22,25 @@ function Textarea({
   Label,
   LabelFontFamily,
   TextFontFamily,
+  PlaceHolder,
+  IsShaded,
+  ShadowColor,
 
 }) {
   const LabelColorStyle = LabelColor ? { color: LabelColor } : {};
   const insideTextColor = TextColor ? { color: TextColor } : {};
   const LabelFontFamilyProp = LabelFontFamily ? { fontFamily: LabelFontFamily } : { fontFamily: 'Helvetica,Arial, sans-serif' };
   const TextInsideFontFamilyProp = TextFontFamily ? { fontFamily: TextFontFamily } : { fontFamily: 'Helvetica,Arial, sans-serif' };
+  const shadowColorStyles = ShadowColor && IsShaded ? { boxShadow: `0px 0px 5px ${ShadowColor}` } : {};
 
   return (
     <div className={cx(styles.container, { [styles.RTL]: IsRTL })}>
       <textarea
-        className={cx(styles.input, { [styles.disabled]: IsDisabled })}
-        style={{ ...TextInsideFontFamilyProp, ...insideTextColor }}
+        className={cx(styles.input, {
+          [styles.disabled]: IsDisabled,
+          [styles.RTL_Label]: IsShaded,
+        })}
+        style={{ ...TextInsideFontFamilyProp, ...insideTextColor, ...shadowColorStyles }}
         id={Id}
         name={Name}
         rows={Row}
@@ -46,6 +53,7 @@ function Textarea({
         maxLength={MaxValue}
         spellCheck={IsSpellChecker}
         value={DefaultValue}
+        placeholder={PlaceHolder}
       />
       <label htmlFor="TextAreaId" className={cx(styles.label)} style={{ ...LabelColorStyle, ...LabelFontFamilyProp }}>
         {' '}
@@ -76,6 +84,9 @@ Textarea.propTypes = {
   TextColor: PropTypes.string,
   LabelFontFamily: PropTypes.string,
   TextFontFamily: PropTypes.string,
+  PlaceHolder: PropTypes.string,
+  IsShaded: PropTypes.bool,
+  ShadowColor: PropTypes.string,
 };
 
 Textarea.defaultProps = {
@@ -96,5 +107,8 @@ Textarea.defaultProps = {
   TextColor: '',
   LabelFontFamily: '',
   TextFontFamily: '',
+  PlaceHolder: '',
+  IsShaded: false,
+  ShadowColor: '',
 };
 export default Textarea;
