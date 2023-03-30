@@ -13,28 +13,32 @@ outline: 0;
 border: 1px solid #181616;
 border-radius: 4px;
 background: #fff;
-font-family: Helvetica,Arial, sans-serif;
-font-size: 16px 
+font-size: 16px;
+margin-bottom: 3px;
 }
 .label{
 font-size: 16px;
-font-family: Helvetica,Arial, sans-serif;
 padding: 0 12px;
 color: #999;
 pointer-events: none;
 position: absolute;
 transform-origin: top left;
 transition: all 0.2s ease-out;
+margin-top: 4px;
 }
 
 .label:focus-within{
 transform: translate(0, 12px) scale(0.75);
 }
 
+.input:focus{
+outline: none !important;
+border:1px solid black;
+box-shadow: 0 0 10px #719ECE;
+}
 .RTL{
 direction: rtl ;
 } 
 .disabled{
-    opacity: 0.10;
-    
+opacity: 0.10;
 }

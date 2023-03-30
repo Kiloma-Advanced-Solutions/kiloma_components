@@ -2,7 +2,7 @@ import React from 'react';
 import ButtonComponents from './ButtonComponent ';
 
 export default {
-  title: 'Components/Button',
+  title: 'Components/UI Components/Button',
   component: ButtonComponents,
   parameters: {
     docs: {

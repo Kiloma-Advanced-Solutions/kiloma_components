@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import styles from './Textarea.module.css';
+import styles from './TextAreaComponent.module.css';
 
 function Textarea({
   Id,
@@ -20,15 +20,20 @@ function Textarea({
   LabelColor,
   TextColor,
   Label,
+  LabelFontFamily,
+  TextFontFamily,
 
 }) {
   const LabelColorStyle = LabelColor ? { color: LabelColor } : {};
   const insideTextColor = TextColor ? { color: TextColor } : {};
+  const LabelFontFamilyProp = LabelFontFamily ? { fontFamily: LabelFontFamily } : { fontFamily: 'Helvetica,Arial, sans-serif' };
+  const TextInsideFontFamilyProp = TextFontFamily ? { fontFamily: TextFontFamily } : { fontFamily: 'Helvetica,Arial, sans-serif' };
 
   return (
     <div className={cx(styles.container, { [styles.RTL]: IsRTL })}>
       <textarea
         className={cx(styles.input, { [styles.disabled]: IsDisabled })}
+        style={{ ...TextInsideFontFamilyProp, ...insideTextColor }}
         id={Id}
         name={Name}
         rows={Row}
@@ -40,10 +45,9 @@ function Textarea({
         minLength={MinValue}
         maxLength={MaxValue}
         spellCheck={IsSpellChecker}
-        defaultValue={DefaultValue}
-        style={{ ...insideTextColor }}
+        value={DefaultValue}
       />
-      <label htmlFor="TextAreaId" className={cx(styles.label)} style={{ ...LabelColorStyle }}>
+      <label htmlFor="TextAreaId" className={cx(styles.label)} style={{ ...LabelColorStyle, ...LabelFontFamilyProp }}>
         {' '}
         {Label}
         {' '}
@@ -70,14 +74,16 @@ Textarea.propTypes = {
   IsRTL: PropTypes.bool,
   LabelColor: PropTypes.string,
   TextColor: PropTypes.string,
+  LabelFontFamily: PropTypes.string,
+  TextFontFamily: PropTypes.string,
 };
 
 Textarea.defaultProps = {
   Label: '',
   Id: '',
   Name: '',
-  Row: 20,
-  Column: 40,
+  Row: null,
+  Column: null,
   AutoComplete: true,
   IsDisabled: false,
   IsReadOnly: false,
@@ -88,5 +94,7 @@ Textarea.defaultProps = {
   IsRTL: false,
   LabelColor: '',
   TextColor: '',
+  LabelFontFamily: '',
+  TextFontFamily: '',
 };
 export default Textarea;

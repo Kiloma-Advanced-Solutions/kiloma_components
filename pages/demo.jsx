@@ -1,5 +1,5 @@
 import React from 'react';
-import Textarea from '../components/TextArea/Textarea';
+import Textarea from '../components/TextArea/TextAreaComponent';
 
 export default function Demo() {
   return (

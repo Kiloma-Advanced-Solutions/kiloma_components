@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import style from './Checkbox2.module.css';
 
 function CheckBox({
-  CheckBoxTitle,
-  IdForTheLabel,
+  CheckBoxLabel,
+  CheckBoxId,
   LabelValue,
   IsRequired,
   LabelFontSize,
@@ -61,7 +61,7 @@ function CheckBox({
           style={makeInputStyleFromProps()}
           // eslint-disable-next-line jsx-quotes
           type='checkbox'
-          id={IdForTheLabel}
+          id={CheckBoxId}
           value={LabelValue}
           required={IsRequired}
           disabled={IsDisabled}
@@ -69,9 +69,9 @@ function CheckBox({
           onChange={handleChecked}
         />
         {ShouldDisplayLabel && !IsRequired ? (
-          <label style={makeLabelStyleFromProps()} htmlFor={IdForTheLabel}>
+          <label style={makeLabelStyleFromProps()} htmlFor={CheckBoxId}>
             <div>
-              {CheckBoxTitle}
+              {CheckBoxLabel}
             </div>
           </label>
         ) : (
@@ -80,10 +80,10 @@ function CheckBox({
         {ShouldDisplayLabel && IsRequired ? (
           <label
             style={makeLabelStyleFromPropsRequired()}
-            htmlFor={IdForTheLabel}
+            htmlFor={CheckBoxId}
           >
             <div>
-              {CheckBoxTitle}
+              {CheckBoxLabel}
             </div>
           </label>
         ) : (
@@ -96,8 +96,8 @@ function CheckBox({
 
 // adding prop type
 CheckBox.propTypes = {
-  CheckBoxTitle: PropTypes.string,
-  IdForTheLabel: PropTypes.string,
+  CheckBoxLabel: PropTypes.string,
+  CheckBoxId: PropTypes.string,
   LabelValue: PropTypes.string,
   IsRequired: PropTypes.bool,
   ShouldDisplayLabel: PropTypes.bool,
@@ -115,8 +115,8 @@ CheckBox.propTypes = {
 };
 
 CheckBox.defaultProps = {
-  CheckBoxTitle: '',
-  IdForTheLabel: '',
+  CheckBoxLabel: '',
+  CheckBoxId: '',
   LabelValue: '',
   IsRequired: true,
   ShouldDisplayLabel: false,
