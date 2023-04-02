@@ -3,6 +3,14 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import styles from './TextAreaComponent.module.css';
 
+const flexDirectionMap = {
+  Up: 'column',
+  Left: 'row',
+  Bottom: 'column-reverse',
+  Right: 'row-reverse',
+
+};
+
 function Textarea({
   Id,
   Name,
@@ -25,6 +33,7 @@ function Textarea({
   PlaceHolder,
   IsShaded,
   ShadowColor,
+  LabelPlace,
 
 }) {
   const LabelColorStyle = LabelColor ? { color: LabelColor } : {};
@@ -32,9 +41,15 @@ function Textarea({
   const LabelFontFamilyProp = LabelFontFamily ? { fontFamily: LabelFontFamily } : { fontFamily: 'Helvetica,Arial, sans-serif' };
   const TextInsideFontFamilyProp = TextFontFamily ? { fontFamily: TextFontFamily } : { fontFamily: 'Helvetica,Arial, sans-serif' };
   const shadowColorStyles = ShadowColor && IsShaded ? { boxShadow: `0px 0px 5px ${ShadowColor}` } : {};
+  const flexDirectionStyle = LabelPlace ? { flexDirection: flexDirectionMap[LabelPlace] } : { flexDirection: 'column' };
 
   return (
-    <div className={cx(styles.container, { [styles.RTL]: IsRTL })}>
+    <div className={cx(styles.container, { [styles.RTL]: IsRTL })} style={flexDirectionStyle}>
+      <label htmlFor="TextAreaId" className={cx(styles.label)} style={{ ...LabelColorStyle, ...LabelFontFamilyProp }}>
+        {' '}
+        {Label}
+        {' '}
+      </label>
       <textarea
         className={cx(styles.input, {
           [styles.disabled]: IsDisabled,
@@ -55,11 +70,6 @@ function Textarea({
         value={DefaultValue}
         placeholder={PlaceHolder}
       />
-      <label htmlFor="TextAreaId" className={cx(styles.label)} style={{ ...LabelColorStyle, ...LabelFontFamilyProp }}>
-        {' '}
-        {Label}
-        {' '}
-      </label>
 
     </div>
   );
@@ -67,6 +77,7 @@ function Textarea({
 
 Textarea.propTypes = {
   Label: PropTypes.string,
+  LabelPlace: PropTypes.oneOf(['Up', 'Left', 'Bottom', 'Right']),
   Id: PropTypes.string,
   Name: PropTypes.string,
   Row: PropTypes.number,
@@ -90,12 +101,13 @@ Textarea.propTypes = {
 };
 
 Textarea.defaultProps = {
-  Label: '',
-  Id: '',
-  Name: '',
-  Row: null,
-  Column: null,
-  AutoComplete: true,
+  Label: 'Text For the label',
+  LabelPlace: 'Label Place',
+  Id: 'Label ID',
+  Name: 'Label Name',
+  Row: 'Row size',
+  Column: 'Column Size',
+  AutoComplete: false,
   IsDisabled: false,
   IsReadOnly: false,
   MinValue: 1,
@@ -107,8 +119,8 @@ Textarea.defaultProps = {
   TextColor: '',
   LabelFontFamily: '',
   TextFontFamily: '',
-  PlaceHolder: '',
+  PlaceHolder: 'Place Holder',
   IsShaded: false,
-  ShadowColor: '',
+  ShadowColor: 'Shadow Color',
 };
 export default Textarea;

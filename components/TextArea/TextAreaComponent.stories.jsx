@@ -16,9 +16,10 @@ export const PrimaryComponent = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 PrimaryComponent.args = {
   Label: 'Text Area Label',
+  LabelPlace: '',
   Id: '',
   Name: '',
-  Row: 10,
+  Row: 20,
   Column: 40,
   AutoComplete: true,
   IsDisabled: false,
@@ -29,5 +30,7 @@ PrimaryComponent.args = {
   IsSpellChecker: true,
   DefaultValue: null,
   IsRTL: false,
+  isShaded: false,
+  ShadowColor: '',
 
 };
