@@ -34,6 +34,7 @@ function Textarea({
   IsShaded,
   ShadowColor,
   LabelPlace,
+  BorderColor,
 
 }) {
   const LabelColorStyle = LabelColor ? { color: LabelColor } : {};
@@ -42,6 +43,7 @@ function Textarea({
   const TextInsideFontFamilyProp = TextFontFamily ? { fontFamily: TextFontFamily } : { fontFamily: 'Helvetica,Arial, sans-serif' };
   const shadowColorStyles = ShadowColor && IsShaded ? { boxShadow: `0px 0px 5px ${ShadowColor}` } : {};
   const flexDirectionStyle = LabelPlace ? { flexDirection: flexDirectionMap[LabelPlace] } : { flexDirection: 'column' };
+  const borderColorStyle = BorderColor ? { border: `${BorderColor} solid` } : { border: 'border: 1px solid #181616' };
 
   return (
     <div className={cx(styles.container, { [styles.RTL]: IsRTL })} style={flexDirectionStyle}>
@@ -55,7 +57,12 @@ function Textarea({
           [styles.disabled]: IsDisabled,
           [styles.RTL_Label]: IsShaded,
         })}
-        style={{ ...TextInsideFontFamilyProp, ...insideTextColor, ...shadowColorStyles }}
+        style={{
+          ...TextInsideFontFamilyProp,
+          ...insideTextColor,
+          ...shadowColorStyles,
+          ...borderColorStyle,
+        }}
         id={Id}
         name={Name}
         rows={Row}
@@ -98,6 +105,7 @@ Textarea.propTypes = {
   TextFontFamily: PropTypes.string,
   IsShaded: PropTypes.bool,
   ShadowColor: PropTypes.string,
+  BorderColor: PropTypes.string,
 };
 
 Textarea.defaultProps = {
@@ -122,5 +130,6 @@ Textarea.defaultProps = {
   TextFontFamily: '',
   IsShaded: false,
   ShadowColor: 'Shadow Color',
+  BorderColor: '',
 };
 export default Textarea;
