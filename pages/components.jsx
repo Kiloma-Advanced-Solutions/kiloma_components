@@ -47,15 +47,15 @@ export default function components() {
               <div className={styles.components_examples}>
                 <Textarea
                   AutoComplete
-                  Column={20}
+                  Column={40}
                   Id=""
-                  Label="English Example"
-                  LabelColor="blue"
+                  Label="Text Area Example"
+                  LabelColor="black"
                   LabelFontFamily="Helvetica, Arial sans-serif"
                   LabelPlace="Left"
                   Name=""
                   PlaceHolder="Enter Your text here..."
-                  Row={20}
+                  Row={3}
                   ShadowColor=""
                   TextFontFamily="Helvetica, Arial sans-serif"
                 />
