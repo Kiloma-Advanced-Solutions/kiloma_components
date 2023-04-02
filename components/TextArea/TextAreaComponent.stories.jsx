@@ -12,11 +12,11 @@ function Template(args) {
   return <Textarea {...args} />;
 }
 
-export const PrimaryComponent = Template.bind({});
+export const EnglishExample = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
-PrimaryComponent.args = {
-  Label: 'Text Area Label',
-  LabelPlace: '',
+EnglishExample.args = {
+  Label: 'English Example',
+  LabelPlace: 'row',
   Id: '',
   Name: '',
   Row: 20,
@@ -30,7 +30,36 @@ PrimaryComponent.args = {
   IsSpellChecker: true,
   DefaultValue: null,
   IsRTL: false,
-  isShaded: false,
   ShadowColor: '',
+  LabelFontFamily: 'Helvetica, Arial sans-serif',
+  TextFontFamily: 'Helvetica, Arial sans-serif',
+  LabelColor: 'blue',
+  PlaceHolder: 'Enter Your text here...',
+
+};
+
+export const HebrewExample = Template.bind({});
+// More on args: https://storybook.js.org/docs/react/writing-stories/args
+HebrewExample.args = {
+  Label: 'דוגמא בעברית',
+  LabelPlace: 'row',
+  Id: '',
+  Name: '',
+  Row: 20,
+  Column: 40,
+  AutoComplete: true,
+  IsDisabled: false,
+  IsRequired: false,
+  IsReadOnly: false,
+  MinValue: 1,
+  MaxValue: 999,
+  IsSpellChecker: true,
+  DefaultValue: null,
+  IsRTL: true,
+  ShadowColor: '',
+  LabelFontFamily: 'Helvetica, Arial sans-serif',
+  TextFontFamily: 'Helvetica, Arial sans-serif',
+  LabelColor: 'green',
+  PlaceHolder: 'הכנס כאן את הטקסט..',
 
 };

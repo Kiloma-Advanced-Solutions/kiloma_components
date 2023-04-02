@@ -15,6 +15,7 @@ function Textarea({
   Id,
   Name,
   Row,
+  PlaceHolder,
   Column,
   AutoComplete,
   IsDisabled,
@@ -30,7 +31,6 @@ function Textarea({
   Label,
   LabelFontFamily,
   TextFontFamily,
-  PlaceHolder,
   IsShaded,
   ShadowColor,
   LabelPlace,
@@ -78,6 +78,7 @@ function Textarea({
 Textarea.propTypes = {
   Label: PropTypes.string,
   LabelPlace: PropTypes.oneOf(['Up', 'Left', 'Bottom', 'Right']),
+  PlaceHolder: PropTypes.string,
   Id: PropTypes.string,
   Name: PropTypes.string,
   Row: PropTypes.number,
@@ -95,7 +96,6 @@ Textarea.propTypes = {
   TextColor: PropTypes.string,
   LabelFontFamily: PropTypes.string,
   TextFontFamily: PropTypes.string,
-  PlaceHolder: PropTypes.string,
   IsShaded: PropTypes.bool,
   ShadowColor: PropTypes.string,
 };
@@ -103,6 +103,7 @@ Textarea.propTypes = {
 Textarea.defaultProps = {
   Label: 'Text For the label',
   LabelPlace: 'Label Place',
+  PlaceHolder: '',
   Id: 'Label ID',
   Name: 'Label Name',
   Row: 'Row size',
@@ -119,7 +120,6 @@ Textarea.defaultProps = {
   TextColor: '',
   LabelFontFamily: '',
   TextFontFamily: '',
-  PlaceHolder: 'Place Holder',
   IsShaded: false,
   ShadowColor: 'Shadow Color',
 };
