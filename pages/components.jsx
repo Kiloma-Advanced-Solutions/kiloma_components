@@ -49,14 +49,15 @@ export default function components() {
                   AutoComplete
                   Column={40}
                   Id=""
-                  Label="Text Area Example"
-                  LabelColor="black"
+                  Label="English Example"
+                  LabelColor="#060606"
                   LabelFontFamily="Helvetica, Arial sans-serif"
-                  LabelPlace="Left"
+                  LabelPlace="row"
                   Name=""
                   PlaceHolder="Enter Your text here..."
                   Row={3}
                   ShadowColor=""
+                  TextColor="#141fd7"
                   TextFontFamily="Helvetica, Arial sans-serif"
                 />
               </div>

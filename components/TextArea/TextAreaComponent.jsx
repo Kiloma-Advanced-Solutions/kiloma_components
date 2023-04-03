@@ -35,6 +35,7 @@ function Textarea({
   ShadowColor,
   LabelPlace,
   BorderColor,
+  IsExpandAllow,
 
 }) {
   const LabelColorStyle = LabelColor ? { color: LabelColor } : {};
@@ -44,6 +45,7 @@ function Textarea({
   const shadowColorStyles = ShadowColor && IsShaded ? { boxShadow: `0px 0px 5px ${ShadowColor}` } : {};
   const flexDirectionStyle = LabelPlace ? { flexDirection: flexDirectionMap[LabelPlace] } : { flexDirection: 'column' };
   const borderColorStyle = BorderColor ? { border: `${BorderColor} solid` } : { border: 'border: 1px solid #181616' };
+  const isExpandProp = IsExpandAllow ? {} : { resize: 'none' };
 
   return (
     <div className={cx(styles.container, { [styles.RTL]: IsRTL })} style={flexDirectionStyle}>
@@ -52,6 +54,12 @@ function Textarea({
         {Label}
         {' '}
       </label>
+
+      <p className={styles.placeholder}>
+        {' '}
+        {' '}
+      </p>
+
       <textarea
         className={cx(styles.input, {
           [styles.disabled]: IsDisabled,
@@ -62,6 +70,7 @@ function Textarea({
           ...insideTextColor,
           ...shadowColorStyles,
           ...borderColorStyle,
+          ...isExpandProp,
         }}
         id={Id}
         name={Name}
@@ -77,7 +86,6 @@ function Textarea({
         value={DefaultValue}
         placeholder={PlaceHolder}
       />
-
     </div>
   );
 }
@@ -106,6 +114,7 @@ Textarea.propTypes = {
   IsShaded: PropTypes.bool,
   ShadowColor: PropTypes.string,
   BorderColor: PropTypes.string,
+  IsExpandAllow: PropTypes.bool,
 };
 
 Textarea.defaultProps = {
@@ -131,5 +140,6 @@ Textarea.defaultProps = {
   IsShaded: false,
   ShadowColor: 'Shadow Color',
   BorderColor: '',
+  IsExpandAllow: true,
 };
 export default Textarea;

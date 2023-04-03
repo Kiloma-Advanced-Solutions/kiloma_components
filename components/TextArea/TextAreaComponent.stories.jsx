@@ -19,7 +19,7 @@ EnglishExample.args = {
   LabelPlace: 'row',
   Id: '',
   Name: '',
-  Row: 20,
+  Row: 3,
   Column: 40,
   AutoComplete: true,
   IsDisabled: false,
@@ -35,6 +35,7 @@ EnglishExample.args = {
   TextFontFamily: 'Helvetica, Arial sans-serif',
   LabelColor: 'blue',
   PlaceHolder: 'Enter Your text here...',
+  IsExpandAllow: true,
 
 };
 
@@ -45,7 +46,7 @@ HebrewExample.args = {
   LabelPlace: 'row',
   Id: '',
   Name: '',
-  Row: 20,
+  Row: 3,
   Column: 40,
   AutoComplete: true,
   IsDisabled: false,
