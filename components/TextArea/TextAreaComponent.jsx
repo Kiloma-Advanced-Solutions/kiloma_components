@@ -61,7 +61,9 @@ function Textarea({
         {' '}
         {' '}
       </p>
-
+      <div className={styles.placeholder}>
+        <p>Enter Amount</p>
+      </div>
       <textarea
         className={cx(styles.input, {
           [styles.disabled]: IsDisabled,
