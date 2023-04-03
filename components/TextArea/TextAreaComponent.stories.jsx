@@ -36,6 +36,7 @@ EnglishExample.args = {
   LabelColor: 'blue',
   PlaceHolder: 'Enter Your text here...',
   IsExpandAllow: true,
+  IsWithBorder: true,
 
 };
 
@@ -62,5 +63,8 @@ HebrewExample.args = {
   TextFontFamily: 'Helvetica, Arial sans-serif',
   LabelColor: 'green',
   PlaceHolder: 'הכנס כאן את הטקסט..',
+  IsExpandAllow: true,
+  IsWithBorder: true,
+  borderWidth: 1,
 
 };
