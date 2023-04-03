@@ -2,7 +2,7 @@ import React from 'react';
 import CheckBox from './Checkbox2';
 
 export default {
-  title: 'Components/Checkbox',
+  title: 'Components/Input Components/Checkbox',
   component: CheckBox,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
 };
@@ -15,8 +15,8 @@ function Template(args) {
 export const Primary = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Primary.args = {
-  CheckBoxTitle: '',
-  IdForTheLabel: '',
+  CheckBoxLabel: '',
+  CheckBoxId: '',
   LabelValue: '',
   IsChecked: '',
   IsRequired: false,

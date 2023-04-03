@@ -71,6 +71,8 @@
             flex-direction: column;
             width: 100%;
             align-items: flex-start;
+
+
         }
         .input_div{
            display: flex;
@@ -83,8 +85,10 @@
         }
         .components_examples{
             display: flex;
-            gap: 5px;
+            /* gap: 5px; */
             flex-direction: row;
+            
+
         }
 
         .ol1{

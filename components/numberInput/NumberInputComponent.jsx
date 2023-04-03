@@ -18,50 +18,49 @@ function NumberInputComponent({
   MaxLength,
   PlaceHolder,
   IsDouble,
-  DecimalDotPlace,
 }) {
   const [value, setValue] = useState(0);
-  const allowedChar = /[^0-9.,-]/;
-  const errorMessage = `The character ${allowedChar} can appear only once`;
 
-  const handleChange = (event) => {
-    const inputValue = event.target.value;
-    let newValue = inputValue.replace(/[^0-9+]|^-/g, (match, offset) => {
-      if (offset === 0 && match === '-') {
-        return match;
-      }
-      return '';
-    });
-    const charCount = (newValue.match(new RegExp(allowedChar, 'g')) || []).length;
-    if (charCount > 1) {
-      event.preventDefault();
-      console.log(errorMessage);
-    } else {
-      if (newValue.length > 3) {
-        if (IsDouble) {
-          const withoutLast2Digits = newValue.slice(0, -DecimalDotPlace);
-          newValue = `${withoutLast2Digits.replace(/\B(?=(\d{3})+(?!\d))/g, ',')}.${newValue.slice(-DecimalDotPlace)}`;
+  const handleChange = (e) => {
+    if (IsDouble) {
+      const regex = /^-?\d*\.?\d*$/;
+      let input = e.target.value.replace(',', '');
+      if (regex.test(input)) {
+        // let [integerPart, decimalPart] = input.split('.');
+        const divided = input.split('.');
+        let integerPart = divided[0];
+        const decimalPart = divided[1];
+        integerPart = integerPart.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+        if (decimalPart !== undefined) {
+          input = `${integerPart}.${decimalPart}`;
         } else {
-          newValue = newValue.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+          input = integerPart;
         }
+
+        setValue(input);
       }
-      setValue(newValue);
+    } else {
+      const regexWithOutComma = /^-?\d*$/;
+      const firstInput = e.target.value.replace(',', '');
+      if (regexWithOutComma.test(firstInput)) {
+        setValue(firstInput.replace(/\B(?=(\d{3})+(?!\d))/g, ','));
+      }
     }
   };
-  const handleChangeWithDecimal = (e) => {
-    const inputValue = e.target.value;
-    let decimalValue = inputValue;
-    const newValue = inputValue.replace(/[^0-9+]|^-/g, (match, offset) => {
-      if (offset === 0 && match === '-') {
-        return match;
-      }
-      return '';
-    });
+
+  const handleWithOutComma = (e) => {
     if (IsDouble) {
-      decimalValue = `${newValue.slice(0, -DecimalDotPlace)}.${newValue.slice(-DecimalDotPlace)}`;
-      setValue(decimalValue);
+      const regex = /^-?\d*\.?\d*$/;
+      const input = e.target.value;
+      if (regex.test(input)) {
+        setValue(input);
+      }
     } else {
-      setValue(newValue);
+      const regexWithOutComma = /^-?\d*$/;
+      const firstInput = e.target.value;
+      if (regexWithOutComma.test(firstInput)) {
+        setValue(firstInput);
+      }
     }
   };
 
@@ -115,14 +114,27 @@ function NumberInputComponent({
     }
   };
 
-  const handleOnKey = (event) => {
+  function handleOnKey(event) {
+    const currentPosition = event.target.selectionStart;
+
     if (event.keyCode === 40) {
       decreaseValue();
-    }
-    if (event.keyCode === 38) {
+      // setInputValue1(event.target.value);
+
+      setTimeout(() => {
+        event.target.setSelectionRange(currentPosition, currentPosition);
+      });
+    } else if (event.keyCode === 38) {
       addValue();
+      // setInputValue1(event.target.value);
+
+      setTimeout(() => {
+        event.target.setSelectionRange(currentPosition, currentPosition);
+      });
+      event.preventDefault();
     }
-  };
+  }
+
   const InputBackGroundColorStyle = InputBackGroundColor
     ? { backgroundColor: InputBackGroundColor } : {};
 
@@ -143,7 +155,7 @@ function NumberInputComponent({
             type="text"
             pattern="[^-]+[^0-9]+"
             value={value}
-            onInput={IsWithComma ? handleChange : handleChangeWithDecimal}
+            onInput={IsWithComma ? handleChange : handleWithOutComma}
             step={Step}
             disabled={Disabled}
             minLength={MinLength}
@@ -154,8 +166,8 @@ function NumberInputComponent({
           />
           {ShowControlButton ? (
             <div className={styles.inside_div_button}>
-              <button className={cx({ [styles.disabled]: Disabled }, [styles.plus_input_button])} type="button" onClick={addValue}>^</button>
-              <button className={cx({ [styles.disabled]: Disabled }, [styles.minus_input_button])} type="button" onClick={decreaseValue}>^</button>
+              <div className={cx({ [styles.disabled]: Disabled }, [styles.plus_input_button])} role="button" onClick={addValue} tabIndex={0} onKeyUp={() => {}}>^</div>
+              <div className={cx({ [styles.disabled]: Disabled }, [styles.minus_input_button])} role="button" type="button" onClick={decreaseValue} tabIndex={0} onKeyUp={() => {}}>^</div>
 
             </div>
           ) : null }
@@ -180,7 +192,6 @@ NumberInputComponent.propTypes = {
   MaxLength: PropTypes.number,
   PlaceHolder: PropTypes.string,
   IsDouble: PropTypes.bool,
-  DecimalDotPlace: PropTypes.number,
 
 };
 
@@ -198,7 +209,7 @@ NumberInputComponent.defaultProps = {
   MaxLength: null,
   PlaceHolder: 'Place Holder',
   IsDouble: false,
-  DecimalDotPlace: null,
+
 };
 
 export default NumberInputComponent;

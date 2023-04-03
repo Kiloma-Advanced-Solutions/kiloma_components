@@ -2,7 +2,7 @@ import React from 'react';
 import NumberInputComponent from './NumberInputComponent';
 
 export default {
-  title: 'Components/NumberInput',
+  title: 'Components/Input Components/NumberInput',
   component: NumberInputComponent,
   parameters: {
     docs: {
@@ -20,8 +20,8 @@ function Template(args) {
 export const Number = Template.bind({});
 
 Number.args = {
-  LabelText: 'Amount',
-  Step: 0,
+  LabelText: 'Example',
+  Step: 1,
   Disabled: false,
   IsRTL: false,
   IsWithComma: true,
@@ -31,6 +31,5 @@ Number.args = {
   MinLength: 1,
   MaxLength: 999,
   IsDouble: false,
-  DecimalDotPlace: 2,
 
 };

@@ -3,6 +3,7 @@ import styles from '../styles/components.module.css';
 import ButtonComponents from '../components/button/ButtonComponent ';
 import CheckBox from '../components/Checkbox2/Checkbox2';
 import NumberInputComponent from '../components/numberInput/NumberInputComponent';
+import Textarea from '../components/TextArea/TextAreaComponent';
 
 export default function components() {
   return (
@@ -32,14 +33,32 @@ export default function components() {
             <li>
               <div className={styles.components_examples}>
                 <NumberInputComponent
-                  DecimalDotPlace={2}
                   InputWidthSize="25%"
                   IsDouble
-                  IsTextCenter
-                  LabelText="Text Input Example"
+                  IsWithComma={false}
+                  LabelText="Number Input Example"
                   MaxLength={999}
                   MinLength={1}
                   Step={1}
+                />
+              </div>
+            </li>
+            <li>
+              <div className={styles.components_examples}>
+                <Textarea
+                  AutoComplete
+                  Column={40}
+                  Id=""
+                  Label="English Example"
+                  LabelColor="#060606"
+                  LabelFontFamily="Helvetica, Arial sans-serif"
+                  LabelPlace="row"
+                  Name=""
+                  PlaceHolder="Enter Your text here..."
+                  Row={3}
+                  ShadowColor=""
+                  TextColor="#141fd7"
+                  TextFontFamily="Helvetica, Arial sans-serif"
                 />
               </div>
             </li>
