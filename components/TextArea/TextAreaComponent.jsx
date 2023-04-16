@@ -38,6 +38,7 @@ function Textarea({
   IsExpandAllow,
   IsWithBorder,
   BorderWidth,
+
 }) {
   const LabelColorStyle = LabelColor ? { color: LabelColor } : {};
   const insideTextColor = TextColor ? { color: TextColor } : {};
@@ -46,7 +47,7 @@ function Textarea({
   const shadowColorStyles = ShadowColor && IsShaded ? { boxShadow: `0px 0px 5px ${ShadowColor}` } : {};
   const flexDirectionStyle = LabelPlace ? { flexDirection: flexDirectionMap[LabelPlace] } : { flexDirection: 'column' };
   const isExpandProp = IsExpandAllow ? {} : { resize: 'none' };
-  const borderStyle = IsWithBorder ? { border: `${BorderColor || 'black' }  ${BorderWidth}px solid` } : { border: 'none' };
+  const borderStyle = IsWithBorder ? { border: `${BorderColor || 'black'}  ${BorderWidth}px solid` } : { border: 'none' };
   const borderColorStyle = BorderColor ? { border: `${BorderColor} ${BorderWidth}px solid` } : { border: 'border: 1px solid #181616' };
 
   return (
@@ -61,9 +62,6 @@ function Textarea({
         {' '}
         {' '}
       </p>
-      <div className={styles.placeholder}>
-        <p>Enter Amount</p>
-      </div>
       <textarea
         className={cx(styles.input, {
           [styles.disabled]: IsDisabled,
