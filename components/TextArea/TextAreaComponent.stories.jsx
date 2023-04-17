@@ -9,11 +9,7 @@ export default {
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 function Template(args) {
-  return (
-    <div style={{ marginTop: 100 }}>
-      <Textarea {...args} />
-    </div>
-  );
+  return <Textarea {...args} />;
 }
 
 export const EnglishExample = Template.bind({});

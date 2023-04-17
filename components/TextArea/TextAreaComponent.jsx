@@ -4,7 +4,6 @@ import cx from 'classnames';
 import styles from './TextAreaComponent.module.css';
 
 const flexDirectionMap = {
-  Up: 'column',
   Left: 'row',
   Bottom: 'column-reverse',
   Right: 'row-reverse',
@@ -103,7 +102,7 @@ function Textarea({
 
 Textarea.propTypes = {
   Label: PropTypes.string,
-  LabelPlace: PropTypes.oneOf(['Up', 'Left', 'Bottom', 'Right']),
+  LabelPlace: PropTypes.oneOf(['Left', 'Bottom', 'Right']),
   PlaceHolder: PropTypes.string,
   Id: PropTypes.string,
   Name: PropTypes.string,

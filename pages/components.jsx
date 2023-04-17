@@ -15,6 +15,24 @@ export default function components() {
           <ol className={styles.ol1}>
             <li>
               <div className={styles.components_examples}>
+                <Textarea
+                  AutoComplete
+                  Column={40}
+                  Id=""
+                  Label="Text Area Example"
+                  LabelColor="rgba(5, 4, 5, 1)"
+                  LabelFontFamily="Helvetica, Arial sans-serif"
+                  LabelPlace="row"
+                  Name=""
+                  PlaceHolder="Enter Your Text"
+                  Row={3}
+                  ShadowColor=""
+                  TextFontFamily="Helvetica, Arial sans-serif"
+                />
+              </div>
+            </li>
+            <li>
+              <div className={styles.components_examples}>
                 <p className={styles.p1}> CheckBox </p>
 
                 <CheckBox
@@ -43,25 +61,7 @@ export default function components() {
                 />
               </div>
             </li>
-            <li>
-              <div className={styles.components_examples}>
-                <Textarea
-                  AutoComplete
-                  Column={40}
-                  Id=""
-                  Label="English Example"
-                  LabelColor="#060606"
-                  LabelFontFamily="Helvetica, Arial sans-serif"
-                  LabelPlace="row"
-                  Name=""
-                  PlaceHolder="Enter Your text here..."
-                  Row={3}
-                  ShadowColor=""
-                  TextColor="#141fd7"
-                  TextFontFamily="Helvetica, Arial sans-serif"
-                />
-              </div>
-            </li>
+
           </ol>
         </div>
       </div>
