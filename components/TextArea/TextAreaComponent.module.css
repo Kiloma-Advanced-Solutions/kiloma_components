@@ -48,7 +48,7 @@ opacity: 0.10;
     top: 5px;
     font-family: Helvetica ,Arial, sans-serif;
     font-family: 16px;
-    transition: all 0.2s ease-out;
+    transition: 250ms ease-in-out;
     pointer-events: none;
 }
 
