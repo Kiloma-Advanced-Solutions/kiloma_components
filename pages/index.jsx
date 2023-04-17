@@ -1,11 +1,16 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 
 export default function Home() {
   return (
     <div className={styles.container}>
+      <Head>
+        <title>Kiloma Components</title>
+        <link rel="icon" href="Images/logo.svg" />
+      </Head>
       <div className={styles.img_title}>
         <Image src="\Images\logo.svg" width={100} height={100} />
         <p>Kiloma Components</p>
