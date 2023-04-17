@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import styles from './TextAreaComponent.module.css';
@@ -40,6 +40,7 @@ function Textarea({
   BorderWidth,
 
 }) {
+  const [hasContent, setHasContent] = useState(DefaultValue?.length > 0);
   const LabelColorStyle = LabelColor ? { color: LabelColor } : {};
   const insideTextColor = TextColor ? { color: TextColor } : {};
   const LabelFontFamilyProp = LabelFontFamily ? { fontFamily: LabelFontFamily } : { fontFamily: 'Helvetica,Arial, sans-serif' };
@@ -50,6 +51,13 @@ function Textarea({
   const borderStyle = IsWithBorder ? { border: `${BorderColor || 'black'}  ${BorderWidth}px solid` } : { border: 'none' };
   const borderColorStyle = BorderColor ? { border: `${BorderColor} ${BorderWidth}px solid` } : { border: 'border: 1px solid #181616' };
 
+  const handleInputChange = (event) => {
+    if (event.target.value) {
+      setHasContent(true);
+    } else {
+      setHasContent(false);
+    }
+  };
   return (
     <div className={cx(styles.container, { [styles.RTL]: IsRTL })} style={flexDirectionStyle}>
       <label htmlFor="TextAreaId" className={cx(styles.label)} style={{ ...LabelColorStyle, ...LabelFontFamilyProp }}>
@@ -57,38 +65,38 @@ function Textarea({
         {Label}
         {' '}
       </label>
-
-      <p className={styles.placeholder}>
-        {' '}
-        {' '}
-      </p>
-      <textarea
-        className={cx(styles.input, {
-          [styles.disabled]: IsDisabled,
-          [styles.RTL_Label]: IsShaded,
-        })}
-        style={{
-          ...TextInsideFontFamilyProp,
-          ...insideTextColor,
-          ...shadowColorStyles,
-          ...borderColorStyle,
-          ...isExpandProp,
-          ...borderStyle,
-        }}
-        id={Id}
-        name={Name}
-        rows={Row}
-        cols={Column}
-        autoComplete={AutoComplete}
-        disabled={IsDisabled}
-        required={IsRequired}
-        readOnly={IsReadOnly}
-        minLength={MinValue}
-        maxLength={MaxValue}
-        spellCheck={IsSpellChecker}
-        value={DefaultValue}
-        placeholder={PlaceHolder}
-      />
+      <div className={styles.text_area_wrapper}>
+        <textarea
+          onChange={handleInputChange}
+          className={cx(styles.input, {
+            [styles.disabled]: IsDisabled,
+            [styles.RTL_Label]: IsShaded,
+          })}
+          style={{
+            ...TextInsideFontFamilyProp,
+            ...insideTextColor,
+            ...shadowColorStyles,
+            ...borderColorStyle,
+            ...isExpandProp,
+            ...borderStyle,
+          }}
+          id={Id}
+          name={Name}
+          rows={Row}
+          cols={Column}
+          autoComplete={AutoComplete}
+          disabled={IsDisabled}
+          required={IsRequired}
+          readOnly={IsReadOnly}
+          minLength={MinValue}
+          maxLength={MaxValue}
+          spellCheck={IsSpellChecker}
+          value={DefaultValue}
+        />
+        <div className={cx(styles.place_holder, { [styles.is_content]: hasContent })}>
+          {PlaceHolder}
+        </div>
+      </div>
     </div>
   );
 }
