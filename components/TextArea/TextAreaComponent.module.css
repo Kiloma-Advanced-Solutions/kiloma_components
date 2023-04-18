@@ -60,3 +60,8 @@ opacity: 0.10;
 .input:focus + .place_holder{
     top: -25px;
 }
+
+.RTL .place_holder{
+    right: 8px;
+    left: auto;
+}

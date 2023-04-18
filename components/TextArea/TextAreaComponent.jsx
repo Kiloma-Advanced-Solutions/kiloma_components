@@ -92,7 +92,11 @@ function Textarea({
           spellCheck={IsSpellChecker}
           value={DefaultValue}
         />
-        <div className={cx(styles.place_holder, { [styles.is_content]: hasContent })}>
+        <div className={cx(
+          styles.place_holder,
+          { [styles.is_content]: hasContent },
+        )}
+        >
           {PlaceHolder}
         </div>
       </div>
