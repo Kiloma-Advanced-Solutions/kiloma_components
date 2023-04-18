@@ -47,9 +47,10 @@ opacity: 0.10;
     z-index: 2;
     top: 5px;
     font-family: Helvetica ,Arial, sans-serif;
-    font-family: 16px;
+    font-size: 14px;
     transition: 250ms ease-in-out;
     pointer-events: none;
+    color: #999;
 }
 
 .is_content{
